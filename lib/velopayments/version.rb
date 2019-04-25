@@ -11,5 +11,5 @@ OpenAPI Generator version: 4.0.0-SNAPSHOT
 =end
 
 module VeloPayments
-  VERSION = '1.0.0'
+  VERSION = '2.11.73'
 end
