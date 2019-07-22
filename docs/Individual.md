@@ -5,8 +5,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | [**IndividualName**](IndividualName.md) |  | 
-**national_identification** | [**OneOfstringstring**](OneOfstringstring.md) |  | [optional] 
-**date_of_birth** | [**OneOfdatestring**](OneOfdatestring.md) |  | 
+**national_identification** | **String** | If not authorized to view, value will be masked. Example: XXXXX1234 | [optional] 
+**date_of_birth** | **String** | If not authorized to view, value will be masked. Example: - XXXX-XX-XX | 
 
 ## Code Sample
 

@@ -4,9 +4,9 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**summary** | [**GetPaymentsForPayoutResponseSummary**](GetPaymentsForPayoutResponseSummary.md) |  | [optional] 
-**page** | [**GetPaymentsForPayoutResponsePage**](GetPaymentsForPayoutResponsePage.md) |  | [optional] 
-**links** | [**Array&lt;GetPaymentsForPayoutResponseLinks&gt;**](GetPaymentsForPayoutResponseLinks.md) |  | [optional] 
+**summary** | [**PayeeResponseSummary**](PayeeResponseSummary.md) |  | [optional] 
+**page** | [**PayeeResponsePage**](PayeeResponsePage.md) |  | [optional] 
+**links** | [**Array&lt;PayeeResponseLinks&gt;**](PayeeResponseLinks.md) |  | [optional] 
 **content** | [**Array&lt;Payee&gt;**](Payee.md) |  | [optional] 
 
 ## Code Sample

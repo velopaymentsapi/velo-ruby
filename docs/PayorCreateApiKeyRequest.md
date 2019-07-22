@@ -13,9 +13,9 @@ Name | Type | Description | Notes
 ```ruby
 require 'VeloPayments'
 
-instance = VeloPayments::PayorCreateApiKeyRequest.new(name: null,
-                                 description: null,
-                                 roles: null)
+instance = VeloPayments::PayorCreateApiKeyRequest.new(name: iOS Key,
+                                 description: Key for iOS mobile application,
+                                 roles: [&quot;payor.admin&quot;])
 ```
 
 

@@ -28,7 +28,7 @@ VeloPayments.configure do |config|
 end
 
 api_instance = VeloPayments::SubmitPayoutApi.new
-create_payout_request = VeloPayments::CreatePayoutRequest.new # CreatePayoutRequest | Post ammount to transfer via ACH using stored funding account details.
+create_payout_request = VeloPayments::CreatePayoutRequest.new # CreatePayoutRequest | Post amount to transfer using stored funding account details.
 
 begin
   #Submit Payout
@@ -43,7 +43,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **create_payout_request** | [**CreatePayoutRequest**](CreatePayoutRequest.md)| Post ammount to transfer via ACH using stored funding account details. | 
+ **create_payout_request** | [**CreatePayoutRequest**](CreatePayoutRequest.md)| Post amount to transfer using stored funding account details. | 
 
 ### Return type
 

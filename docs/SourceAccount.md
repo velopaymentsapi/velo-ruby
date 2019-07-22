@@ -14,10 +14,10 @@ Name | Type | Description | Notes
 ```ruby
 require 'VeloPayments'
 
-instance = VeloPayments::SourceAccount.new(source_account_name: null,
+instance = VeloPayments::SourceAccount.new(source_account_name: AccountName,
                                  source_account_id: null,
-                                 currency: null,
-                                 total_payout_cost: null)
+                                 currency: USD,
+                                 total_payout_cost: 1231200)
 ```
 
 

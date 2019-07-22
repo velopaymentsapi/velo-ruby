@@ -13,9 +13,9 @@ Name | Type | Description | Notes
 ```ruby
 require 'VeloPayments'
 
-instance = VeloPayments::PayorFundingBankDetailsUpdate.new(routing_number: null,
-                                 account_number: null,
-                                 account_name: null)
+instance = VeloPayments::PayorFundingBankDetailsUpdate.new(routing_number: 123123123,
+                                 account_number: 123456789012345,
+                                 account_name: Bank of America)
 ```
 
 

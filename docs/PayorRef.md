@@ -13,8 +13,8 @@ Name | Type | Description | Notes
 ```ruby
 require 'VeloPayments'
 
-instance = VeloPayments::PayorRef.new(payor_id: null,
-                                 remote_id: null,
+instance = VeloPayments::PayorRef.new(payor_id: ba08877f-9d96-41e4-9c26-44a872d856ae,
+                                 remote_id: uniqueIdForRemoteEntity,
                                  invitation_status: null)
 ```
 

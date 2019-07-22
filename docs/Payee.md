@@ -24,7 +24,6 @@ Name | Type | Description | Notes
 **marketing_opt_ins** | [**Array&lt;MarketingOptIn&gt;**](MarketingOptIn.md) |  | [optional] 
 **ofac_status** | [**OfacStatus**](OfacStatus.md) |  | [optional] 
 **onboarded_status** | [**OnboardedStatus**](OnboardedStatus.md) |  | [optional] 
-**social** | [**Social**](Social.md) |  | [optional] 
 
 ## Code Sample
 
@@ -50,8 +49,7 @@ instance = VeloPayments::Payee.new(payee_id: null,
                                  last_ofac_check_timestamp: null,
                                  marketing_opt_ins: null,
                                  ofac_status: null,
-                                 onboarded_status: null,
-                                 social: null)
+                                 onboarded_status: null)
 ```
 
 

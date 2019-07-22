@@ -12,8 +12,8 @@ Name | Type | Description | Notes
 ```ruby
 require 'VeloPayments'
 
-instance = VeloPayments::PayorCreateApplicationRequest.new(name: null,
-                                 description: null)
+instance = VeloPayments::PayorCreateApplicationRequest.new(name: SAP,
+                                 description: SAP Application integration)
 ```
 
 

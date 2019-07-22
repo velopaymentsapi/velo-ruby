@@ -16,12 +16,12 @@ Name | Type | Description | Notes
 ```ruby
 require 'VeloPayments'
 
-instance = VeloPayments::PaymentInstruction.new(remote_id: null,
-                                 currency: null,
-                                 amount: null,
-                                 payment_memo: null,
-                                 source_account_name: null,
-                                 payor_payment_id: null)
+instance = VeloPayments::PaymentInstruction.new(remote_id: remoteId1234,
+                                 currency: USD,
+                                 amount: 1299,
+                                 payment_memo: my memo,
+                                 source_account_name: MyAccountName,
+                                 payor_payment_id: 123211321ABSD)
 ```
 
 

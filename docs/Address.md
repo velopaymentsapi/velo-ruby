@@ -18,14 +18,14 @@ Name | Type | Description | Notes
 ```ruby
 require 'VeloPayments'
 
-instance = VeloPayments::Address.new(line1: null,
+instance = VeloPayments::Address.new(line1: 500 Duval St,
                                  line2: null,
                                  line3: null,
                                  line4: null,
-                                 city: null,
-                                 county_or_province: null,
-                                 zip_or_postcode: null,
-                                 country: null)
+                                 city: Key West,
+                                 county_or_province: FL,
+                                 zip_or_postcode: 33945,
+                                 country: US)
 ```
 
 

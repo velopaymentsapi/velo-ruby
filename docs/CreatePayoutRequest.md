@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 require 'VeloPayments'
 
 instance = VeloPayments::CreatePayoutRequest.new(payor_id: null,
-                                 payout_memo: null,
+                                 payout_memo: A memo,
                                  payments: null)
 ```
 

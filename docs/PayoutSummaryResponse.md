@@ -19,10 +19,10 @@ Name | Type | Description | Notes
 require 'VeloPayments'
 
 instance = VeloPayments::PayoutSummaryResponse.new(payout_id: null,
-                                 status: null,
-                                 payments_submitted: null,
-                                 payments_accepted: null,
-                                 payments_rejected: null,
+                                 status: COMPLETED,
+                                 payments_submitted: 10,
+                                 payments_accepted: 10,
+                                 payments_rejected: 0,
                                  fx_summaries: null,
                                  accounts: null,
                                  rejected_payments: null)
