@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **date_time** | **DateTime** |  | [optional] 
 **submitted_date_time** | **String** |  | 
 **instructed_date_time** | **String** |  | [optional] 
+**withdrawn_date_time** | **String** |  | [optional] 
 **total_payments** | **Integer** |  | [optional] 
 **total_incomplete_payments** | **Integer** |  | [optional] 
 **total_returned_payments** | **Integer** |  | [optional] 
@@ -28,6 +29,7 @@ instance = VeloPayments::PayoutSummaryAuditV4.new(payout_id: null,
                                  date_time: null,
                                  submitted_date_time: null,
                                  instructed_date_time: null,
+                                 withdrawn_date_time: null,
                                  total_payments: null,
                                  total_incomplete_payments: null,
                                  total_returned_payments: null,

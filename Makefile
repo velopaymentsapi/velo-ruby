@@ -19,6 +19,7 @@ clean:
 	rm -f Gemfile.lock
 	rm -f Rakefile
 	rm -f *.gemspec
+	rm -f velopayments-*.gem
 
 ruby-client:
 	docker run --rm -v ${PWD}:/local openapitools/openapi-generator-cli generate \
@@ -37,3 +38,10 @@ info:
 	sed -i.bak '1s/.*/# Ruby client for Velo/' README.md && rm README.md.bak
 	
 client: clean ruby-client trim info
+
+lib:
+	gem build velopayments.gemspec
+
+publish:
+	# make version=2.14.90.pre.1 publish
+	gem push velopayments-$(version).gem

@@ -22,10 +22,10 @@ require 'VeloPayments'
 
 instance = VeloPayments::FxSummaryV4.new(quote_id: null,
                                  creation_date_time: null,
-                                 rate: null,
-                                 inverted_rate: null,
+                                 rate: 123.23,
+                                 inverted_rate: 123.23,
                                  total_cost: null,
-                                 total_payment_amount: null,
+                                 total_payment_amount: 34235,
                                  source_currency: null,
                                  payment_currency: null,
                                  status: null,

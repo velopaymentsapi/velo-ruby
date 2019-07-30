@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 require 'VeloPayments'
 
 instance = VeloPayments::SourceAccountSummaryV4.new(source_account_id: null,
-                                 total_cost: null,
+                                 total_cost: 3344,
                                  currency: null)
 ```
 
