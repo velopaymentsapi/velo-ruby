@@ -39,7 +39,7 @@ info:
 	
 client: clean ruby-client trim info
 
-lib:
+build:
 	gem build velopayments.gemspec
 
 publish:
