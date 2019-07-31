@@ -44,4 +44,6 @@ build:
 
 publish:
 	# make version=2.14.90.pre.1 publish
+	git tag $(version)
+	git push origin tag $(version)
 	gem push velopayments-$(version).gem
