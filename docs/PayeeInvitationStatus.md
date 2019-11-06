@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 require 'VeloPayments'
 
 instance = VeloPayments::PayeeInvitationStatus.new(payee_id: null,
-                                 invitation_status: null,
+                                 invitation_status: ACCEPTED,
                                  grace_period_end_date: null)
 ```
 

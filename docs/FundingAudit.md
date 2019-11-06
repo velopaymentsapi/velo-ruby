@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **funding_account_name** | **String** |  | [optional] 
 **funding_type** | **String** |  | [optional] 
 **events** | [**Array&lt;FundingEvent&gt;**](FundingEvent.md) |  | [optional] 
+**topup_type** | **String** |  | [optional] 
 
 ## Code Sample
 
@@ -25,7 +26,8 @@ instance = VeloPayments::FundingAudit.new(amount: null,
                                  source_account_name: null,
                                  funding_account_name: null,
                                  funding_type: null,
-                                 events: null)
+                                 events: null,
+                                 topup_type: null)
 ```
 
 

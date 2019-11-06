@@ -8,6 +8,12 @@ help:
 	@echo "\033[92m    make WORKING_SPEC=https://raw.githubusercontent.com/velopaymentsapi/VeloOpenApi/master/spec/openapi.yaml client \033[0m"
 	@echo ""
 
+version:
+	@docker run -i --rm mikefarah/yq sh -c "apk -q add curl && curl -s $$WORKING_SPEC -o /tmp/oa3.yaml;  yq r /tmp/oa3.yaml info.version" 2>&1
+
+oa3config:
+	sed -i.bak 's/"gemVersion": ".*"/"gemVersion": "${VERSION}"/g' oa3-config.json && rm oa3-config.json.bak
+
 clean:
 	rm -Rf lib
 	rm -Rf docs
@@ -19,8 +25,9 @@ clean:
 	rm -f Gemfile.lock
 	rm -f Rakefile
 	rm -f *.gemspec
+	rm -f velopayments-*.gem
 
-ruby-client:
+generate:
 	docker run --rm -v ${PWD}:/local openapitools/openapi-generator-cli generate \
 		-i $$WORKING_SPEC \
 		-g ruby \
@@ -36,4 +43,30 @@ trim:
 info:
 	sed -i.bak '1s/.*/# Ruby client for Velo/' README.md && rm README.md.bak
 	
-client: clean ruby-client trim info
+client: clean generate trim info
+
+tests:
+	# language: ruby
+	# cache: bundler
+	# rvm:
+	# - 2.3
+	# - 2.4
+	# - 2.5
+	# script:
+	# - bundle install --path vendor/bundle
+	# - bundle exec rspec
+	# - gem build velopayments.gemspec
+	# - gem install ./velopayments-1.0.3.gem
+
+commit:
+	git add --all
+	git commit -am 'bump version to ${VERSION}'
+	git push --set-upstream origin master
+
+build:
+	gem build velopayments.gemspec
+
+publish:
+	git tag $(VERSION)
+	git push origin tag $(VERSION)
+	# gem push velopayments-$(VERSION).gem

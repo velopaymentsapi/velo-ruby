@@ -12,8 +12,8 @@ Name | Type | Description | Notes
 ```ruby
 require 'VeloPayments'
 
-instance = VeloPayments::SupportedCountry.new(iso_country_code: null,
-                                 currencies: null)
+instance = VeloPayments::SupportedCountry.new(iso_country_code: US,
+                                 currencies: [&quot;USD&quot;])
 ```
 
 

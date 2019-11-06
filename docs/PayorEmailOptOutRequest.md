@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**reminder_emails_opt_out** | **Boolean** |  | [optional] 
+**reminder_emails_opt_out** | **Boolean** |  | 
 
 ## Code Sample
 

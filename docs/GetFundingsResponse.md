@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **page** | [**PagedResponsePage**](PagedResponsePage.md) |  | [optional] 
 **links** | **Array&lt;Object&gt;** |  | [optional] 
-**content** | [**FundingAudit**](FundingAudit.md) |  | [optional] 
+**content** | [**Array&lt;FundingAudit&gt;**](FundingAudit.md) |  | [optional] 
 
 ## Code Sample
 

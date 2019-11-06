@@ -8,14 +8,17 @@ Method | HTTP request | Description
 [**create_funding_request**](FundingManagerApi.md#create_funding_request) | **POST** /v2/sourceAccounts/{sourceAccountId}/fundingRequest | Create Funding Request
 [**get_fundings**](FundingManagerApi.md#get_fundings) | **GET** /v1/paymentaudit/fundings | Get Fundings for Payor
 [**get_source_account**](FundingManagerApi.md#get_source_account) | **GET** /v1/sourceAccounts/{sourceAccountId} | Get details about given source account.
+[**get_source_account_v2**](FundingManagerApi.md#get_source_account_v2) | **GET** /v2/sourceAccounts/{sourceAccountId} | Get details about given source account.
 [**get_source_accounts**](FundingManagerApi.md#get_source_accounts) | **GET** /v1/sourceAccounts | Get list of source accounts
-[**set_payor_funding_bank_details**](FundingManagerApi.md#set_payor_funding_bank_details) | **POST** /v1/payors/{payorId}/payorFundingBankDetailsUpdate | Set Funding Bank Details
+[**get_source_accounts_v2**](FundingManagerApi.md#get_source_accounts_v2) | **GET** /v2/sourceAccounts | Get list of source accounts
+[**list_funding_audit_deltas**](FundingManagerApi.md#list_funding_audit_deltas) | **GET** /v1/deltas/fundings | List Funding changes
+[**set_notifications_request**](FundingManagerApi.md#set_notifications_request) | **POST** /v1/sourceAccounts/{sourceAccountId}/notifications | Set notifications
 
 
 
 ## create_ach_funding_request
 
-> create_ach_funding_request(source_account_id, funding_request)
+> create_ach_funding_request(source_account_id, funding_request_v1)
 
 Create Funding Request
 
@@ -34,11 +37,11 @@ end
 
 api_instance = VeloPayments::FundingManagerApi.new
 source_account_id = 'source_account_id_example' # String | Source account id
-funding_request = VeloPayments::FundingRequest.new # FundingRequest | Body to included ammount to be funded
+funding_request_v1 = VeloPayments::FundingRequestV1.new # FundingRequestV1 | Body to included ammount to be funded
 
 begin
   #Create Funding Request
-  api_instance.create_ach_funding_request(source_account_id, funding_request)
+  api_instance.create_ach_funding_request(source_account_id, funding_request_v1)
 rescue VeloPayments::ApiError => e
   puts "Exception when calling FundingManagerApi->create_ach_funding_request: #{e}"
 end
@@ -50,7 +53,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **source_account_id** | [**String**](.md)| Source account id | 
- **funding_request** | [**FundingRequest**](FundingRequest.md)| Body to included ammount to be funded | 
+ **funding_request_v1** | [**FundingRequestV1**](FundingRequestV1.md)| Body to included ammount to be funded | 
 
 ### Return type
 
@@ -63,12 +66,12 @@ nil (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json
+- **Accept**: Not defined
 
 
 ## create_funding_request
 
-> create_funding_request(source_account_id, funding_request2)
+> create_funding_request(source_account_id, funding_request_v2)
 
 Create Funding Request
 
@@ -87,11 +90,11 @@ end
 
 api_instance = VeloPayments::FundingManagerApi.new
 source_account_id = 'source_account_id_example' # String | Source account id
-funding_request2 = VeloPayments::FundingRequest2.new # FundingRequest2 | Body to included ammount to be funded
+funding_request_v2 = VeloPayments::FundingRequestV2.new # FundingRequestV2 | Body to included ammount to be funded
 
 begin
   #Create Funding Request
-  api_instance.create_funding_request(source_account_id, funding_request2)
+  api_instance.create_funding_request(source_account_id, funding_request_v2)
 rescue VeloPayments::ApiError => e
   puts "Exception when calling FundingManagerApi->create_funding_request: #{e}"
 end
@@ -103,7 +106,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **source_account_id** | [**String**](.md)| Source account id | 
- **funding_request2** | [**FundingRequest2**](FundingRequest2.md)| Body to included ammount to be funded | 
+ **funding_request_v2** | [**FundingRequestV2**](FundingRequestV2.md)| Body to included ammount to be funded | 
 
 ### Return type
 
@@ -116,7 +119,7 @@ nil (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: application/json
+- **Accept**: Not defined
 
 
 ## get_fundings
@@ -231,6 +234,58 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
+## get_source_account_v2
+
+> SourceAccountResponseV2 get_source_account_v2(source_account_id)
+
+Get details about given source account.
+
+Get details about given source account.
+
+### Example
+
+```ruby
+# load the gem
+require 'velopayments'
+# setup authorization
+VeloPayments.configure do |config|
+  # Configure OAuth2 access token for authorization: OAuth2
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
+
+api_instance = VeloPayments::FundingManagerApi.new
+source_account_id = 'source_account_id_example' # String | Source account id
+
+begin
+  #Get details about given source account.
+  result = api_instance.get_source_account_v2(source_account_id)
+  p result
+rescue VeloPayments::ApiError => e
+  puts "Exception when calling FundingManagerApi->get_source_account_v2: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **source_account_id** | [**String**](.md)| Source account id | 
+
+### Return type
+
+[**SourceAccountResponseV2**](SourceAccountResponseV2.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## get_source_accounts
 
 > ListSourceAccountResponse get_source_accounts(opts)
@@ -293,13 +348,13 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## set_payor_funding_bank_details
+## get_source_accounts_v2
 
-> set_payor_funding_bank_details(payor_id, payor_funding_bank_details_update)
+> ListSourceAccountResponseV2 get_source_accounts_v2(opts)
 
-Set Funding Bank Details
+Get list of source accounts
 
-This API allows you to set or update the funding details for the given Payor ID. 
+List source accounts.
 
 ### Example
 
@@ -313,14 +368,20 @@ VeloPayments.configure do |config|
 end
 
 api_instance = VeloPayments::FundingManagerApi.new
-payor_id = 'payor_id_example' # String | The account owner Payor ID
-payor_funding_bank_details_update = VeloPayments::PayorFundingBankDetailsUpdate.new # PayorFundingBankDetailsUpdate | Update Funding bank details of given Payor Id
+opts = {
+  physical_account_name: 'physical_account_name_example', # String | Physical Account Name
+  payor_id: 'payor_id_example', # String | The account owner Payor ID
+  page: 1, # Integer | Page number. Default is 1.
+  page_size: 25, # Integer | Page size. Default is 25. Max allowable is 100.
+  sort: 'sort_example' # String | Sort String
+}
 
 begin
-  #Set Funding Bank Details
-  api_instance.set_payor_funding_bank_details(payor_id, payor_funding_bank_details_update)
+  #Get list of source accounts
+  result = api_instance.get_source_accounts_v2(opts)
+  p result
 rescue VeloPayments::ApiError => e
-  puts "Exception when calling FundingManagerApi->set_payor_funding_bank_details: #{e}"
+  puts "Exception when calling FundingManagerApi->get_source_accounts_v2: #{e}"
 end
 ```
 
@@ -329,8 +390,124 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payor_id** | [**String**](.md)| The account owner Payor ID | 
- **payor_funding_bank_details_update** | [**PayorFundingBankDetailsUpdate**](PayorFundingBankDetailsUpdate.md)| Update Funding bank details of given Payor Id | 
+ **physical_account_name** | **String**| Physical Account Name | [optional] 
+ **payor_id** | [**String**](.md)| The account owner Payor ID | [optional] 
+ **page** | **Integer**| Page number. Default is 1. | [optional] [default to 1]
+ **page_size** | **Integer**| Page size. Default is 25. Max allowable is 100. | [optional] [default to 25]
+ **sort** | **String**| Sort String | [optional] 
+
+### Return type
+
+[**ListSourceAccountResponseV2**](ListSourceAccountResponseV2.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## list_funding_audit_deltas
+
+> FundingDeltaResponse list_funding_audit_deltas(payor_id, updated_since, opts)
+
+List Funding changes
+
+Get a paginated response listing funding changes.
+
+### Example
+
+```ruby
+# load the gem
+require 'velopayments'
+# setup authorization
+VeloPayments.configure do |config|
+  # Configure OAuth2 access token for authorization: OAuth2
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
+
+api_instance = VeloPayments::FundingManagerApi.new
+payor_id = 'payor_id_example' # String | The Payor ID to find associated funding records
+updated_since = DateTime.parse('2013-10-20T19:20:30+01:00') # DateTime | The updatedSince filter in the format YYYY-MM-DDThh:mm:ss+hh:mm
+opts = {
+  page: 1, # Integer | Page number. Default is 1.
+  page_size: 100 # Integer | Page size. Default is 100. Max allowable is 1000.
+}
+
+begin
+  #List Funding changes
+  result = api_instance.list_funding_audit_deltas(payor_id, updated_since, opts)
+  p result
+rescue VeloPayments::ApiError => e
+  puts "Exception when calling FundingManagerApi->list_funding_audit_deltas: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payor_id** | [**String**](.md)| The Payor ID to find associated funding records | 
+ **updated_since** | **DateTime**| The updatedSince filter in the format YYYY-MM-DDThh:mm:ss+hh:mm | 
+ **page** | **Integer**| Page number. Default is 1. | [optional] [default to 1]
+ **page_size** | **Integer**| Page size. Default is 100. Max allowable is 1000. | [optional] [default to 100]
+
+### Return type
+
+[**FundingDeltaResponse**](FundingDeltaResponse.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## set_notifications_request
+
+> set_notifications_request(source_account_id, set_notifications_request)
+
+Set notifications
+
+Set notifications for a given source account
+
+### Example
+
+```ruby
+# load the gem
+require 'velopayments'
+# setup authorization
+VeloPayments.configure do |config|
+  # Configure OAuth2 access token for authorization: OAuth2
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
+
+api_instance = VeloPayments::FundingManagerApi.new
+source_account_id = 'source_account_id_example' # String | Source account id
+set_notifications_request = VeloPayments::SetNotificationsRequest.new # SetNotificationsRequest | Body to included minimum balance to set
+
+begin
+  #Set notifications
+  api_instance.set_notifications_request(source_account_id, set_notifications_request)
+rescue VeloPayments::ApiError => e
+  puts "Exception when calling FundingManagerApi->set_notifications_request: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **source_account_id** | [**String**](.md)| Source account id | 
+ **set_notifications_request** | [**SetNotificationsRequest**](SetNotificationsRequest.md)| Body to included minimum balance to set | 
 
 ### Return type
 

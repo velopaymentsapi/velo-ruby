@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**page** | [**GetPaymentsForPayoutResponsePage**](GetPaymentsForPayoutResponsePage.md) |  | [optional] 
-**links** | [**Array&lt;GetPaymentsForPayoutResponseLinks&gt;**](GetPaymentsForPayoutResponseLinks.md) |  | [optional] 
+**page** | [**ListSourceAccountResponsePage**](ListSourceAccountResponsePage.md) |  | [optional] 
+**links** | [**Array&lt;ListSourceAccountResponseLinks&gt;**](ListSourceAccountResponseLinks.md) |  | [optional] 
 **content** | [**Array&lt;SourceAccountResponse&gt;**](SourceAccountResponse.md) |  | [optional] 
 
 ## Code Sample

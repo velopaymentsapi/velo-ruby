@@ -6,6 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**delete_payee_by_id**](PayeesApi.md#delete_payee_by_id) | **DELETE** /v1/payees/{payeeId} | Delete Payee by Id
 [**get_payee_by_id**](PayeesApi.md#get_payee_by_id) | **GET** /v1/payees/{payeeId} | Get Payee by Id
+[**list_payee_changes**](PayeesApi.md#list_payee_changes) | **GET** /v1/deltas/payees | List Payee Changes
 [**list_payees**](PayeesApi.md#list_payees) | **GET** /v1/payees | List Payees
 
 
@@ -117,9 +118,69 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
+## list_payee_changes
+
+> PayeeDeltaResponse list_payee_changes(payor_id, updated_since, opts)
+
+List Payee Changes
+
+Get a paginated response listing payee changes.
+
+### Example
+
+```ruby
+# load the gem
+require 'velopayments'
+# setup authorization
+VeloPayments.configure do |config|
+  # Configure OAuth2 access token for authorization: OAuth2
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
+
+api_instance = VeloPayments::PayeesApi.new
+payor_id = 'payor_id_example' # String | The Payor ID to find associated Payees
+updated_since = DateTime.parse('2013-10-20T19:20:30+01:00') # DateTime | The updatedSince filter in the format YYYY-MM-DDThh:mm:ss+hh:mm
+opts = {
+  page: 1, # Integer | Page number. Default is 1.
+  page_size: 100 # Integer | Page size. Default is 100. Max allowable is 1000.
+}
+
+begin
+  #List Payee Changes
+  result = api_instance.list_payee_changes(payor_id, updated_since, opts)
+  p result
+rescue VeloPayments::ApiError => e
+  puts "Exception when calling PayeesApi->list_payee_changes: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payor_id** | [**String**](.md)| The Payor ID to find associated Payees | 
+ **updated_since** | **DateTime**| The updatedSince filter in the format YYYY-MM-DDThh:mm:ss+hh:mm | 
+ **page** | **Integer**| Page number. Default is 1. | [optional] [default to 1]
+ **page_size** | **Integer**| Page size. Default is 100. Max allowable is 1000. | [optional] [default to 100]
+
+### Return type
+
+[**PayeeDeltaResponse**](PayeeDeltaResponse.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## list_payees
 
-> PayeeResponse list_payees(payor_id, opts)
+> PagedPayeeResponse list_payees(payor_id, opts)
 
 List Payees
 
@@ -179,7 +240,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PayeeResponse**](PayeeResponse.md)
+[**PagedPayeeResponse**](PagedPayeeResponse.md)
 
 ### Authorization
 

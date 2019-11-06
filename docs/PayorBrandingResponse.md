@@ -15,11 +15,11 @@ Name | Type | Description | Notes
 ```ruby
 require 'VeloPayments'
 
-instance = VeloPayments::PayorBrandingResponse.new(payor_name: null,
-                                 logo_url: null,
-                                 collective_alias: null,
-                                 support_contact: null,
-                                 dba_name: null)
+instance = VeloPayments::PayorBrandingResponse.new(payor_name: Key West Imports, Inc,
+                                 logo_url: example.com,
+                                 collective_alias: Payee,
+                                 support_contact: support@example.com,
+                                 dba_name: Key West Imports)
 ```
 
 
