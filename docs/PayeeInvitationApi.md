@@ -7,8 +7,10 @@ Method | HTTP request | Description
 [**get_payees_invitation_status**](PayeeInvitationApi.md#get_payees_invitation_status) | **GET** /v1/payees/payors/{payorId}/invitationStatus | Get Payee Invitation Status
 [**get_payees_invitation_status_v2**](PayeeInvitationApi.md#get_payees_invitation_status_v2) | **GET** /v2/payees/payors/{payorId}/invitationStatus | Get Payee Invitation Status
 [**resend_payee_invite**](PayeeInvitationApi.md#resend_payee_invite) | **POST** /v1/payees/{payeeId}/invite | Resend Payee Invite
-[**v2_create_payee**](PayeeInvitationApi.md#v2_create_payee) | **POST** /v2/payees | Intiate Payee Creation
+[**v2_create_payee**](PayeeInvitationApi.md#v2_create_payee) | **POST** /v2/payees | Intiate Payee Creation V2
 [**v2_query_batch_status**](PayeeInvitationApi.md#v2_query_batch_status) | **GET** /v2/payees/batch/{batchId} | Query Batch Status
+[**v3_create_payee**](PayeeInvitationApi.md#v3_create_payee) | **POST** /v3/payees | Intiate Payee Creation V3
+[**v3_query_batch_status**](PayeeInvitationApi.md#v3_query_batch_status) | **GET** /v3/payees/batch/{batchId} | Query Batch Status
 
 
 
@@ -184,7 +186,7 @@ Name | Type | Description  | Notes
 
 > CreatePayeesCSVResponse v2_create_payee(create_payees_request)
 
-Intiate Payee Creation
+Intiate Payee Creation V2
 
 Initiate the process of creating 1 to 2000 payees in a batch Use the response location header to query for status (201 - Created, 400 - invalid request body, 409 - if there is a duplicate remote id within the batch / if there is a duplicate email within the batch). 
 
@@ -203,7 +205,7 @@ api_instance = VeloPayments::PayeeInvitationApi.new
 create_payees_request = VeloPayments::CreatePayeesRequest.new # CreatePayeesRequest | Post payees to create.
 
 begin
-  #Intiate Payee Creation
+  #Intiate Payee Creation V2
   result = api_instance.v2_create_payee(create_payees_request)
   p result
 rescue VeloPayments::ApiError => e
@@ -260,6 +262,110 @@ begin
   p result
 rescue VeloPayments::ApiError => e
   puts "Exception when calling PayeeInvitationApi->v2_query_batch_status: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **batch_id** | [**String**](.md)| Batch Id | 
+
+### Return type
+
+[**QueryBatchResponse**](QueryBatchResponse.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## v3_create_payee
+
+> CreatePayeesCSVResponse2 v3_create_payee(create_payees_request2)
+
+Intiate Payee Creation V3
+
+Initiate the process of creating 1 to 2000 payees in a batch Use the response location header to query for status (201 - Created, 400 - invalid request body, 409 - if there is a duplicate remote id within the batch / if there is a duplicate email within the batch). 
+
+### Example
+
+```ruby
+# load the gem
+require 'velopayments'
+# setup authorization
+VeloPayments.configure do |config|
+  # Configure OAuth2 access token for authorization: OAuth2
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
+
+api_instance = VeloPayments::PayeeInvitationApi.new
+create_payees_request2 = VeloPayments::CreatePayeesRequest2.new # CreatePayeesRequest2 | Post payees to create.
+
+begin
+  #Intiate Payee Creation V3
+  result = api_instance.v3_create_payee(create_payees_request2)
+  p result
+rescue VeloPayments::ApiError => e
+  puts "Exception when calling PayeeInvitationApi->v3_create_payee: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **create_payees_request2** | [**CreatePayeesRequest2**](CreatePayeesRequest2.md)| Post payees to create. | 
+
+### Return type
+
+[**CreatePayeesCSVResponse2**](CreatePayeesCSVResponse2.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, multipart/form-data
+- **Accept**: application/json
+
+
+## v3_query_batch_status
+
+> QueryBatchResponse v3_query_batch_status(batch_id)
+
+Query Batch Status
+
+Fetch the status of a specific batch of payees. The batch is fully processed when status is ACCEPTED and pendingCount is 0 ( 200 - OK, 404 - batch not found ). 
+
+### Example
+
+```ruby
+# load the gem
+require 'velopayments'
+# setup authorization
+VeloPayments.configure do |config|
+  # Configure OAuth2 access token for authorization: OAuth2
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
+
+api_instance = VeloPayments::PayeeInvitationApi.new
+batch_id = 'batch_id_example' # String | Batch Id
+
+begin
+  #Query Batch Status
+  result = api_instance.v3_query_batch_status(batch_id)
+  p result
+rescue VeloPayments::ApiError => e
+  puts "Exception when calling PayeeInvitationApi->v3_query_batch_status: #{e}"
 end
 ```
 

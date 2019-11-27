@@ -1,4 +1,4 @@
-# VeloPayments::PayeePayorRefV2
+# VeloPayments::PayeePayorRef2
 
 ## Properties
 
@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ```ruby
 require 'VeloPayments'
 
-instance = VeloPayments::PayeePayorRefV2.new(payor_id: ba08877f-9d96-41e4-9c26-44a872d856ae,
+instance = VeloPayments::PayeePayorRef2.new(payor_id: ba08877f-9d96-41e4-9c26-44a872d856ae,
                                  remote_id: uniqueIdForRemoteEntity,
                                  invitation_status: null)
 ```

@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **city** | **String** |  | 
 **county_or_province** | **String** |  | [optional] 
 **zip_or_postcode** | **String** |  | [optional] 
-**country** | **String** |  | 
+**country** | **String** | Ideally a 2 letter ISO 3166-1 country code.  But a limited set of additional values will be corrected.  See Java Locale.getISOCountries() and Locale.getDisplayCountry() | 
 
 ## Code Sample
 
