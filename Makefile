@@ -35,15 +35,19 @@ generate:
 		-c /local/oa3-config.json
 
 trim:
-	rm -Rf .openapi-generator
-	rm .openapi-generator-ignore
-	rm .travis.yml
-	rm git_push.sh
+	- rm -Rf .openapi-generator
+	- rm .openapi-generator-ignore
+	- rm .travis.yml
+	- rm git_push.sh
 
 info:
 	sed -i.bak '1s/.*/# Ruby client for Velo/' README.md && rm README.md.bak
+	sed -i.bak '2s/.*/[![License](https:\/\/img.shields.io\/badge\/License-Apache%202.0-blue.svg)](https:\/\/opensource.org\/licenses\/Apache-2.0) [![npm version](https:\/\/badge.fury.io\/rb\/velopayments.svg)](https:\/\/badge.fury.io\/rb\/velopayments) [![CircleCI](https:\/\/circleci.com\/gh\/velopaymentsapi\/velo-ruby.svg?style=svg)](https:\/\/circleci.com\/gh\/velopaymentsapi\/velo-ruby)\\/' README.md && rm README.md.bak
 	
-client: clean generate trim info
+build_client:
+	#
+
+client: clean generate trim info build_client
 
 tests:
 	# language: ruby
@@ -64,9 +68,10 @@ commit:
 	git push --set-upstream origin master
 
 build:
+	sed -i.bak "s/VERSION = '.*'/VERSION = '${VERSION}'/g" lib/velopayments/version.rb && rm lib/velopayments/version.rb.bak
 	gem build velopayments.gemspec
 
 publish:
 	git tag $(VERSION)
 	git push origin tag $(VERSION)
-	# gem push velopayments-$(VERSION).gem
+	gem push velopayments-$(VERSION).gem
