@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**countries** | [**Array&lt;SupportedCountry2&gt;**](SupportedCountry2.md) |  | [optional] 
+**countries** | [**Array&lt;SupportedCountryV2&gt;**](SupportedCountryV2.md) |  | [optional] 
 
 ## Code Sample
 

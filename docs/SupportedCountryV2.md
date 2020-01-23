@@ -1,4 +1,4 @@
-# VeloPayments::SupportedCountry2
+# VeloPayments::SupportedCountryV2
 
 ## Properties
 
@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ```ruby
 require 'VeloPayments'
 
-instance = VeloPayments::SupportedCountry2.new(iso_country_code: US,
+instance = VeloPayments::SupportedCountryV2.new(iso_country_code: US,
                                  currencies: [&quot;USD&quot;],
                                  regions: null)
 ```
