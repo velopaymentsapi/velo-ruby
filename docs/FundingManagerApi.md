@@ -6,13 +6,16 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_ach_funding_request**](FundingManagerApi.md#create_ach_funding_request) | **POST** /v1/sourceAccounts/{sourceAccountId}/achFundingRequest | Create Funding Request
 [**create_funding_request**](FundingManagerApi.md#create_funding_request) | **POST** /v2/sourceAccounts/{sourceAccountId}/fundingRequest | Create Funding Request
-[**get_fundings**](FundingManagerApi.md#get_fundings) | **GET** /v1/paymentaudit/fundings | Get Fundings for Payor
+[**get_funding_account**](FundingManagerApi.md#get_funding_account) | **GET** /v1/fundingAccounts/{fundingAccountId} | Get Funding Account
+[**get_funding_accounts**](FundingManagerApi.md#get_funding_accounts) | **GET** /v1/fundingAccounts | Get Funding Accounts
+[**get_fundings_v1**](FundingManagerApi.md#get_fundings_v1) | **GET** /v1/paymentaudit/fundings | Get Fundings for Payor
 [**get_source_account**](FundingManagerApi.md#get_source_account) | **GET** /v1/sourceAccounts/{sourceAccountId} | Get details about given source account.
 [**get_source_account_v2**](FundingManagerApi.md#get_source_account_v2) | **GET** /v2/sourceAccounts/{sourceAccountId} | Get details about given source account.
 [**get_source_accounts**](FundingManagerApi.md#get_source_accounts) | **GET** /v1/sourceAccounts | Get list of source accounts
 [**get_source_accounts_v2**](FundingManagerApi.md#get_source_accounts_v2) | **GET** /v2/sourceAccounts | Get list of source accounts
-[**list_funding_audit_deltas**](FundingManagerApi.md#list_funding_audit_deltas) | **GET** /v1/deltas/fundings | List Funding changes
+[**list_funding_audit_deltas**](FundingManagerApi.md#list_funding_audit_deltas) | **GET** /v1/deltas/fundings | Get Funding Audit Delta
 [**set_notifications_request**](FundingManagerApi.md#set_notifications_request) | **POST** /v1/sourceAccounts/{sourceAccountId}/notifications | Set notifications
+[**transfer_funds**](FundingManagerApi.md#transfer_funds) | **POST** /v2/sourceAccounts/{sourceAccountId}/transfers | Transfer Funds between source accounts
 
 
 
@@ -22,7 +25,7 @@ Method | HTTP request | Description
 
 Create Funding Request
 
-Instruct a funding request to transfer funds from the payor’s funding bank to the payor’s balance held within Velo  (202 - accepted, 400 - invalid request body, 404 - source account not found).
+Instruct a funding request to transfer funds from the payor’s funding bank to the payor’s balance held within Velo.
 
 ### Example
 
@@ -66,7 +69,7 @@ nil (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: Not defined
+- **Accept**: application/json
 
 
 ## create_funding_request
@@ -119,12 +122,132 @@ nil (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: Not defined
+- **Accept**: application/json
 
 
-## get_fundings
+## get_funding_account
 
-> GetFundingsResponse get_fundings(opts)
+> FundingAccountResponse get_funding_account(funding_account_id, opts)
+
+Get Funding Account
+
+Get Funding Account by ID
+
+### Example
+
+```ruby
+# load the gem
+require 'velopayments'
+# setup authorization
+VeloPayments.configure do |config|
+  # Configure OAuth2 access token for authorization: OAuth2
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
+
+api_instance = VeloPayments::FundingManagerApi.new
+funding_account_id = 'funding_account_id_example' # String | 
+opts = {
+  sensitive: false # Boolean | 
+}
+
+begin
+  #Get Funding Account
+  result = api_instance.get_funding_account(funding_account_id, opts)
+  p result
+rescue VeloPayments::ApiError => e
+  puts "Exception when calling FundingManagerApi->get_funding_account: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **funding_account_id** | [**String**](.md)|  | 
+ **sensitive** | **Boolean**|  | [optional] [default to false]
+
+### Return type
+
+[**FundingAccountResponse**](FundingAccountResponse.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## get_funding_accounts
+
+> ListFundingAccountsResponse get_funding_accounts(opts)
+
+Get Funding Accounts
+
+Get the source accounts.
+
+### Example
+
+```ruby
+# load the gem
+require 'velopayments'
+# setup authorization
+VeloPayments.configure do |config|
+  # Configure OAuth2 access token for authorization: OAuth2
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
+
+api_instance = VeloPayments::FundingManagerApi.new
+opts = {
+  payor_id: 'payor_id_example', # String | 
+  source_account_id: 'source_account_id_example', # String | 
+  page: 1, # Integer | Page number. Default is 1.
+  page_size: 25, # Integer | Page size. Default is 25. Max allowable is 100.
+  sort: 'accountName:asc', # String | 
+  sensitive: false # Boolean | 
+}
+
+begin
+  #Get Funding Accounts
+  result = api_instance.get_funding_accounts(opts)
+  p result
+rescue VeloPayments::ApiError => e
+  puts "Exception when calling FundingManagerApi->get_funding_accounts: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payor_id** | [**String**](.md)|  | [optional] 
+ **source_account_id** | [**String**](.md)|  | [optional] 
+ **page** | **Integer**| Page number. Default is 1. | [optional] [default to 1]
+ **page_size** | **Integer**| Page size. Default is 25. Max allowable is 100. | [optional] [default to 25]
+ **sort** | **String**|  | [optional] [default to &#39;accountName:asc&#39;]
+ **sensitive** | **Boolean**|  | [optional] [default to false]
+
+### Return type
+
+[**ListFundingAccountsResponse**](ListFundingAccountsResponse.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## get_fundings_v1
+
+> GetFundingsResponse get_fundings_v1(opts)
 
 Get Fundings for Payor
 
@@ -151,10 +274,10 @@ opts = {
 
 begin
   #Get Fundings for Payor
-  result = api_instance.get_fundings(opts)
+  result = api_instance.get_fundings_v1(opts)
   p result
 rescue VeloPayments::ApiError => e
-  puts "Exception when calling FundingManagerApi->get_fundings: #{e}"
+  puts "Exception when calling FundingManagerApi->get_fundings_v1: #{e}"
 end
 ```
 
@@ -412,11 +535,11 @@ Name | Type | Description  | Notes
 
 ## list_funding_audit_deltas
 
-> FundingDeltaResponse list_funding_audit_deltas(payor_id, updated_since, opts)
+> PageResourceFundingPayorStatusAuditResponseFundingPayorStatusAuditResponse list_funding_audit_deltas(payor_id, updated_since, opts)
 
-List Funding changes
+Get Funding Audit Delta
 
-Get a paginated response listing funding changes.
+Get funding audit deltas for a payor
 
 ### Example
 
@@ -430,15 +553,15 @@ VeloPayments.configure do |config|
 end
 
 api_instance = VeloPayments::FundingManagerApi.new
-payor_id = 'payor_id_example' # String | The Payor ID to find associated funding records
-updated_since = DateTime.parse('2013-10-20T19:20:30+01:00') # DateTime | The updatedSince filter in the format YYYY-MM-DDThh:mm:ss+hh:mm
+payor_id = 'payor_id_example' # String | 
+updated_since = DateTime.parse('2013-10-20T19:20:30+01:00') # DateTime | 
 opts = {
   page: 1, # Integer | Page number. Default is 1.
-  page_size: 100 # Integer | Page size. Default is 100. Max allowable is 1000.
+  page_size: 25 # Integer | Page size. Default is 25. Max allowable is 100.
 }
 
 begin
-  #List Funding changes
+  #Get Funding Audit Delta
   result = api_instance.list_funding_audit_deltas(payor_id, updated_since, opts)
   p result
 rescue VeloPayments::ApiError => e
@@ -451,14 +574,14 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payor_id** | [**String**](.md)| The Payor ID to find associated funding records | 
- **updated_since** | **DateTime**| The updatedSince filter in the format YYYY-MM-DDThh:mm:ss+hh:mm | 
+ **payor_id** | [**String**](.md)|  | 
+ **updated_since** | **DateTime**|  | 
  **page** | **Integer**| Page number. Default is 1. | [optional] [default to 1]
- **page_size** | **Integer**| Page size. Default is 100. Max allowable is 1000. | [optional] [default to 100]
+ **page_size** | **Integer**| Page size. Default is 25. Max allowable is 100. | [optional] [default to 25]
 
 ### Return type
 
-[**FundingDeltaResponse**](FundingDeltaResponse.md)
+[**PageResourceFundingPayorStatusAuditResponseFundingPayorStatusAuditResponse**](PageResourceFundingPayorStatusAuditResponseFundingPayorStatusAuditResponse.md)
 
 ### Authorization
 
@@ -520,5 +643,58 @@ nil (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: application/json
-- **Accept**: Not defined
+- **Accept**: application/json
+
+
+## transfer_funds
+
+> transfer_funds(source_account_id, transfer_request)
+
+Transfer Funds between source accounts
+
+Transfer funds between source accounts for a Payor. The 'from' source account is identified in the URL, and is the account which will be debited. The 'to' (destination) source account is in the body, and is the account which will be credited. Both source accounts must belong to the same Payor. There must be sufficient balance in the 'from' source account, otherwise the transfer attempt will fail.
+
+### Example
+
+```ruby
+# load the gem
+require 'velopayments'
+# setup authorization
+VeloPayments.configure do |config|
+  # Configure OAuth2 access token for authorization: OAuth2
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
+
+api_instance = VeloPayments::FundingManagerApi.new
+source_account_id = 'source_account_id_example' # String | The 'from' source account id, which will be debited
+transfer_request = VeloPayments::TransferRequest.new # TransferRequest | Body
+
+begin
+  #Transfer Funds between source accounts
+  api_instance.transfer_funds(source_account_id, transfer_request)
+rescue VeloPayments::ApiError => e
+  puts "Exception when calling FundingManagerApi->transfer_funds: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **source_account_id** | [**String**](.md)| The &#39;from&#39; source account id, which will be debited | 
+ **transfer_request** | [**TransferRequest**](TransferRequest.md)| Body | 
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
 

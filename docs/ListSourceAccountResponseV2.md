@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**page** | [**ListSourceAccountResponseV2Page**](ListSourceAccountResponseV2Page.md) |  | [optional] 
+**page** | [**PagedUserResponsePage**](PagedUserResponsePage.md) |  | [optional] 
 **links** | [**Array&lt;ListSourceAccountResponseLinks&gt;**](ListSourceAccountResponseLinks.md) |  | [optional] 
 **content** | [**Array&lt;SourceAccountResponseV2&gt;**](SourceAccountResponseV2.md) |  | [optional] 
 

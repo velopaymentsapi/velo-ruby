@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**payor_id** | **String** |  | [optional] [readonly] 
+**payor_id** | **String** |  | [readonly] 
 **payor_name** | **String** | The name of the payor. | 
 **address** | [**PayorAddressV2**](PayorAddressV2.md) |  | [optional] 
 **primary_contact_name** | **String** | Name of primary contact for the payor. | [optional] 
 **primary_contact_phone** | **String** | Primary contact phone number for the payor. | [optional] 
 **primary_contact_email** | **String** | Primary contact email for the payor. | [optional] 
-**kyc_state** | **String** | The kyc state of the payor. | [optional] [readonly] 
+**kyc_state** | [**KycState**](KycState.md) |  | [optional] 
 **manual_lockout** | **Boolean** | Whether or not the payor has been manually locked by the backoffice. | [optional] 
 **payee_grace_period_processing_enabled** | **Boolean** | Whether grace period processing is enabled. | [optional] [readonly] 
 **payee_grace_period_days** | **Integer** | The grace period for paying payees in days. | [optional] [readonly] 
@@ -21,7 +21,9 @@ Name | Type | Description | Notes
 **reminder_emails_opt_out** | **Boolean** | Whether or not the payor has opted-out of reminder emails being sent. | [optional] [readonly] 
 **language** | **String** | The payor’s language preference. Must be one of [EN, FR]. | [optional] 
 **includes_reports** | **Boolean** |  | [optional] 
+**wu_customer_id** | **String** |  | [optional] 
 **max_master_payor_admins** | **Integer** |  | [optional] 
+**payment_rails** | [**PaymentRails**](PaymentRails.md) |  | [optional] 
 
 ## Code Sample
 
@@ -34,7 +36,7 @@ instance = VeloPayments::PayorV2.new(payor_id: null,
                                  primary_contact_name: Joe Buck,
                                  primary_contact_phone: 123-123-1234,
                                  primary_contact_email: joe.buck@example.com,
-                                 kyc_state: PASSED_KYC,
+                                 kyc_state: null,
                                  manual_lockout: null,
                                  payee_grace_period_processing_enabled: null,
                                  payee_grace_period_days: null,
@@ -45,7 +47,9 @@ instance = VeloPayments::PayorV2.new(payor_id: null,
                                  reminder_emails_opt_out: null,
                                  language: EN,
                                  includes_reports: null,
-                                 max_master_payor_admins: null)
+                                 wu_customer_id: null,
+                                 max_master_payor_admins: null,
+                                 payment_rails: null)
 ```
 
 

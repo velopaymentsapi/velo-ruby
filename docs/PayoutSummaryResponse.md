@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **payments_rejected** | **Integer** |  | [optional] 
 **fx_summaries** | [**Array&lt;QuoteFxSummary&gt;**](QuoteFxSummary.md) |  | 
 **accounts** | [**Array&lt;SourceAccount&gt;**](SourceAccount.md) |  | 
+**accepted_payments** | [**Array&lt;AcceptedPayment&gt;**](AcceptedPayment.md) |  | 
 **rejected_payments** | [**Array&lt;RejectedPayment&gt;**](RejectedPayment.md) |  | 
 
 ## Code Sample
@@ -25,6 +26,7 @@ instance = VeloPayments::PayoutSummaryResponse.new(payout_id: null,
                                  payments_rejected: 0,
                                  fx_summaries: null,
                                  accounts: null,
+                                 accepted_payments: null,
                                  rejected_payments: null)
 ```
 

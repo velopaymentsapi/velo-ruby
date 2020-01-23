@@ -4,13 +4,13 @@ All URIs are relative to *https://api.sandbox.velopayments.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**v3_payouts_payout_id_post**](InstructPayoutApi.md#v3_payouts_payout_id_post) | **POST** /v3/payouts/{payoutId} | Instruct Payout
+[**instruct_payout_v3**](InstructPayoutApi.md#instruct_payout_v3) | **POST** /v3/payouts/{payoutId} | Instruct Payout
 
 
 
-## v3_payouts_payout_id_post
+## instruct_payout_v3
 
-> v3_payouts_payout_id_post(payout_id)
+> instruct_payout_v3(payout_id)
 
 Instruct Payout
 
@@ -32,9 +32,9 @@ payout_id = 'payout_id_example' # String | Id of the payout
 
 begin
   #Instruct Payout
-  api_instance.v3_payouts_payout_id_post(payout_id)
+  api_instance.instruct_payout_v3(payout_id)
 rescue VeloPayments::ApiError => e
-  puts "Exception when calling InstructPayoutApi->v3_payouts_payout_id_post: #{e}"
+  puts "Exception when calling InstructPayoutApi->instruct_payout_v3: #{e}"
 end
 ```
 

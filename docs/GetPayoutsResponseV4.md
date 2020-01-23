@@ -4,7 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**summary** | [**PagedPayeeResponseSummary**](PagedPayeeResponseSummary.md) |  | [optional] 
 **page** | [**PagedPayeeResponsePage**](PagedPayeeResponsePage.md) |  | [optional] 
 **links** | [**Array&lt;PagedPayeeResponseLinks&gt;**](PagedPayeeResponseLinks.md) |  | [optional] 
 **content** | [**Array&lt;PayoutSummaryAuditV4&gt;**](PayoutSummaryAuditV4.md) |  | [optional] 
@@ -14,8 +13,7 @@ Name | Type | Description | Notes
 ```ruby
 require 'VeloPayments'
 
-instance = VeloPayments::GetPayoutsResponseV4.new(summary: null,
-                                 page: null,
+instance = VeloPayments::GetPayoutsResponseV4.new(page: null,
                                  links: null,
                                  content: null)
 ```

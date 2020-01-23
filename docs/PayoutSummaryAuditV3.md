@@ -7,7 +7,6 @@ Name | Type | Description | Notes
 **payout_id** | **String** |  | 
 **payor_id** | **String** |  | [optional] 
 **status** | [**PayoutStatusV3**](PayoutStatusV3.md) |  | 
-**date_time** | **DateTime** |  | [optional] 
 **submitted_date_time** | **String** |  | 
 **instructed_date_time** | **String** |  | [optional] 
 **withdrawn_date_time** | **String** |  | [optional] 
@@ -26,7 +25,6 @@ require 'VeloPayments'
 instance = VeloPayments::PayoutSummaryAuditV3.new(payout_id: null,
                                  payor_id: null,
                                  status: null,
-                                 date_time: null,
                                  submitted_date_time: null,
                                  instructed_date_time: null,
                                  withdrawn_date_time: null,

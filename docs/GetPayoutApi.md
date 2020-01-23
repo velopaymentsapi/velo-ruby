@@ -4,13 +4,13 @@ All URIs are relative to *https://api.sandbox.velopayments.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**v3_payouts_payout_id_get**](GetPayoutApi.md#v3_payouts_payout_id_get) | **GET** /v3/payouts/{payoutId} | Get Payout Summary
+[**get_payout_summary_v3**](GetPayoutApi.md#get_payout_summary_v3) | **GET** /v3/payouts/{payoutId} | Get Payout Summary
 
 
 
-## v3_payouts_payout_id_get
+## get_payout_summary_v3
 
-> PayoutSummaryResponse v3_payouts_payout_id_get(payout_id)
+> PayoutSummaryResponse get_payout_summary_v3(payout_id)
 
 Get Payout Summary
 
@@ -32,10 +32,10 @@ payout_id = 'payout_id_example' # String | Id of the payout
 
 begin
   #Get Payout Summary
-  result = api_instance.v3_payouts_payout_id_get(payout_id)
+  result = api_instance.get_payout_summary_v3(payout_id)
   p result
 rescue VeloPayments::ApiError => e
-  puts "Exception when calling GetPayoutApi->v3_payouts_payout_id_get: #{e}"
+  puts "Exception when calling GetPayoutApi->get_payout_summary_v3: #{e}"
 end
 ```
 

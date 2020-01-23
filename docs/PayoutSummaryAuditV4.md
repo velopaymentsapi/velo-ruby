@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**payout_id** | **String** |  | 
-**payor_id** | **String** | Deprecated in v2.16. Will be populated with submitting payor ID until removed in a later release. | [optional] 
+**payout_id** | **String** |  | [optional] 
+**payor_id** | **String** |  | [optional] 
 **status** | [**PayoutStatusV4**](PayoutStatusV4.md) |  | 
 **date_time** | **DateTime** |  | [optional] 
 **submitted_date_time** | **String** |  | 
@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **fx_summaries** | [**Array&lt;FxSummaryV4&gt;**](FxSummaryV4.md) |  | [optional] 
 **payout_memo** | **String** |  | [optional] 
 **payout_type** | [**PayoutTypeV4**](PayoutTypeV4.md) |  | 
+**payor_name** | **String** |  | 
 
 ## Code Sample
 
@@ -37,7 +38,8 @@ instance = VeloPayments::PayoutSummaryAuditV4.new(payout_id: null,
                                  source_account_summary: null,
                                  fx_summaries: null,
                                  payout_memo: null,
-                                 payout_type: null)
+                                 payout_type: null,
+                                 payor_name: null)
 ```
 
 

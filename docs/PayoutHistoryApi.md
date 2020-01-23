@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**get_payments_for_payout**](PayoutHistoryApi.md#get_payments_for_payout) | **GET** /v3/paymentaudit/payouts/{payoutId} | Get Payments for Payout
 [**get_payments_for_payout_v4**](PayoutHistoryApi.md#get_payments_for_payout_v4) | **GET** /v4/paymentaudit/payouts/{payoutId} | Get Payments for Payout
-[**get_payout_stats**](PayoutHistoryApi.md#get_payout_stats) | **GET** /v1/paymentaudit/payoutStatistics | Get Payout Statistics
+[**get_payout_stats_v1**](PayoutHistoryApi.md#get_payout_stats_v1) | **GET** /v1/paymentaudit/payoutStatistics | Get Payout Statistics
 
 
 
@@ -166,9 +166,9 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## get_payout_stats
+## get_payout_stats_v1
 
-> GetPayoutStatistics get_payout_stats(opts)
+> GetPayoutStatistics get_payout_stats_v1(opts)
 
 Get Payout Statistics
 
@@ -192,10 +192,10 @@ opts = {
 
 begin
   #Get Payout Statistics
-  result = api_instance.get_payout_stats(opts)
+  result = api_instance.get_payout_stats_v1(opts)
   p result
 rescue VeloPayments::ApiError => e
-  puts "Exception when calling PayoutHistoryApi->get_payout_stats: #{e}"
+  puts "Exception when calling PayoutHistoryApi->get_payout_stats_v1: #{e}"
 end
 ```
 

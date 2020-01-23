@@ -4,13 +4,14 @@ All URIs are relative to *https://api.sandbox.velopayments.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**export_transactions_csv**](PaymentAuditServiceApi.md#export_transactions_csv) | **GET** /v4/paymentaudit/transactions | Export Transactions
-[**get_fundings**](PaymentAuditServiceApi.md#get_fundings) | **GET** /v1/paymentaudit/fundings | Get Fundings for Payor
+[**export_transactions_csvv3**](PaymentAuditServiceApi.md#export_transactions_csvv3) | **GET** /v3/paymentaudit/transactions | Export Transactions
+[**export_transactions_csvv4**](PaymentAuditServiceApi.md#export_transactions_csvv4) | **GET** /v4/paymentaudit/transactions | Export Transactions
+[**get_fundings_v1**](PaymentAuditServiceApi.md#get_fundings_v1) | **GET** /v1/paymentaudit/fundings | Get Fundings for Payor
 [**get_payment_details**](PaymentAuditServiceApi.md#get_payment_details) | **GET** /v3/paymentaudit/payments/{paymentId} | Get Payment
 [**get_payment_details_v4**](PaymentAuditServiceApi.md#get_payment_details_v4) | **GET** /v4/paymentaudit/payments/{paymentId} | Get Payment
 [**get_payments_for_payout**](PaymentAuditServiceApi.md#get_payments_for_payout) | **GET** /v3/paymentaudit/payouts/{payoutId} | Get Payments for Payout
 [**get_payments_for_payout_v4**](PaymentAuditServiceApi.md#get_payments_for_payout_v4) | **GET** /v4/paymentaudit/payouts/{payoutId} | Get Payments for Payout
-[**get_payouts_for_payor**](PaymentAuditServiceApi.md#get_payouts_for_payor) | **GET** /v3/paymentaudit/payouts | Get Payouts for Payor
+[**get_payouts_for_payor_v3**](PaymentAuditServiceApi.md#get_payouts_for_payor_v3) | **GET** /v3/paymentaudit/payouts | Get Payouts for Payor
 [**get_payouts_for_payor_v4**](PaymentAuditServiceApi.md#get_payouts_for_payor_v4) | **GET** /v4/paymentaudit/payouts | Get Payouts for Payor
 [**list_payment_changes**](PaymentAuditServiceApi.md#list_payment_changes) | **GET** /v1/deltas/payments | List Payment Changes
 [**list_payments_audit**](PaymentAuditServiceApi.md#list_payments_audit) | **GET** /v3/paymentaudit/payments | Get List of Payments
@@ -18,9 +19,67 @@ Method | HTTP request | Description
 
 
 
-## export_transactions_csv
+## export_transactions_csvv3
 
-> String export_transactions_csv(opts)
+> PayorAmlTransactionV3 export_transactions_csvv3(opts)
+
+Export Transactions
+
+Download a CSV file containing payments in a date range. Uses Transfer-Encoding - chunked to stream to the client. Date range is inclusive of both the start and end dates.
+
+### Example
+
+```ruby
+# load the gem
+require 'velopayments'
+# setup authorization
+VeloPayments.configure do |config|
+  # Configure OAuth2 access token for authorization: OAuth2
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
+
+api_instance = VeloPayments::PaymentAuditServiceApi.new
+opts = {
+  payor_id: 'payor_id_example', # String | The Payor ID for whom you wish to run the report. For a Payor requesting the report, this could be their exact Payor, or it could be a child/descendant Payor. 
+  start_date: Date.parse('2013-10-20'), # Date | Start date, inclusive. Format is YYYY-MM-DD
+  end_date: Date.parse('2013-10-20') # Date | End date, inclusive. Format is YYYY-MM-DD
+}
+
+begin
+  #Export Transactions
+  result = api_instance.export_transactions_csvv3(opts)
+  p result
+rescue VeloPayments::ApiError => e
+  puts "Exception when calling PaymentAuditServiceApi->export_transactions_csvv3: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payor_id** | [**String**](.md)| The Payor ID for whom you wish to run the report. For a Payor requesting the report, this could be their exact Payor, or it could be a child/descendant Payor.  | [optional] 
+ **start_date** | **Date**| Start date, inclusive. Format is YYYY-MM-DD | [optional] 
+ **end_date** | **Date**| End date, inclusive. Format is YYYY-MM-DD | [optional] 
+
+### Return type
+
+[**PayorAmlTransactionV3**](PayorAmlTransactionV3.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/csv
+
+
+## export_transactions_csvv4
+
+> PayorAmlTransactionV4 export_transactions_csvv4(opts)
 
 Export Transactions
 
@@ -47,10 +106,10 @@ opts = {
 
 begin
   #Export Transactions
-  result = api_instance.export_transactions_csv(opts)
+  result = api_instance.export_transactions_csvv4(opts)
   p result
 rescue VeloPayments::ApiError => e
-  puts "Exception when calling PaymentAuditServiceApi->export_transactions_csv: #{e}"
+  puts "Exception when calling PaymentAuditServiceApi->export_transactions_csvv4: #{e}"
 end
 ```
 
@@ -66,7 +125,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**String**
+[**PayorAmlTransactionV4**](PayorAmlTransactionV4.md)
 
 ### Authorization
 
@@ -78,9 +137,9 @@ Name | Type | Description  | Notes
 - **Accept**: application/csv
 
 
-## get_fundings
+## get_fundings_v1
 
-> GetFundingsResponse get_fundings(opts)
+> GetFundingsResponse get_fundings_v1(opts)
 
 Get Fundings for Payor
 
@@ -107,10 +166,10 @@ opts = {
 
 begin
   #Get Fundings for Payor
-  result = api_instance.get_fundings(opts)
+  result = api_instance.get_fundings_v1(opts)
   p result
 rescue VeloPayments::ApiError => e
-  puts "Exception when calling PaymentAuditServiceApi->get_fundings: #{e}"
+  puts "Exception when calling PaymentAuditServiceApi->get_fundings_v1: #{e}"
 end
 ```
 
@@ -406,9 +465,9 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## get_payouts_for_payor
+## get_payouts_for_payor_v3
 
-> GetPayoutsResponseV3 get_payouts_for_payor(payor_id, opts)
+> GetPayoutsResponseV3 get_payouts_for_payor_v3(payor_id, opts)
 
 Get Payouts for Payor
 
@@ -439,10 +498,10 @@ opts = {
 
 begin
   #Get Payouts for Payor
-  result = api_instance.get_payouts_for_payor(payor_id, opts)
+  result = api_instance.get_payouts_for_payor_v3(payor_id, opts)
   p result
 rescue VeloPayments::ApiError => e
-  puts "Exception when calling PaymentAuditServiceApi->get_payouts_for_payor: #{e}"
+  puts "Exception when calling PaymentAuditServiceApi->get_payouts_for_payor_v3: #{e}"
 end
 ```
 
@@ -476,7 +535,7 @@ Name | Type | Description  | Notes
 
 ## get_payouts_for_payor_v4
 
-> GetPayoutsResponseV4 get_payouts_for_payor_v4(payor_id, opts)
+> GetPayoutsResponseV4 get_payouts_for_payor_v4(opts)
 
 Get Payouts for Payor
 
@@ -494,20 +553,21 @@ VeloPayments.configure do |config|
 end
 
 api_instance = VeloPayments::PaymentAuditServiceApi.new
-payor_id = 'payor_id_example' # String | The account owner Payor ID
 opts = {
+  payor_id: 'payor_id_example', # String | The id (UUID) of the payor funding the payout or the payor whose payees are being paid.
   payout_memo: 'payout_memo_example', # String | Payout Memo filter - case insensitive sub-string match
   status: 'status_example', # String | Payout Status
   submitted_date_from: Date.parse('2013-10-20'), # Date | The submitted date from range filter. Format is yyyy-MM-dd.
   submitted_date_to: Date.parse('2013-10-20'), # Date | The submitted date to range filter. Format is yyyy-MM-dd.
+  from_payor_name: 'from_payor_name_example', # String | The name of the payor whose payees are being paid. This filters via a case insensitive substring match.
   page: 1, # Integer | Page number. Default is 1.
   page_size: 25, # Integer | Page size. Default is 25. Max allowable is 100.
-  sort: 'sort_example' # String | List of sort fields (e.g. ?sort=submittedDateTime:asc,instructedDateTime:asc,status:asc) Default is submittedDateTime:asc The supported sort fields are: submittedDateTime, instructedDateTime, status. 
+  sort: 'sort_example' # String | List of sort fields (e.g. ?sort=submittedDateTime:asc,instructedDateTime:asc,status:asc) Default is submittedDateTime:asc The supported sort fields are: submittedDateTime, instructedDateTime, status, totalPayments 
 }
 
 begin
   #Get Payouts for Payor
-  result = api_instance.get_payouts_for_payor_v4(payor_id, opts)
+  result = api_instance.get_payouts_for_payor_v4(opts)
   p result
 rescue VeloPayments::ApiError => e
   puts "Exception when calling PaymentAuditServiceApi->get_payouts_for_payor_v4: #{e}"
@@ -519,14 +579,15 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payor_id** | [**String**](.md)| The account owner Payor ID | 
+ **payor_id** | [**String**](.md)| The id (UUID) of the payor funding the payout or the payor whose payees are being paid. | [optional] 
  **payout_memo** | **String**| Payout Memo filter - case insensitive sub-string match | [optional] 
  **status** | **String**| Payout Status | [optional] 
  **submitted_date_from** | **Date**| The submitted date from range filter. Format is yyyy-MM-dd. | [optional] 
  **submitted_date_to** | **Date**| The submitted date to range filter. Format is yyyy-MM-dd. | [optional] 
+ **from_payor_name** | **String**| The name of the payor whose payees are being paid. This filters via a case insensitive substring match. | [optional] 
  **page** | **Integer**| Page number. Default is 1. | [optional] [default to 1]
  **page_size** | **Integer**| Page size. Default is 25. Max allowable is 100. | [optional] [default to 25]
- **sort** | **String**| List of sort fields (e.g. ?sort&#x3D;submittedDateTime:asc,instructedDateTime:asc,status:asc) Default is submittedDateTime:asc The supported sort fields are: submittedDateTime, instructedDateTime, status.  | [optional] 
+ **sort** | **String**| List of sort fields (e.g. ?sort&#x3D;submittedDateTime:asc,instructedDateTime:asc,status:asc) Default is submittedDateTime:asc The supported sort fields are: submittedDateTime, instructedDateTime, status, totalPayments  | [optional] 
 
 ### Return type
 
@@ -694,7 +755,7 @@ Name | Type | Description  | Notes
 
 ## list_payments_audit_v4
 
-> ListPaymentsResponse list_payments_audit_v4(opts)
+> ListPaymentsResponseV4 list_payments_audit_v4(opts)
 
 Get List of Payments
 
@@ -770,7 +831,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListPaymentsResponse**](ListPaymentsResponse.md)
+[**ListPaymentsResponseV4**](ListPaymentsResponseV4.md)
 
 ### Authorization
 
