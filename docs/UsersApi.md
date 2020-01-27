@@ -6,7 +6,6 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**delete_user_by_id_v2**](UsersApi.md#delete_user_by_id_v2) | **DELETE** /v2/users/{userId} | Delete a User
 [**disable_user_v2**](UsersApi.md#disable_user_v2) | **POST** /v2/users/{userId}/disable | Disable a User
-[**email_update**](UsersApi.md#email_update) | **POST** /v2/users/{userId}/emailUpdate | Update Email Address
 [**enable_user_v2**](UsersApi.md#enable_user_v2) | **POST** /v2/users/{userId}/enable | Enable a User
 [**get_self**](UsersApi.md#get_self) | **GET** /v2/users/self | Get Self
 [**get_user_by_id_v2**](UsersApi.md#get_user_by_id_v2) | **GET** /v2/users/{userId} | Get User
@@ -14,10 +13,12 @@ Method | HTTP request | Description
 [**list_users**](UsersApi.md#list_users) | **GET** /v2/users | List Users
 [**register_sms**](UsersApi.md#register_sms) | **POST** /v2/users/registration/sms | Register SMS Number
 [**resend_token**](UsersApi.md#resend_token) | **POST** /v2/users/{userId}/tokens | Resend a token
+[**role_update**](UsersApi.md#role_update) | **POST** /v2/users/{userId}/roleUpdate | Update User Role
 [**unlock_user_v2**](UsersApi.md#unlock_user_v2) | **POST** /v2/users/{userId}/unlock | Unlock a User
 [**unregister_mfa**](UsersApi.md#unregister_mfa) | **POST** /v2/users/{userId}/mfa/unregister | Unregister MFA for the user
 [**unregister_mfa_for_self**](UsersApi.md#unregister_mfa_for_self) | **POST** /v2/users/self/mfa/unregister | Unregister MFA for Self
 [**update_password_self**](UsersApi.md#update_password_self) | **POST** /v2/users/self/password | Update Password for self
+[**user_details_update**](UsersApi.md#user_details_update) | **POST** /v2/users/{userId}/userDetailsUpdate | Update User Details
 [**validate_password_self**](UsersApi.md#validate_password_self) | **POST** /v2/users/self/password/validate | Validate the proposed password
 
 
@@ -121,59 +122,6 @@ nil (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## email_update
-
-> email_update(user_id, email_update_request)
-
-Update Email Address
-
-<p>Update the user's email address </p> <p>If the email address is already in use a 409 will be returned</p> 
-
-### Example
-
-```ruby
-# load the gem
-require 'velopayments'
-# setup authorization
-VeloPayments.configure do |config|
-  # Configure OAuth2 access token for authorization: OAuth2
-  config.access_token = 'YOUR ACCESS TOKEN'
-end
-
-api_instance = VeloPayments::UsersApi.new
-user_id = 'user_id_example' # String | The UUID of the User.
-email_update_request = VeloPayments::EmailUpdateRequest.new # EmailUpdateRequest | a new email address
-
-begin
-  #Update Email Address
-  api_instance.email_update(user_id, email_update_request)
-rescue VeloPayments::ApiError => e
-  puts "Exception when calling UsersApi->email_update: #{e}"
-end
-```
-
-### Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **user_id** | [**String**](.md)| The UUID of the User. | 
- **email_update_request** | [**EmailUpdateRequest**](EmailUpdateRequest.md)| a new email address | 
-
-### Return type
-
-nil (empty response body)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2)
-
-### HTTP request headers
-
-- **Content-Type**: application/json
 - **Accept**: application/json
 
 
@@ -547,6 +495,59 @@ nil (empty response body)
 - **Accept**: application/json
 
 
+## role_update
+
+> role_update(user_id, role_update_request)
+
+Update User Role
+
+<p>Update the user's Role</p> 
+
+### Example
+
+```ruby
+# load the gem
+require 'velopayments'
+# setup authorization
+VeloPayments.configure do |config|
+  # Configure OAuth2 access token for authorization: OAuth2
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
+
+api_instance = VeloPayments::UsersApi.new
+user_id = 'user_id_example' # String | The UUID of the User.
+role_update_request = VeloPayments::RoleUpdateRequest.new # RoleUpdateRequest | The Role to change to
+
+begin
+  #Update User Role
+  api_instance.role_update(user_id, role_update_request)
+rescue VeloPayments::ApiError => e
+  puts "Exception when calling UsersApi->role_update: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **user_id** | [**String**](.md)| The UUID of the User. | 
+ **role_update_request** | [**RoleUpdateRequest**](RoleUpdateRequest.md)| The Role to change to | 
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
 ## unlock_user_v2
 
 > unlock_user_v2(user_id)
@@ -738,6 +739,59 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **self_update_password_request** | [**SelfUpdatePasswordRequest**](SelfUpdatePasswordRequest.md)| The password | 
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## user_details_update
+
+> user_details_update(user_id, user_details_update_request)
+
+Update User Details
+
+<p>Update the profile details for the given user</p> <p>When updating Payor users with the role of payor.master_admin a verificationCode is required</p> 
+
+### Example
+
+```ruby
+# load the gem
+require 'velopayments'
+# setup authorization
+VeloPayments.configure do |config|
+  # Configure OAuth2 access token for authorization: OAuth2
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
+
+api_instance = VeloPayments::UsersApi.new
+user_id = 'user_id_example' # String | The UUID of the User.
+user_details_update_request = VeloPayments::UserDetailsUpdateRequest.new # UserDetailsUpdateRequest | The details of the user to update
+
+begin
+  #Update User Details
+  api_instance.user_details_update(user_id, user_details_update_request)
+rescue VeloPayments::ApiError => e
+  puts "Exception when calling UsersApi->user_details_update: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **user_id** | [**String**](.md)| The UUID of the User. | 
+ **user_details_update_request** | [**UserDetailsUpdateRequest**](UserDetailsUpdateRequest.md)| The details of the user to update | 
 
 ### Return type
 

@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**element** | **String** |  | [optional] 
-**required** | **Boolean** |  | [optional] 
-**display_name** | **String** |  | [optional] 
-**min_length** | **Integer** |  | [optional] 
-**max_length** | **Integer** |  | [optional] 
-**validation** | **String** |  | [optional] 
+**element** | **String** | &lt;p&gt;the rule element&lt;/p&gt; &lt;p&gt;will match a given element name for a payment channel configuration  | 
+**required** | **Boolean** | is this element required | 
+**display_name** | **String** | User friendly name | 
+**min_length** | **Integer** | mininum length of the element data | [optional] 
+**max_length** | **Integer** | maximum length of the element data | [optional] 
+**validation** | **String** | a regex to validate the element data | 
 **display_order** | **Integer** |  | [optional] 
 
 ## Code Sample
@@ -17,12 +17,12 @@ Name | Type | Description | Notes
 ```ruby
 require 'VeloPayments'
 
-instance = VeloPayments::PaymentChannelRule.new(element: null,
+instance = VeloPayments::PaymentChannelRule.new(element: accountName,
                                  required: null,
-                                 display_name: null,
-                                 min_length: null,
-                                 max_length: null,
-                                 validation: null,
+                                 display_name: Account Name,
+                                 min_length: 5,
+                                 max_length: 50,
+                                 validation: ^[0-9]{6,11}$,
                                  display_order: null)
 ```
 

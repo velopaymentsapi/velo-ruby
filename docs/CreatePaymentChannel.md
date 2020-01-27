@@ -17,13 +17,13 @@ Name | Type | Description | Notes
 ```ruby
 require 'VeloPayments'
 
-instance = VeloPayments::CreatePaymentChannel.new(payment_channel_name: null,
-                                 iban: null,
-                                 account_number: null,
-                                 routing_number: null,
-                                 country_code: null,
+instance = VeloPayments::CreatePaymentChannel.new(payment_channel_name: My Payment Channel,
+                                 iban: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX1234,
+                                 account_number: XXXXXX5678,
+                                 routing_number: XXXXX6789,
+                                 country_code: US,
                                  currency: null,
-                                 account_name: null)
+                                 account_name: My account)
 ```
 
 

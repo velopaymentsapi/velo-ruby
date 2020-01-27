@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**page** | [**PagedPayeeResponsePage**](PagedPayeeResponsePage.md) |  | [optional] 
+**page** | [**PagedPayeeInvitationStatusResponsePage**](PagedPayeeInvitationStatusResponsePage.md) |  | [optional] 
 **links** | [**Array&lt;PagedPayeeResponseLinks&gt;**](PagedPayeeResponseLinks.md) |  | [optional] 
 **content** | [**Array&lt;PayoutSummaryAuditV4&gt;**](PayoutSummaryAuditV4.md) |  | [optional] 
 

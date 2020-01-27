@@ -23,11 +23,6 @@ List the supported countries.
 ```ruby
 # load the gem
 require 'velopayments'
-# setup authorization
-VeloPayments.configure do |config|
-  # Configure OAuth2 access token for authorization: OAuth2
-  config.access_token = 'YOUR ACCESS TOKEN'
-end
 
 api_instance = VeloPayments::CountriesApi.new
 
@@ -50,7 +45,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 
@@ -64,18 +59,13 @@ This endpoint does not need any parameter.
 
 List Supported Countries
 
-List the supported countries.
+<p>List the supported countries.</p> <p>This version will be retired in March 2020. Use /v2/supportedCountries</p> 
 
 ### Example
 
 ```ruby
 # load the gem
 require 'velopayments'
-# setup authorization
-VeloPayments.configure do |config|
-  # Configure OAuth2 access token for authorization: OAuth2
-  config.access_token = 'YOUR ACCESS TOKEN'
-end
 
 api_instance = VeloPayments::CountriesApi.new
 
@@ -98,7 +88,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 

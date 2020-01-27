@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **payee_id** | **String** |  | 
-**invitation_status** | [**InvitationStatus**](InvitationStatus.md) |  | 
+**invitation_status** | **String** |  | 
 **grace_period_end_date** | **Date** |  | [optional] 
 
 ## Code Sample
@@ -13,9 +13,9 @@ Name | Type | Description | Notes
 ```ruby
 require 'VeloPayments'
 
-instance = VeloPayments::PayeeInvitationStatusResponse.new(payee_id: null,
+instance = VeloPayments::PayeeInvitationStatusResponse.new(payee_id: 2aa5d7e0-2ecb-403f-8494-1865ed0454e9,
                                  invitation_status: null,
-                                 grace_period_end_date: null)
+                                 grace_period_end_date: Sun Jan 20 00:00:00 GMT 2019)
 ```
 
 

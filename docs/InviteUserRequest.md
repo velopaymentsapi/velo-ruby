@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **email** | **String** | the email address of the invited user | 
-**mfa_type** | **String** | The MFA type that the user will use The type may be conditional on the role(s) the user has  | 
+**mfa_type** | **String** | &lt;p&gt;The MFA type that the user will use&lt;/p&gt; &lt;p&gt;The type may be conditional on the role(s) the user has&lt;/p&gt;  | 
 **sms_number** | **String** | The phone number of a device that the user can receive sms messages on  | 
 **primary_contact_number** | **String** | The main contact number for the user  | 
 **secondary_contact_number** | **String** | The secondary contact number for the user  | [optional] 
@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 require 'VeloPayments'
 
 instance = VeloPayments::InviteUserRequest.new(email: foo@example.com,
-                                 mfa_type: null,
+                                 mfa_type: TOTP,
                                  sms_number: 11235555555,
                                  primary_contact_number: 11235555555,
                                  secondary_contact_number: 11235555550,

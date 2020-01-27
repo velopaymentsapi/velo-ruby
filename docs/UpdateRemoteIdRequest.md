@@ -12,8 +12,8 @@ Name | Type | Description | Notes
 ```ruby
 require 'VeloPayments'
 
-instance = VeloPayments::UpdateRemoteIdRequest.new(payor_id: null,
-                                 remote_id: null)
+instance = VeloPayments::UpdateRemoteIdRequest.new(payor_id: 9ac75325-5dcd-42d5-b992-175d7e0a035e,
+                                 remote_id: remoteId123)
 ```
 
 

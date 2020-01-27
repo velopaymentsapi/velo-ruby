@@ -15,7 +15,7 @@ require 'VeloPayments'
 
 instance = VeloPayments::PayeePayorRef.new(payor_id: ba08877f-9d96-41e4-9c26-44a872d856ae,
                                  remote_id: uniqueIdForRemoteEntity,
-                                 invitation_status: null)
+                                 invitation_status: ACCEPTED)
 ```
 
 

@@ -21,11 +21,6 @@ List the supported currencies.
 ```ruby
 # load the gem
 require 'velopayments'
-# setup authorization
-VeloPayments.configure do |config|
-  # Configure OAuth2 access token for authorization: OAuth2
-  config.access_token = 'YOUR ACCESS TOKEN'
-end
 
 api_instance = VeloPayments::CurrenciesApi.new
 
@@ -48,7 +43,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 

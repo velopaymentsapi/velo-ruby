@@ -434,7 +434,7 @@ opts = {
   payor_id: 'payor_id_example', # String | The account owner Payor ID
   page: 1, # Integer | Page number. Default is 1.
   page_size: 25, # Integer | Page size. Default is 25. Max allowable is 100.
-  sort: 'sort_example' # String | Sort String
+  sort: 'fundingRef:asc' # String | List of sort fields e.g. ?sort=name:asc Default is name:asc The supported sort fields are - fundingRef 
 }
 
 begin
@@ -455,7 +455,7 @@ Name | Type | Description  | Notes
  **payor_id** | [**String**](.md)| The account owner Payor ID | [optional] 
  **page** | **Integer**| Page number. Default is 1. | [optional] [default to 1]
  **page_size** | **Integer**| Page size. Default is 25. Max allowable is 100. | [optional] [default to 25]
- **sort** | **String**| Sort String | [optional] 
+ **sort** | **String**| List of sort fields e.g. ?sort&#x3D;name:asc Default is name:asc The supported sort fields are - fundingRef  | [optional] [default to &#39;fundingRef:asc&#39;]
 
 ### Return type
 
@@ -493,10 +493,12 @@ end
 api_instance = VeloPayments::FundingManagerApi.new
 opts = {
   physical_account_name: 'physical_account_name_example', # String | Physical Account Name
+  physical_account_id: 'physical_account_id_example', # String | The physical account ID
   payor_id: 'payor_id_example', # String | The account owner Payor ID
+  funding_account_id: 'funding_account_id_example', # String | The funding account ID
   page: 1, # Integer | Page number. Default is 1.
   page_size: 25, # Integer | Page size. Default is 25. Max allowable is 100.
-  sort: 'sort_example' # String | Sort String
+  sort: 'fundingRef:asc' # String | List of sort fields e.g. ?sort=name:asc Default is name:asc The supported sort fields are - fundingRef, name, balance 
 }
 
 begin
@@ -514,10 +516,12 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **physical_account_name** | **String**| Physical Account Name | [optional] 
+ **physical_account_id** | [**String**](.md)| The physical account ID | [optional] 
  **payor_id** | [**String**](.md)| The account owner Payor ID | [optional] 
+ **funding_account_id** | [**String**](.md)| The funding account ID | [optional] 
  **page** | **Integer**| Page number. Default is 1. | [optional] [default to 1]
  **page_size** | **Integer**| Page size. Default is 25. Max allowable is 100. | [optional] [default to 25]
- **sort** | **String**| Sort String | [optional] 
+ **sort** | **String**| List of sort fields e.g. ?sort&#x3D;name:asc Default is name:asc The supported sort fields are - fundingRef, name, balance  | [optional] [default to &#39;fundingRef:asc&#39;]
 
 ### Return type
 

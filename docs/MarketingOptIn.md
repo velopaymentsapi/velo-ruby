@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 require 'VeloPayments'
 
 instance = VeloPayments::MarketingOptIn.new(opted_in: null,
-                                 timestamp: null)
+                                 timestamp: 2019-01-20T09:00Z)
 ```
 
 

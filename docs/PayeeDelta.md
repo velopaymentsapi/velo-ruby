@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 require 'VeloPayments'
 
 instance = VeloPayments::PayeeDelta.new(remote_id: payee_1,
-                                 payee_id: null,
+                                 payee_id: 2aa5d7e0-2ecb-403f-8494-1865ed0454e9,
                                  display_name: Payee1,
                                  dba_name: Payee DBA Name,
                                  email: payee1@example.com,

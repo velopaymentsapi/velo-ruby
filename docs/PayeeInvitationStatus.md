@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 ```ruby
 require 'VeloPayments'
 
-instance = VeloPayments::PayeeInvitationStatus.new(payee_id: null,
+instance = VeloPayments::PayeeInvitationStatus.new(payee_id: 2aa5d7e0-2ecb-403f-8494-1865ed0454e9,
                                  invitation_status: ACCEPTED,
                                  grace_period_end_date: Sun Feb 03 00:00:00 GMT 2019)
 ```

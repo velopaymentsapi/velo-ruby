@@ -12,8 +12,8 @@ Name | Type | Description | Notes
 ```ruby
 require 'VeloPayments'
 
-instance = VeloPayments::CompanyResponse.new(name: null,
-                                 operating_name: null)
+instance = VeloPayments::CompanyResponse.new(name: ABC Ltd.,
+                                 operating_name: ABC)
 ```
 
 

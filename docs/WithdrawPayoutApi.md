@@ -4,13 +4,13 @@ All URIs are relative to *https://api.sandbox.velopayments.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**withdraw_payout_v3**](WithdrawPayoutApi.md#withdraw_payout_v3) | **DELETE** /v3/payouts/{payoutId} | Withdraw Payout
+[**v3_payouts_payout_id_delete**](WithdrawPayoutApi.md#v3_payouts_payout_id_delete) | **DELETE** /v3/payouts/{payoutId} | Withdraw Payout
 
 
 
-## withdraw_payout_v3
+## v3_payouts_payout_id_delete
 
-> withdraw_payout_v3(payout_id)
+> v3_payouts_payout_id_delete(payout_id)
 
 Withdraw Payout
 
@@ -32,9 +32,9 @@ payout_id = 'payout_id_example' # String | Id of the payout
 
 begin
   #Withdraw Payout
-  api_instance.withdraw_payout_v3(payout_id)
+  api_instance.v3_payouts_payout_id_delete(payout_id)
 rescue VeloPayments::ApiError => e
-  puts "Exception when calling WithdrawPayoutApi->withdraw_payout_v3: #{e}"
+  puts "Exception when calling WithdrawPayoutApi->v3_payouts_payout_id_delete: #{e}"
 end
 ```
 
@@ -56,5 +56,5 @@ nil (empty response body)
 ### HTTP request headers
 
 - **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Accept**: application/json
 

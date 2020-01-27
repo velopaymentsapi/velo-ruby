@@ -12,8 +12,8 @@ Name | Type | Description | Notes
 ```ruby
 require 'VeloPayments'
 
-instance = VeloPayments::Challenge.new(value: null,
-                                 description: null)
+instance = VeloPayments::Challenge.new(value: challenge test,
+                                 description: challenge description)
 ```
 
 

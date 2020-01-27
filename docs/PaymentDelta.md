@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **payor_payment_id** | **String** |  | [optional] 
 **payment_currency** | **String** |  | [optional] 
 **payment_amount** | **Integer** |  | [optional] 
-**status** | [**PaymentStatus**](PaymentStatus.md) |  | [optional] 
+**status** | **String** |  | [optional] 
 **source_currency** | **String** |  | [optional] 
 **source_amount** | **Integer** |  | [optional] 
 

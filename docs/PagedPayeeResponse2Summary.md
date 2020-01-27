@@ -15,11 +15,11 @@ Name | Type | Description | Notes
 ```ruby
 require 'VeloPayments'
 
-instance = VeloPayments::PagedPayeeResponse2Summary.new(total_payees_count: null,
-                                 total_invited_count: null,
-                                 total_registered_count: null,
-                                 total_onboarded_count: null,
-                                 total_watchlist_failed_count: null)
+instance = VeloPayments::PagedPayeeResponse2Summary.new(total_payees_count: 10,
+                                 total_invited_count: 10,
+                                 total_registered_count: 10,
+                                 total_onboarded_count: 10,
+                                 total_watchlist_failed_count: 0)
 ```
 
 

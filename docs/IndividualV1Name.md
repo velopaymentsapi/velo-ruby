@@ -14,10 +14,10 @@ Name | Type | Description | Notes
 ```ruby
 require 'VeloPayments'
 
-instance = VeloPayments::IndividualV1Name.new(title: null,
-                                 first_name: null,
-                                 other_names: null,
-                                 last_name: null)
+instance = VeloPayments::IndividualV1Name.new(title: Mr,
+                                 first_name: Bob,
+                                 other_names: A,
+                                 last_name: Smith)
 ```
 
 

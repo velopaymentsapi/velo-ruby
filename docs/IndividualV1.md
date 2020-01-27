@@ -14,8 +14,8 @@ Name | Type | Description | Notes
 require 'VeloPayments'
 
 instance = VeloPayments::IndividualV1.new(name: null,
-                                 national_identification: null,
-                                 date_of_birth: null)
+                                 national_identification: AB123456C,
+                                 date_of_birth: 1985-01-01)
 ```
 
 

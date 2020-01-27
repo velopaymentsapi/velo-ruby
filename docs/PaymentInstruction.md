@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **remote_id** | **String** | Your identifier for payee | 
 **currency** | **String** | Payee&#39;s currency | 
-**amount** | **Integer** | Amount to send to Payee | 
+**amount** | **Integer** | &lt;p&gt;Amount to send to Payee&lt;/p&gt; &lt;p&gt;The maximum payment amount is dependent on the currency&lt;/p&gt;  | 
 **payment_memo** | **String** |  | [optional] 
 **source_account_name** | **String** |  | 
 **payor_payment_id** | **String** |  | [optional] 

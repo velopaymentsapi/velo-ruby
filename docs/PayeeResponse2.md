@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **payee_id** | **String** |  | [optional] [readonly] 
-**payor_refs** | [**Array&lt;PayeePayorRef&gt;**](PayeePayorRef.md) |  | [optional] [readonly] 
+**payor_refs** | [**Array&lt;PayeePayorRefV3&gt;**](PayeePayorRefV3.md) |  | [optional] [readonly] 
 **email** | **String** |  | [optional] 
 **address** | [**PayeeAddress**](PayeeAddress.md) |  | [optional] 
 **country** | **String** |  | [optional] 
@@ -30,23 +30,23 @@ Name | Type | Description | Notes
 ```ruby
 require 'VeloPayments'
 
-instance = VeloPayments::PayeeResponse2.new(payee_id: null,
+instance = VeloPayments::PayeeResponse2.new(payee_id: 2aa5d7e0-2ecb-403f-8494-1865ed0454e9,
                                  payor_refs: null,
-                                 email: null,
+                                 email: bob@example.com,
                                  address: null,
-                                 country: null,
-                                 display_name: null,
+                                 country: US,
+                                 display_name: ABC,
                                  payment_channel: null,
                                  challenge: null,
                                  language: null,
-                                 accept_terms_and_conditions_timestamp: null,
-                                 cellphone_number: null,
+                                 accept_terms_and_conditions_timestamp: 2019-01-20T09:00Z,
+                                 cellphone_number: 1234567890,
                                  payee_type: null,
                                  company: null,
                                  individual: null,
-                                 created: null,
-                                 grace_period_end_date: null,
-                                 watchlist_status_updated_timestamp: null,
+                                 created: 2019-01-20T09:00Z,
+                                 grace_period_end_date: Sun Jan 20 00:00:00 GMT 2019,
+                                 watchlist_status_updated_timestamp: 2019-01-20T09:00:00+00:00,
                                  marketing_opt_ins: null,
                                  watchlist_status: null,
                                  onboarded_status: null)

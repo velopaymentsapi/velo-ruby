@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **payee_id** | **String** |  | [optional] [readonly] 
-**payor_refs** | [**Array&lt;PayeePayorRef2&gt;**](PayeePayorRef2.md) |  | [optional] [readonly] 
+**payor_refs** | [**Array&lt;PayeePayorRefV3&gt;**](PayeePayorRefV3.md) |  | [optional] [readonly] 
 **email** | **String** |  | 
 **remote_id** | **String** |  | 
 **type** | [**PayeeType**](PayeeType.md) |  | 
@@ -21,10 +21,10 @@ Name | Type | Description | Notes
 ```ruby
 require 'VeloPayments'
 
-instance = VeloPayments::CreatePayee2.new(payee_id: null,
+instance = VeloPayments::CreatePayee2.new(payee_id: 2aa5d7e0-2ecb-403f-8494-1865ed0454e9,
                                  payor_refs: null,
-                                 email: null,
-                                 remote_id: null,
+                                 email: bob@example.com,
+                                 remote_id: Remote ID,
                                  type: null,
                                  address: null,
                                  payment_channel: null,

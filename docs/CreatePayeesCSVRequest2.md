@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 **individual_other_names** | **String** |  | [optional] 
 **individual_last_name** | **String** |  | [optional] 
 **company_name** | **String** |  | [optional] 
-**company_ein** | **String** | Company Tax Id (EIN) must be 9 numeric characters. Must match the regular expression &#x60;&#x60;&#x60;[\\d]{9}&#x60;&#x60;&#x60;. | [optional] 
+**company_ein** | **String** |  | [optional] 
 **company_operating_name** | **String** |  | [optional] 
 **payment_channel_account_number** | **String** | Either routing number and account number or only iban must be set | [optional] 
 **payment_channel_routing_number** | **String** | Either routing number and account number or only iban must be set | [optional] 
@@ -40,33 +40,33 @@ Name | Type | Description | Notes
 require 'VeloPayments'
 
 instance = VeloPayments::CreatePayeesCSVRequest2.new(type: null,
-                                 remote_id: null,
-                                 email: null,
-                                 address_line1: null,
+                                 remote_id: remoteId123,
+                                 email: bob@example.com,
+                                 address_line1: 500 Duval St,
                                  address_line2: null,
                                  address_line3: null,
                                  address_line4: null,
-                                 address_city: null,
-                                 address_county_or_province: null,
-                                 address_zip_or_postcode: null,
-                                 address_country: null,
-                                 individual_national_identification: null,
-                                 individual_date_of_birth: null,
-                                 individual_title: null,
+                                 address_city: Key West,
+                                 address_county_or_province: FL,
+                                 address_zip_or_postcode: 33945,
+                                 address_country: US,
+                                 individual_national_identification: AB123456C,
+                                 individual_date_of_birth: Tue Jan 01 00:00:00 GMT 1985,
+                                 individual_title: Mr,
                                  individual_first_name: null,
-                                 individual_other_names: null,
-                                 individual_last_name: null,
-                                 company_name: null,
-                                 company_ein: null,
-                                 company_operating_name: null,
-                                 payment_channel_account_number: null,
-                                 payment_channel_routing_number: null,
-                                 payment_channel_account_name: null,
-                                 payment_channel_iban: null,
-                                 payment_channel_country_code: null,
+                                 individual_other_names: Bob,
+                                 individual_last_name: Smith,
+                                 company_name: ABC Ltd,
+                                 company_ein: 123456789,
+                                 company_operating_name: ABC,
+                                 payment_channel_account_number: XXXXXX5678,
+                                 payment_channel_routing_number: XXXXX6789,
+                                 payment_channel_account_name: My Account,
+                                 payment_channel_iban: XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX1234,
+                                 payment_channel_country_code: US,
                                  payment_channel_currency: null,
-                                 challenge_description: null,
-                                 challenge_value: null,
+                                 challenge_description: challenge description,
+                                 challenge_value: challenge value,
                                  payee_language: null)
 ```
 
