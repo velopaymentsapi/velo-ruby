@@ -50,17 +50,9 @@ build_client:
 client: clean generate trim info build_client
 
 tests:
-	# language: ruby
-	# cache: bundler
-	# rvm:
-	# - 2.3
-	# - 2.4
-	# - 2.5
-	# script:
-	# - bundle install --path vendor/bundle
-	# - bundle exec rspec
-	# - gem build velopayments.gemspec
-	# - gem install ./velopayments-1.0.3.gem
+	cp -Rf specs/ spec/
+	docker build -t=client-ruby-tests .
+	docker run -v $(PWD):/myapp -e KEY=${KEY} -e SECRET=${SECRET} -e PAYOR=${PAYOR} client-ruby-tests bundle exec rspec
 
 commit:
 	git add --all
