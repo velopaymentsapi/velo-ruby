@@ -4,8 +4,6 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**page** | [**PagedResponsePage**](PagedResponsePage.md) |  | [optional] 
-**links** | **Array&lt;Object&gt;** |  | [optional] 
 **content** | [**Array&lt;FundingAudit&gt;**](FundingAudit.md) |  | [optional] 
 
 ## Code Sample
@@ -13,9 +11,7 @@ Name | Type | Description | Notes
 ```ruby
 require 'VeloPayments'
 
-instance = VeloPayments::GetFundingsResponse.new(page: null,
-                                 links: null,
-                                 content: null)
+instance = VeloPayments::GetFundingsResponse.new(content: null)
 ```
 
 
