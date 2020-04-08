@@ -11,7 +11,7 @@ OpenAPI Generator version: 4.3.1-SNAPSHOT
 =end
 
 require 'date'
-
+require 'velopayments/models/paged_response'
 module VeloPayments
   class GetFundingsResponse < PagedResponse
     attr_accessor :content
