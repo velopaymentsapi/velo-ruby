@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **summary** | [**PagedPayeeResponse2Summary**](PagedPayeeResponse2Summary.md) |  | [optional] 
 **page** | [**PagedPayeeResponsePage**](PagedPayeeResponsePage.md) |  | [optional] 
 **links** | [**Array&lt;PagedPayeeResponseLinks&gt;**](PagedPayeeResponseLinks.md) |  | [optional] 
-**content** | [**Array&lt;PayeeResponse2&gt;**](PayeeResponse2.md) |  | [optional] 
+**content** | [**Array&lt;GetPayeeListResponse&gt;**](GetPayeeListResponse.md) |  | [optional] 
 
 ## Code Sample
 

@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **payment_currency** | [**PaymentAuditCurrencyV4**](PaymentAuditCurrencyV4.md) |  | [optional] 
 **rate** | **Float** | The FX rate for the payment, if FX was involved. **Note** that (depending on the role of the caller) this information may not be displayed | [optional] 
 **inverted_rate** | **Float** | The inverted FX rate for the payment, if FX was involved. **Note** that (depending on the role of the caller) this information may not be displayed | [optional] 
+**is_payment_ccy_base_ccy** | **Boolean** |  | [optional] 
 **submitted_date_time** | **DateTime** |  | 
 **status** | **String** |  | 
 **funding_status** | **String** | The funding status of the payment | 
@@ -40,6 +41,8 @@ Name | Type | Description | Notes
 **rails_payment_id** | **String** |  | [optional] 
 **rails_batch_id** | **String** |  | [optional] 
 **rejection_reason** | **String** |  | [optional] 
+**withdrawn_reason** | **String** |  | [optional] 
+**withdrawable** | **Boolean** |  | [optional] 
 **payout** | [**PaymentResponseV4Payout**](PaymentResponseV4Payout.md) |  | [optional] 
 
 ## Code Sample
@@ -61,6 +64,7 @@ instance = VeloPayments::PaymentResponseV4.new(payment_id: null,
                                  payment_currency: null,
                                  rate: null,
                                  inverted_rate: null,
+                                 is_payment_ccy_base_ccy: null,
                                  submitted_date_time: null,
                                  status: null,
                                  funding_status: null,
@@ -83,6 +87,8 @@ instance = VeloPayments::PaymentResponseV4.new(payment_id: null,
                                  rails_payment_id: null,
                                  rails_batch_id: null,
                                  rejection_reason: null,
+                                 withdrawn_reason: null,
+                                 withdrawable: null,
                                  payout: null)
 ```
 

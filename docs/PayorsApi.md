@@ -35,7 +35,7 @@ VeloPayments.configure do |config|
 end
 
 api_instance = VeloPayments::PayorsApi.new
-payor_id = 'payor_id_example' # String | The account owner Payor ID
+payor_id = 'payor_id_example' # String | The Payor Id
 
 begin
   #Get Payor
@@ -51,7 +51,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payor_id** | [**String**](.md)| The account owner Payor ID | 
+ **payor_id** | [**String**](.md)| The Payor Id | 
 
 ### Return type
 
@@ -87,7 +87,7 @@ VeloPayments.configure do |config|
 end
 
 api_instance = VeloPayments::PayorsApi.new
-payor_id = 'payor_id_example' # String | The account owner Payor ID
+payor_id = 'payor_id_example' # String | The Payor Id
 
 begin
   #Get Payor
@@ -103,7 +103,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payor_id** | [**String**](.md)| The account owner Payor ID | 
+ **payor_id** | [**String**](.md)| The Payor Id | 
 
 ### Return type
 
@@ -139,7 +139,7 @@ VeloPayments.configure do |config|
 end
 
 api_instance = VeloPayments::PayorsApi.new
-payor_id = 'payor_id_example' # String | The account owner Payor ID
+payor_id = 'payor_id_example' # String | The Payor Id
 opts = {
   logo: File.new('/path/to/file') # File | 
 }
@@ -157,7 +157,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payor_id** | [**String**](.md)| The account owner Payor ID | 
+ **payor_id** | [**String**](.md)| The Payor Id | 
  **logo** | **File**|  | [optional] 
 
 ### Return type
@@ -194,7 +194,7 @@ VeloPayments.configure do |config|
 end
 
 api_instance = VeloPayments::PayorsApi.new
-payor_id = 'payor_id_example' # String | The account owner Payor ID
+payor_id = 'payor_id_example' # String | The Payor Id
 application_id = 'application_id_example' # String | Application ID
 payor_create_api_key_request = VeloPayments::PayorCreateApiKeyRequest.new # PayorCreateApiKeyRequest | Details of application API key to create
 
@@ -212,7 +212,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payor_id** | [**String**](.md)| The account owner Payor ID | 
+ **payor_id** | [**String**](.md)| The Payor Id | 
  **application_id** | [**String**](.md)| Application ID | 
  **payor_create_api_key_request** | [**PayorCreateApiKeyRequest**](PayorCreateApiKeyRequest.md)| Details of application API key to create | 
 
@@ -250,7 +250,7 @@ VeloPayments.configure do |config|
 end
 
 api_instance = VeloPayments::PayorsApi.new
-payor_id = 'payor_id_example' # String | The account owner Payor ID
+payor_id = 'payor_id_example' # String | The Payor Id
 payor_create_application_request = VeloPayments::PayorCreateApplicationRequest.new # PayorCreateApplicationRequest | Details of application to create
 
 begin
@@ -266,7 +266,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payor_id** | [**String**](.md)| The account owner Payor ID | 
+ **payor_id** | [**String**](.md)| The Payor Id | 
  **payor_create_application_request** | [**PayorCreateApplicationRequest**](PayorCreateApplicationRequest.md)| Details of application to create | 
 
 ### Return type
@@ -303,7 +303,7 @@ VeloPayments.configure do |config|
 end
 
 api_instance = VeloPayments::PayorsApi.new
-payor_id = 'payor_id_example' # String | The account owner Payor ID
+payor_id = 'payor_id_example' # String | The Payor Id
 payor_email_opt_out_request = VeloPayments::PayorEmailOptOutRequest.new # PayorEmailOptOutRequest | Reminder Emails Opt-Out Request
 
 begin
@@ -319,7 +319,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payor_id** | [**String**](.md)| The account owner Payor ID | 
+ **payor_id** | [**String**](.md)| The Payor Id | 
  **payor_email_opt_out_request** | [**PayorEmailOptOutRequest**](PayorEmailOptOutRequest.md)| Reminder Emails Opt-Out Request | 
 
 ### Return type
@@ -356,7 +356,7 @@ VeloPayments.configure do |config|
 end
 
 api_instance = VeloPayments::PayorsApi.new
-payor_id = 'payor_id_example' # String | The account owner Payor ID
+payor_id = 'payor_id_example' # String | The Payor Id
 
 begin
   #Get Branding
@@ -372,7 +372,7 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payor_id** | [**String**](.md)| The account owner Payor ID | 
+ **payor_id** | [**String**](.md)| The Payor Id | 
 
 ### Return type
 

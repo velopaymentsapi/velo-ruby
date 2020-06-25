@@ -6,16 +6,21 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**create_ach_funding_request**](FundingManagerApi.md#create_ach_funding_request) | **POST** /v1/sourceAccounts/{sourceAccountId}/achFundingRequest | Create Funding Request
 [**create_funding_request**](FundingManagerApi.md#create_funding_request) | **POST** /v2/sourceAccounts/{sourceAccountId}/fundingRequest | Create Funding Request
+[**create_funding_request_v3**](FundingManagerApi.md#create_funding_request_v3) | **POST** /v3/sourceAccounts/{sourceAccountId}/fundingRequest | Create Funding Request
 [**get_funding_account**](FundingManagerApi.md#get_funding_account) | **GET** /v1/fundingAccounts/{fundingAccountId} | Get Funding Account
+[**get_funding_account_v2**](FundingManagerApi.md#get_funding_account_v2) | **GET** /v2/fundingAccounts/{fundingAccountId} | Get Funding Account
 [**get_funding_accounts**](FundingManagerApi.md#get_funding_accounts) | **GET** /v1/fundingAccounts | Get Funding Accounts
-[**get_fundings_v1**](FundingManagerApi.md#get_fundings_v1) | **GET** /v1/paymentaudit/fundings | Get Fundings for Payor
+[**get_funding_accounts_v2**](FundingManagerApi.md#get_funding_accounts_v2) | **GET** /v2/fundingAccounts | Get Funding Accounts
 [**get_source_account**](FundingManagerApi.md#get_source_account) | **GET** /v1/sourceAccounts/{sourceAccountId} | Get details about given source account.
 [**get_source_account_v2**](FundingManagerApi.md#get_source_account_v2) | **GET** /v2/sourceAccounts/{sourceAccountId} | Get details about given source account.
+[**get_source_account_v3**](FundingManagerApi.md#get_source_account_v3) | **GET** /v3/sourceAccounts/{sourceAccountId} | Get details about given source account.
 [**get_source_accounts**](FundingManagerApi.md#get_source_accounts) | **GET** /v1/sourceAccounts | Get list of source accounts
 [**get_source_accounts_v2**](FundingManagerApi.md#get_source_accounts_v2) | **GET** /v2/sourceAccounts | Get list of source accounts
+[**get_source_accounts_v3**](FundingManagerApi.md#get_source_accounts_v3) | **GET** /v3/sourceAccounts | Get list of source accounts
 [**list_funding_audit_deltas**](FundingManagerApi.md#list_funding_audit_deltas) | **GET** /v1/deltas/fundings | Get Funding Audit Delta
 [**set_notifications_request**](FundingManagerApi.md#set_notifications_request) | **POST** /v1/sourceAccounts/{sourceAccountId}/notifications | Set notifications
 [**transfer_funds**](FundingManagerApi.md#transfer_funds) | **POST** /v2/sourceAccounts/{sourceAccountId}/transfers | Transfer Funds between source accounts
+[**transfer_funds_v3**](FundingManagerApi.md#transfer_funds_v3) | **POST** /v3/sourceAccounts/{sourceAccountId}/transfers | Transfer Funds between source accounts
 
 
 
@@ -40,7 +45,7 @@ end
 
 api_instance = VeloPayments::FundingManagerApi.new
 source_account_id = 'source_account_id_example' # String | Source account id
-funding_request_v1 = VeloPayments::FundingRequestV1.new # FundingRequestV1 | Body to included ammount to be funded
+funding_request_v1 = VeloPayments::FundingRequestV1.new # FundingRequestV1 | Body to included amount to be funded
 
 begin
   #Create Funding Request
@@ -56,7 +61,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **source_account_id** | [**String**](.md)| Source account id | 
- **funding_request_v1** | [**FundingRequestV1**](FundingRequestV1.md)| Body to included ammount to be funded | 
+ **funding_request_v1** | [**FundingRequestV1**](FundingRequestV1.md)| Body to included amount to be funded | 
 
 ### Return type
 
@@ -93,7 +98,7 @@ end
 
 api_instance = VeloPayments::FundingManagerApi.new
 source_account_id = 'source_account_id_example' # String | Source account id
-funding_request_v2 = VeloPayments::FundingRequestV2.new # FundingRequestV2 | Body to included ammount to be funded
+funding_request_v2 = VeloPayments::FundingRequestV2.new # FundingRequestV2 | Body to included amount to be funded
 
 begin
   #Create Funding Request
@@ -109,7 +114,60 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **source_account_id** | [**String**](.md)| Source account id | 
- **funding_request_v2** | [**FundingRequestV2**](FundingRequestV2.md)| Body to included ammount to be funded | 
+ **funding_request_v2** | [**FundingRequestV2**](FundingRequestV2.md)| Body to included amount to be funded | 
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## create_funding_request_v3
+
+> create_funding_request_v3(source_account_id, funding_request_v3)
+
+Create Funding Request
+
+Instruct a funding request to transfer funds from the payor’s funding bank to the payor’s balance held within Velo  (202 - accepted, 400 - invalid request body, 404 - source account not found).
+
+### Example
+
+```ruby
+# load the gem
+require 'velopayments'
+# setup authorization
+VeloPayments.configure do |config|
+  # Configure OAuth2 access token for authorization: OAuth2
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
+
+api_instance = VeloPayments::FundingManagerApi.new
+source_account_id = 'source_account_id_example' # String | Source account id
+funding_request_v3 = VeloPayments::FundingRequestV3.new # FundingRequestV3 | Body to included amount to be funded
+
+begin
+  #Create Funding Request
+  api_instance.create_funding_request_v3(source_account_id, funding_request_v3)
+rescue VeloPayments::ApiError => e
+  puts "Exception when calling FundingManagerApi->create_funding_request_v3: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **source_account_id** | [**String**](.md)| Source account id | 
+ **funding_request_v3** | [**FundingRequestV3**](FundingRequestV3.md)| Body to included amount to be funded | 
 
 ### Return type
 
@@ -181,13 +239,69 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
+## get_funding_account_v2
+
+> FundingAccountResponse2 get_funding_account_v2(funding_account_id, opts)
+
+Get Funding Account
+
+Get Funding Account by ID
+
+### Example
+
+```ruby
+# load the gem
+require 'velopayments'
+# setup authorization
+VeloPayments.configure do |config|
+  # Configure OAuth2 access token for authorization: OAuth2
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
+
+api_instance = VeloPayments::FundingManagerApi.new
+funding_account_id = 'funding_account_id_example' # String | 
+opts = {
+  sensitive: false # Boolean | 
+}
+
+begin
+  #Get Funding Account
+  result = api_instance.get_funding_account_v2(funding_account_id, opts)
+  p result
+rescue VeloPayments::ApiError => e
+  puts "Exception when calling FundingManagerApi->get_funding_account_v2: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **funding_account_id** | [**String**](.md)|  | 
+ **sensitive** | **Boolean**|  | [optional] [default to false]
+
+### Return type
+
+[**FundingAccountResponse2**](FundingAccountResponse2.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## get_funding_accounts
 
 > ListFundingAccountsResponse get_funding_accounts(opts)
 
 Get Funding Accounts
 
-Get the source accounts.
+Get the funding accounts.
 
 ### Example
 
@@ -205,8 +319,8 @@ opts = {
   payor_id: 'payor_id_example', # String | 
   source_account_id: 'source_account_id_example', # String | 
   page: 1, # Integer | Page number. Default is 1.
-  page_size: 25, # Integer | Page size. Default is 25. Max allowable is 100.
-  sort: 'accountName:asc', # String | 
+  page_size: 25, # Integer | The number of results to return in a page
+  sort: 'accountName:asc', # String | List of sort fields (e.g. ?sort=accountName:asc,name:asc) Default is accountName:asc The supported sort fields are - accountName, name and currency.
   sensitive: false # Boolean | 
 }
 
@@ -227,8 +341,8 @@ Name | Type | Description  | Notes
  **payor_id** | [**String**](.md)|  | [optional] 
  **source_account_id** | [**String**](.md)|  | [optional] 
  **page** | **Integer**| Page number. Default is 1. | [optional] [default to 1]
- **page_size** | **Integer**| Page size. Default is 25. Max allowable is 100. | [optional] [default to 25]
- **sort** | **String**|  | [optional] [default to &#39;accountName:asc&#39;]
+ **page_size** | **Integer**| The number of results to return in a page | [optional] [default to 25]
+ **sort** | **String**| List of sort fields (e.g. ?sort&#x3D;accountName:asc,name:asc) Default is accountName:asc The supported sort fields are - accountName, name and currency. | [optional] [default to &#39;accountName:asc&#39;]
  **sensitive** | **Boolean**|  | [optional] [default to false]
 
 ### Return type
@@ -245,13 +359,13 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
-## get_fundings_v1
+## get_funding_accounts_v2
 
-> GetFundingsResponse get_fundings_v1(opts)
+> ListFundingAccountsResponse2 get_funding_accounts_v2(opts)
 
-Get Fundings for Payor
+Get Funding Accounts
 
-Get a list of Fundings for a payor. 
+Get the funding accounts.
 
 ### Example
 
@@ -266,18 +380,23 @@ end
 
 api_instance = VeloPayments::FundingManagerApi.new
 opts = {
-  payor_id: 'payor_id_example', # String | The account owner Payor ID
+  payor_id: 'payor_id_example', # String | 
+  name: 'name_example', # String | The descriptive funding account name
+  country: 'US', # String | The 2 letter ISO 3166-1 country code (upper case)
+  currency: 'USD', # String | The ISO 4217 currency code
+  type: VeloPayments::FundingAccountType.new, # FundingAccountType | The type of funding account.
   page: 1, # Integer | Page number. Default is 1.
-  page_size: 25, # Integer | Page size. Default is 25. Max allowable is 100.
-  sort: 'sort_example' # String | List of sort fields. Example: ```?sort=destinationCurrency:asc,destinationAmount:asc``` Default is no sort. The supported sort fields are: dateTime and amount. 
+  page_size: 25, # Integer | The number of results to return in a page
+  sort: 'accountName:asc', # String | List of sort fields (e.g. ?sort=accountName:asc,name:asc) Default is accountName:asc The supported sort fields are - accountName, name.
+  sensitive: false # Boolean | 
 }
 
 begin
-  #Get Fundings for Payor
-  result = api_instance.get_fundings_v1(opts)
+  #Get Funding Accounts
+  result = api_instance.get_funding_accounts_v2(opts)
   p result
 rescue VeloPayments::ApiError => e
-  puts "Exception when calling FundingManagerApi->get_fundings_v1: #{e}"
+  puts "Exception when calling FundingManagerApi->get_funding_accounts_v2: #{e}"
 end
 ```
 
@@ -286,14 +405,19 @@ end
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **payor_id** | [**String**](.md)| The account owner Payor ID | [optional] 
+ **payor_id** | [**String**](.md)|  | [optional] 
+ **name** | **String**| The descriptive funding account name | [optional] 
+ **country** | **String**| The 2 letter ISO 3166-1 country code (upper case) | [optional] 
+ **currency** | **String**| The ISO 4217 currency code | [optional] 
+ **type** | [**FundingAccountType**](.md)| The type of funding account. | [optional] 
  **page** | **Integer**| Page number. Default is 1. | [optional] [default to 1]
- **page_size** | **Integer**| Page size. Default is 25. Max allowable is 100. | [optional] [default to 25]
- **sort** | **String**| List of sort fields. Example: &#x60;&#x60;&#x60;?sort&#x3D;destinationCurrency:asc,destinationAmount:asc&#x60;&#x60;&#x60; Default is no sort. The supported sort fields are: dateTime and amount.  | [optional] 
+ **page_size** | **Integer**| The number of results to return in a page | [optional] [default to 25]
+ **sort** | **String**| List of sort fields (e.g. ?sort&#x3D;accountName:asc,name:asc) Default is accountName:asc The supported sort fields are - accountName, name. | [optional] [default to &#39;accountName:asc&#39;]
+ **sensitive** | **Boolean**|  | [optional] [default to false]
 
 ### Return type
 
-[**GetFundingsResponse**](GetFundingsResponse.md)
+[**ListFundingAccountsResponse2**](ListFundingAccountsResponse2.md)
 
 ### Authorization
 
@@ -409,6 +533,58 @@ Name | Type | Description  | Notes
 - **Accept**: application/json
 
 
+## get_source_account_v3
+
+> SourceAccountResponseV3 get_source_account_v3(source_account_id)
+
+Get details about given source account.
+
+Get details about given source account.
+
+### Example
+
+```ruby
+# load the gem
+require 'velopayments'
+# setup authorization
+VeloPayments.configure do |config|
+  # Configure OAuth2 access token for authorization: OAuth2
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
+
+api_instance = VeloPayments::FundingManagerApi.new
+source_account_id = 'source_account_id_example' # String | Source account id
+
+begin
+  #Get details about given source account.
+  result = api_instance.get_source_account_v3(source_account_id)
+  p result
+rescue VeloPayments::ApiError => e
+  puts "Exception when calling FundingManagerApi->get_source_account_v3: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **source_account_id** | [**String**](.md)| Source account id | 
+
+### Return type
+
+[**SourceAccountResponseV3**](SourceAccountResponseV3.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
 ## get_source_accounts
 
 > ListSourceAccountResponse get_source_accounts(opts)
@@ -433,7 +609,7 @@ opts = {
   physical_account_name: 'physical_account_name_example', # String | Physical Account Name
   payor_id: 'payor_id_example', # String | The account owner Payor ID
   page: 1, # Integer | Page number. Default is 1.
-  page_size: 25, # Integer | Page size. Default is 25. Max allowable is 100.
+  page_size: 25, # Integer | The number of results to return in a page
   sort: 'fundingRef:asc' # String | List of sort fields e.g. ?sort=name:asc Default is name:asc The supported sort fields are - fundingRef 
 }
 
@@ -454,7 +630,7 @@ Name | Type | Description  | Notes
  **physical_account_name** | **String**| Physical Account Name | [optional] 
  **payor_id** | [**String**](.md)| The account owner Payor ID | [optional] 
  **page** | **Integer**| Page number. Default is 1. | [optional] [default to 1]
- **page_size** | **Integer**| Page size. Default is 25. Max allowable is 100. | [optional] [default to 25]
+ **page_size** | **Integer**| The number of results to return in a page | [optional] [default to 25]
  **sort** | **String**| List of sort fields e.g. ?sort&#x3D;name:asc Default is name:asc The supported sort fields are - fundingRef  | [optional] [default to &#39;fundingRef:asc&#39;]
 
 ### Return type
@@ -497,7 +673,7 @@ opts = {
   payor_id: 'payor_id_example', # String | The account owner Payor ID
   funding_account_id: 'funding_account_id_example', # String | The funding account ID
   page: 1, # Integer | Page number. Default is 1.
-  page_size: 25, # Integer | Page size. Default is 25. Max allowable is 100.
+  page_size: 25, # Integer | The number of results to return in a page
   sort: 'fundingRef:asc' # String | List of sort fields e.g. ?sort=name:asc Default is name:asc The supported sort fields are - fundingRef, name, balance 
 }
 
@@ -520,12 +696,80 @@ Name | Type | Description  | Notes
  **payor_id** | [**String**](.md)| The account owner Payor ID | [optional] 
  **funding_account_id** | [**String**](.md)| The funding account ID | [optional] 
  **page** | **Integer**| Page number. Default is 1. | [optional] [default to 1]
- **page_size** | **Integer**| Page size. Default is 25. Max allowable is 100. | [optional] [default to 25]
+ **page_size** | **Integer**| The number of results to return in a page | [optional] [default to 25]
  **sort** | **String**| List of sort fields e.g. ?sort&#x3D;name:asc Default is name:asc The supported sort fields are - fundingRef, name, balance  | [optional] [default to &#39;fundingRef:asc&#39;]
 
 ### Return type
 
 [**ListSourceAccountResponseV2**](ListSourceAccountResponseV2.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## get_source_accounts_v3
+
+> ListSourceAccountResponseV3 get_source_accounts_v3(opts)
+
+Get list of source accounts
+
+List source accounts.
+
+### Example
+
+```ruby
+# load the gem
+require 'velopayments'
+# setup authorization
+VeloPayments.configure do |config|
+  # Configure OAuth2 access token for authorization: OAuth2
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
+
+api_instance = VeloPayments::FundingManagerApi.new
+opts = {
+  physical_account_name: 'physical_account_name_example', # String | Physical Account Name
+  physical_account_id: 'physical_account_id_example', # String | The physical account ID
+  payor_id: 'payor_id_example', # String | The account owner Payor ID
+  funding_account_id: 'funding_account_id_example', # String | The funding account ID
+  type: VeloPayments::SourceAccountType.new, # SourceAccountType | The type of source account.
+  page: 1, # Integer | Page number. Default is 1.
+  page_size: 25, # Integer | The number of results to return in a page
+  sort: 'fundingRef:asc' # String | List of sort fields e.g. ?sort=name:asc Default is name:asc The supported sort fields are - fundingRef, name, balance 
+}
+
+begin
+  #Get list of source accounts
+  result = api_instance.get_source_accounts_v3(opts)
+  p result
+rescue VeloPayments::ApiError => e
+  puts "Exception when calling FundingManagerApi->get_source_accounts_v3: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **physical_account_name** | **String**| Physical Account Name | [optional] 
+ **physical_account_id** | [**String**](.md)| The physical account ID | [optional] 
+ **payor_id** | [**String**](.md)| The account owner Payor ID | [optional] 
+ **funding_account_id** | [**String**](.md)| The funding account ID | [optional] 
+ **type** | [**SourceAccountType**](.md)| The type of source account. | [optional] 
+ **page** | **Integer**| Page number. Default is 1. | [optional] [default to 1]
+ **page_size** | **Integer**| The number of results to return in a page | [optional] [default to 25]
+ **sort** | **String**| List of sort fields e.g. ?sort&#x3D;name:asc Default is name:asc The supported sort fields are - fundingRef, name, balance  | [optional] [default to &#39;fundingRef:asc&#39;]
+
+### Return type
+
+[**ListSourceAccountResponseV3**](ListSourceAccountResponseV3.md)
 
 ### Authorization
 
@@ -561,7 +805,7 @@ payor_id = 'payor_id_example' # String |
 updated_since = DateTime.parse('2013-10-20T19:20:30+01:00') # DateTime | 
 opts = {
   page: 1, # Integer | Page number. Default is 1.
-  page_size: 25 # Integer | Page size. Default is 25. Max allowable is 100.
+  page_size: 25 # Integer | The number of results to return in a page
 }
 
 begin
@@ -581,7 +825,7 @@ Name | Type | Description  | Notes
  **payor_id** | [**String**](.md)|  | 
  **updated_since** | **DateTime**|  | 
  **page** | **Integer**| Page number. Default is 1. | [optional] [default to 1]
- **page_size** | **Integer**| Page size. Default is 25. Max allowable is 100. | [optional] [default to 25]
+ **page_size** | **Integer**| The number of results to return in a page | [optional] [default to 25]
 
 ### Return type
 
@@ -688,6 +932,59 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **source_account_id** | [**String**](.md)| The &#39;from&#39; source account id, which will be debited | 
  **transfer_request** | [**TransferRequest**](TransferRequest.md)| Body | 
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## transfer_funds_v3
+
+> transfer_funds_v3(source_account_id, transfer_request2)
+
+Transfer Funds between source accounts
+
+Transfer funds between source accounts for a Payor. The 'from' source account is identified in the URL, and is the account which will be debited. The 'to' (destination) source account is in the body, and is the account which will be credited. Both source accounts must belong to the same Payor. There must be sufficient balance in the 'from' source account, otherwise the transfer attempt will fail.
+
+### Example
+
+```ruby
+# load the gem
+require 'velopayments'
+# setup authorization
+VeloPayments.configure do |config|
+  # Configure OAuth2 access token for authorization: OAuth2
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
+
+api_instance = VeloPayments::FundingManagerApi.new
+source_account_id = 'source_account_id_example' # String | The 'from' source account id, which will be debited
+transfer_request2 = VeloPayments::TransferRequest2.new # TransferRequest2 | Body
+
+begin
+  #Transfer Funds between source accounts
+  api_instance.transfer_funds_v3(source_account_id, transfer_request2)
+rescue VeloPayments::ApiError => e
+  puts "Exception when calling FundingManagerApi->transfer_funds_v3: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **source_account_id** | [**String**](.md)| The &#39;from&#39; source account id, which will be debited | 
+ **transfer_request2** | [**TransferRequest2**](TransferRequest2.md)| Body | 
 
 ### Return type
 

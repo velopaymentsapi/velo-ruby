@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **customer_id** | **String** |  | [optional] 
 **physical_account_id** | **String** |  | [optional] 
 **funding_account_id** | **String** |  | [optional] 
+**account_type** | **String** |  | [optional] 
 
 ## Code Sample
 
@@ -35,7 +36,8 @@ instance = VeloPayments::SourceAccountResponse.new(id: null,
                                  balance_visible: null,
                                  customer_id: Joe Customer,
                                  physical_account_id: null,
-                                 funding_account_id: null)
+                                 funding_account_id: null,
+                                 account_type: FBO)
 ```
 
 

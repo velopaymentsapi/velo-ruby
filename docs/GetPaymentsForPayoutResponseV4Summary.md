@@ -15,6 +15,7 @@ Name | Type | Description | Notes
 **released_payments** | **Integer** | The count of payments within the payout which have been released. | [optional] 
 **incomplete_payments** | **Integer** | The count of payments within the payout which are incomplete. | [optional] 
 **returned_payments** | **Integer** | The count of payments within the payout which have been returned. | [optional] 
+**withdrawn_payments** | **Integer** | The count of payments within the payout which have been withdrawn. | [optional] 
 **payout_type** | [**PayoutTypeV4**](PayoutTypeV4.md) |  | [optional] 
 **submitting** | [**PayoutPayorV4**](PayoutPayorV4.md) |  | [optional] 
 **payout_from** | [**PayoutPayorV4**](PayoutPayorV4.md) |  | [optional] 
@@ -39,6 +40,7 @@ instance = VeloPayments::GetPaymentsForPayoutResponseV4Summary.new(payout_status
                                  released_payments: null,
                                  incomplete_payments: null,
                                  returned_payments: null,
+                                 withdrawn_payments: null,
                                  payout_type: null,
                                  submitting: null,
                                  payout_from: null,

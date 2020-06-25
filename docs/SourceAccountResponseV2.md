@@ -18,7 +18,8 @@ Name | Type | Description | Notes
 **physical_account_id** | **String** |  | [optional] 
 **notifications** | [**Notifications**](Notifications.md) |  | [optional] 
 **funding_account_id** | **String** |  | [optional] 
-**auto_top_up_config** | [**AutoTopUpConfig**](AutoTopUpConfig.md) |  | 
+**auto_top_up_config** | [**AutoTopUpConfig**](AutoTopUpConfig.md) |  | [optional] 
+**account_type** | **String** |  | 
 
 ## Code Sample
 
@@ -39,7 +40,8 @@ instance = VeloPayments::SourceAccountResponseV2.new(id: null,
                                  physical_account_id: null,
                                  notifications: null,
                                  funding_account_id: null,
-                                 auto_top_up_config: null)
+                                 auto_top_up_config: null,
+                                 account_type: FBO)
 ```
 
 

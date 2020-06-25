@@ -25,6 +25,7 @@ Name | Type | Description | Notes
 **language** | **String** | The payor’s language preference. Must be one of [EN, FR]. | [optional] 
 **includes_reports** | **Boolean** |  | [optional] 
 **max_master_payor_admins** | **Integer** |  | [optional] 
+**transmission_types** | [**TransmissionTypes**](TransmissionTypes.md) |  | [optional] 
 
 ## Code Sample
 
@@ -51,7 +52,8 @@ instance = VeloPayments::PayorV1.new(payor_id: null,
                                  reminder_emails_opt_out: null,
                                  language: EN,
                                  includes_reports: null,
-                                 max_master_payor_admins: null)
+                                 max_master_payor_admins: null,
+                                 transmission_types: null)
 ```
 
 

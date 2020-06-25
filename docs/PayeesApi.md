@@ -13,6 +13,7 @@ Method | HTTP request | Description
 [**list_payee_changes_v3**](PayeesApi.md#list_payee_changes_v3) | **GET** /v3/payees/deltas | List Payee Changes
 [**list_payees_v1**](PayeesApi.md#list_payees_v1) | **GET** /v1/payees | List Payees V1
 [**list_payees_v3**](PayeesApi.md#list_payees_v3) | **GET** /v3/payees | List Payees
+[**payee_details_update_v3**](PayeesApi.md#payee_details_update_v3) | **POST** /v3/payees/{payeeId}/payeeDetailsUpdate | Update Payee Details
 [**v1_payees_payee_id_remote_id_update_post**](PayeesApi.md#v1_payees_payee_id_remote_id_update_post) | **POST** /v1/payees/{payeeId}/remoteIdUpdate | Update Payee Remote Id
 [**v3_payees_payee_id_remote_id_update_post**](PayeesApi.md#v3_payees_payee_id_remote_id_update_post) | **POST** /v3/payees/{payeeId}/remoteIdUpdate | Update Payee Remote Id
 
@@ -234,7 +235,7 @@ Name | Type | Description  | Notes
 
 ## get_payee_by_id_v3
 
-> PayeeResponseV3 get_payee_by_id_v3(payee_id, opts)
+> PayeeDetailResponse get_payee_by_id_v3(payee_id, opts)
 
 Get Payee by Id
 
@@ -276,7 +277,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PayeeResponseV3**](PayeeResponseV3.md)
+[**PayeeDetailResponse**](PayeeDetailResponse.md)
 
 ### Authorization
 
@@ -504,7 +505,8 @@ end
 api_instance = VeloPayments::PayeesApi.new
 payor_id = 'payor_id_example' # String | The account owner Payor ID
 opts = {
-  ofac_status: VeloPayments::WatchlistStatus.new, # WatchlistStatus | The watchlistStatus of the payees.
+  watchlist_status: VeloPayments::WatchlistStatus.new, # WatchlistStatus | The watchlistStatus of the payees.
+  disabled: true, # Boolean | Payee disabled
   onboarded_status: VeloPayments::OnboardedStatus.new, # OnboardedStatus | The onboarded status of the payees.
   email: 'bob@example.com', # String | Email address
   display_name: 'Bob Smith', # String | The display name of the payees.
@@ -531,7 +533,8 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **payor_id** | [**String**](.md)| The account owner Payor ID | 
- **ofac_status** | [**WatchlistStatus**](.md)| The watchlistStatus of the payees. | [optional] 
+ **watchlist_status** | [**WatchlistStatus**](.md)| The watchlistStatus of the payees. | [optional] 
+ **disabled** | **Boolean**| Payee disabled | [optional] 
  **onboarded_status** | [**OnboardedStatus**](.md)| The onboarded status of the payees. | [optional] 
  **email** | [**String**](.md)| Email address | [optional] 
  **display_name** | **String**| The display name of the payees. | [optional] 
@@ -553,6 +556,59 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## payee_details_update_v3
+
+> payee_details_update_v3(payee_id, update_payee_details_request)
+
+Update Payee Details
+
+<p>Update payee details for the given Payee Id.<p> 
+
+### Example
+
+```ruby
+# load the gem
+require 'velopayments'
+# setup authorization
+VeloPayments.configure do |config|
+  # Configure OAuth2 access token for authorization: OAuth2
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
+
+api_instance = VeloPayments::PayeesApi.new
+payee_id = '2aa5d7e0-2ecb-403f-8494-1865ed0454e9' # String | The UUID of the payee.
+update_payee_details_request = VeloPayments::UpdatePayeeDetailsRequest.new # UpdatePayeeDetailsRequest | Request to update payee details
+
+begin
+  #Update Payee Details
+  api_instance.payee_details_update_v3(payee_id, update_payee_details_request)
+rescue VeloPayments::ApiError => e
+  puts "Exception when calling PayeesApi->payee_details_update_v3: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payee_id** | [**String**](.md)| The UUID of the payee. | 
+ **update_payee_details_request** | [**UpdatePayeeDetailsRequest**](UpdatePayeeDetailsRequest.md)| Request to update payee details | 
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
 - **Accept**: application/json
 
 

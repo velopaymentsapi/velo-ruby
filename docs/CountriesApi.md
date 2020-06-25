@@ -4,34 +4,39 @@ All URIs are relative to *https://api.sandbox.velopayments.com*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**list_supported_countries**](CountriesApi.md#list_supported_countries) | **GET** /v2/supportedCountries | List Supported Countries
+[**list_payment_channel_rules_v1**](CountriesApi.md#list_payment_channel_rules_v1) | **GET** /v1/paymentChannelRules | List Payment Channel Country Rules
 [**list_supported_countries_v1**](CountriesApi.md#list_supported_countries_v1) | **GET** /v1/supportedCountries | List Supported Countries
-[**v1_payment_channel_rules_get**](CountriesApi.md#v1_payment_channel_rules_get) | **GET** /v1/paymentChannelRules | List Payment Channel Country Rules
+[**list_supported_countries_v2**](CountriesApi.md#list_supported_countries_v2) | **GET** /v2/supportedCountries | List Supported Countries
 
 
 
-## list_supported_countries
+## list_payment_channel_rules_v1
 
-> SupportedCountriesResponse2 list_supported_countries
+> PaymentChannelRulesResponse list_payment_channel_rules_v1
 
-List Supported Countries
+List Payment Channel Country Rules
 
-List the supported countries.
+List the country specific payment channel rules.
 
 ### Example
 
 ```ruby
 # load the gem
 require 'velopayments'
+# setup authorization
+VeloPayments.configure do |config|
+  # Configure OAuth2 access token for authorization: OAuth2
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
 
 api_instance = VeloPayments::CountriesApi.new
 
 begin
-  #List Supported Countries
-  result = api_instance.list_supported_countries
+  #List Payment Channel Country Rules
+  result = api_instance.list_payment_channel_rules_v1
   p result
 rescue VeloPayments::ApiError => e
-  puts "Exception when calling CountriesApi->list_supported_countries: #{e}"
+  puts "Exception when calling CountriesApi->list_payment_channel_rules_v1: #{e}"
 end
 ```
 
@@ -41,11 +46,11 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**SupportedCountriesResponse2**](SupportedCountriesResponse2.md)
+[**PaymentChannelRulesResponse**](PaymentChannelRulesResponse.md)
 
 ### Authorization
 
-No authorization required
+[OAuth2](../README.md#OAuth2)
 
 ### HTTP request headers
 
@@ -96,33 +101,28 @@ No authorization required
 - **Accept**: application/json
 
 
-## v1_payment_channel_rules_get
+## list_supported_countries_v2
 
-> PaymentChannelRulesResponse v1_payment_channel_rules_get
+> SupportedCountriesResponseV2 list_supported_countries_v2
 
-List Payment Channel Country Rules
+List Supported Countries
 
-List the country specific payment channel rules.
+List the supported countries.
 
 ### Example
 
 ```ruby
 # load the gem
 require 'velopayments'
-# setup authorization
-VeloPayments.configure do |config|
-  # Configure OAuth2 access token for authorization: OAuth2
-  config.access_token = 'YOUR ACCESS TOKEN'
-end
 
 api_instance = VeloPayments::CountriesApi.new
 
 begin
-  #List Payment Channel Country Rules
-  result = api_instance.v1_payment_channel_rules_get
+  #List Supported Countries
+  result = api_instance.list_supported_countries_v2
   p result
 rescue VeloPayments::ApiError => e
-  puts "Exception when calling CountriesApi->v1_payment_channel_rules_get: #{e}"
+  puts "Exception when calling CountriesApi->list_supported_countries_v2: #{e}"
 end
 ```
 
@@ -132,11 +132,11 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**PaymentChannelRulesResponse**](PaymentChannelRulesResponse.md)
+[**SupportedCountriesResponseV2**](SupportedCountriesResponseV2.md)
 
 ### Authorization
 
-[OAuth2](../README.md#OAuth2)
+No authorization required
 
 ### HTTP request headers
 

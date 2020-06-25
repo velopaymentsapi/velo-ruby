@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **page** | [**PagedUserResponsePage**](PagedUserResponsePage.md) |  | [optional] 
-**links** | [**Array&lt;ListSourceAccountResponseLinks&gt;**](ListSourceAccountResponseLinks.md) |  | [optional] 
+**links** | [**Array&lt;ListSourceAccountResponseV2Links&gt;**](ListSourceAccountResponseV2Links.md) |  | [optional] 
 **content** | [**Array&lt;SourceAccountResponseV2&gt;**](SourceAccountResponseV2.md) |  | [optional] 
 
 ## Code Sample

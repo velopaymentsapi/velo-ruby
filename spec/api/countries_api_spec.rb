@@ -32,17 +32,6 @@ describe 'CountriesApi' do
     end
   end
 
-  # unit tests for list_supported_countries
-  # List Supported Countries
-  # List the supported countries.
-  # @param [Hash] opts the optional parameters
-  # @return [SupportedCountriesResponse2]
-  describe 'list_supported_countries test' do
-    it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
-    end
-  end
-
   # unit tests for list_supported_countries_v1
   # List Supported Countries
   # &lt;p&gt;List the supported countries.&lt;/p&gt; &lt;p&gt;This version will be retired in March 2020. Use /v2/supportedCountries&lt;/p&gt; 
@@ -50,18 +39,29 @@ describe 'CountriesApi' do
   # @return [SupportedCountriesResponse]
   describe 'list_supported_countries_v1 test' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@api_instance).to respond_to(:list_supported_countries_v1) 
     end
   end
 
-  # unit tests for v1_payment_channel_rules_get
+  # unit tests for list_supported_countries_v2
+  # List Supported Countries
+  # List the supported countries.
+  # @param [Hash] opts the optional parameters
+  # @return [SupportedCountriesResponse2]
+  describe 'list_supported_countries_v2 test' do
+    it 'should work' do
+      expect(@api_instance).to respond_to(:list_supported_countries_v2) 
+    end
+  end
+
+  # unit tests for list_payment_channel_rules_v1
   # List Payment Channel Country Rules
   # List the country specific payment channel rules.
   # @param [Hash] opts the optional parameters
   # @return [PaymentChannelRulesResponse]
-  describe 'v1_payment_channel_rules_get test' do
+  describe 'list_payment_channel_rules_v1 test' do
     it 'should work' do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+      expect(@api_instance).to respond_to(:list_payment_channel_rules_v1) 
     end
   end
 

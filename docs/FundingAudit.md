@@ -4,10 +4,10 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**amount** | **Float** |  | [optional] 
+**amount** | **Float** | The amount funded | [optional] 
+**currency** | **String** | The currency of the funding | [optional] 
 **date_time** | **DateTime** |  | [optional] 
 **status** | **String** |  | [optional] 
-**currency** | **String** |  | [optional] 
 **source_account_name** | **String** |  | [optional] 
 **funding_account_name** | **String** |  | [optional] 
 **funding_type** | **String** |  | [optional] 
@@ -19,10 +19,10 @@ Name | Type | Description | Notes
 ```ruby
 require 'VeloPayments'
 
-instance = VeloPayments::FundingAudit.new(amount: null,
+instance = VeloPayments::FundingAudit.new(amount: 120000,
+                                 currency: USD,
                                  date_time: null,
                                  status: null,
-                                 currency: null,
                                  source_account_name: null,
                                  funding_account_name: null,
                                  funding_type: null,

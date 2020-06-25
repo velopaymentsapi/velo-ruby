@@ -19,6 +19,7 @@ Method | HTTP request | Description
 [**unregister_mfa_for_self**](UsersApi.md#unregister_mfa_for_self) | **POST** /v2/users/self/mfa/unregister | Unregister MFA for Self
 [**update_password_self**](UsersApi.md#update_password_self) | **POST** /v2/users/self/password | Update Password for self
 [**user_details_update**](UsersApi.md#user_details_update) | **POST** /v2/users/{userId}/userDetailsUpdate | Update User Details
+[**user_details_update_for_self**](UsersApi.md#user_details_update_for_self) | **POST** /v2/users/self/userDetailsUpdate | Update User Details for self
 [**validate_password_self**](UsersApi.md#validate_password_self) | **POST** /v2/users/self/password/validate | Validate the proposed password
 
 
@@ -178,7 +179,7 @@ nil (empty response body)
 
 ## get_self
 
-> UserResponse2 get_self
+> UserResponse get_self
 
 Get Self
 
@@ -212,7 +213,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**UserResponse2**](UserResponse2.md)
+[**UserResponse**](UserResponse.md)
 
 ### Authorization
 
@@ -352,7 +353,7 @@ opts = {
   status: VeloPayments::UserStatus.new, # UserStatus | The status of the User.
   entity_id: 'entity_id_example', # String | The entityId of the User.
   page: 1, # Integer | Page number. Default is 1.
-  page_size: 25, # Integer | Page size. Default is 25. Max allowable is 100.
+  page_size: 25, # Integer | The number of results to return in a page
   sort: 'email:asc' # String | List of sort fields (e.g. ?sort=email:asc,lastName:asc) Default is email:asc 'name' The supported sort fields are - email, lastNmae. 
 }
 
@@ -374,7 +375,7 @@ Name | Type | Description  | Notes
  **status** | [**UserStatus**](.md)| The status of the User. | [optional] 
  **entity_id** | [**String**](.md)| The entityId of the User. | [optional] 
  **page** | **Integer**| Page number. Default is 1. | [optional] [default to 1]
- **page_size** | **Integer**| Page size. Default is 25. Max allowable is 100. | [optional] [default to 25]
+ **page_size** | **Integer**| The number of results to return in a page | [optional] [default to 25]
  **sort** | **String**| List of sort fields (e.g. ?sort&#x3D;email:asc,lastName:asc) Default is email:asc &#39;name&#39; The supported sort fields are - email, lastNmae.  | [optional] [default to &#39;email:asc&#39;]
 
 ### Return type
@@ -792,6 +793,57 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **user_id** | [**String**](.md)| The UUID of the User. | 
  **user_details_update_request** | [**UserDetailsUpdateRequest**](UserDetailsUpdateRequest.md)| The details of the user to update | 
+
+### Return type
+
+nil (empty response body)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+- **Content-Type**: application/json
+- **Accept**: application/json
+
+
+## user_details_update_for_self
+
+> user_details_update_for_self(payee_user_self_update_request)
+
+Update User Details for self
+
+<p>Update the profile details for the given user</p> <p>Only Payee user types are supported</p> 
+
+### Example
+
+```ruby
+# load the gem
+require 'velopayments'
+# setup authorization
+VeloPayments.configure do |config|
+  # Configure OAuth2 access token for authorization: OAuth2
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
+
+api_instance = VeloPayments::UsersApi.new
+payee_user_self_update_request = VeloPayments::PayeeUserSelfUpdateRequest.new # PayeeUserSelfUpdateRequest | The details of the user to update
+
+begin
+  #Update User Details for self
+  api_instance.user_details_update_for_self(payee_user_self_update_request)
+rescue VeloPayments::ApiError => e
+  puts "Exception when calling UsersApi->user_details_update_for_self: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **payee_user_self_update_request** | [**PayeeUserSelfUpdateRequest**](PayeeUserSelfUpdateRequest.md)| The details of the user to update | 
 
 ### Return type
 

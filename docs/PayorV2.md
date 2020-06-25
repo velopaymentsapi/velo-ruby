@@ -24,6 +24,7 @@ Name | Type | Description | Notes
 **wu_customer_id** | **String** |  | [optional] 
 **max_master_payor_admins** | **Integer** |  | [optional] 
 **payment_rails** | [**PaymentRails**](PaymentRails.md) |  | [optional] 
+**transmission_types** | [**TransmissionTypes2**](TransmissionTypes2.md) |  | [optional] 
 
 ## Code Sample
 
@@ -49,7 +50,8 @@ instance = VeloPayments::PayorV2.new(payor_id: null,
                                  includes_reports: null,
                                  wu_customer_id: null,
                                  max_master_payor_admins: null,
-                                 payment_rails: null)
+                                 payment_rails: null,
+                                 transmission_types: null)
 ```
 
 

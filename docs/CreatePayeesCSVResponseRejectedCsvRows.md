@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 require 'VeloPayments'
 
 instance = VeloPayments::CreatePayeesCSVResponseRejectedCsvRows.new(line_number: 3,
-                                 rejected_content: remoteId1,USD,-123.45,ref1,
+                                 rejected_content: unable,to,process,csv,line,
                                  message: rejected message 1)
 ```
 
