@@ -51,9 +51,10 @@ build_client:
 client: clean generate trim info build_client
 
 tests:
+	# overwrite the generated test stubs
 	cp -Rf specs/ spec/
 	docker build -t=client-ruby-tests .
-	docker run -v $(PWD):/myapp -e KEY=${KEY} -e SECRET=${SECRET} -e PAYOR=${PAYOR} client-ruby-tests bundle exec rspec
+	docker run -t -v $(PWD):/myapp -e KEY=${KEY} -e SECRET=${SECRET} -e PAYOR=${PAYOR} -e APITOKEN="" client-ruby-tests bundle exec rspec
 
 commit:
 	git add --all
