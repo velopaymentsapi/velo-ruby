@@ -51,6 +51,8 @@ build_client:
 client: clean generate trim info build_client
 
 tests:
+	# TODO: spec/models since generated models tests are empty remove for now
+	rm -Rf spec/models
 	# overwrite the generated test stubs
 	cp -Rf specs/ spec/
 	docker build -t=client-ruby-tests .
