@@ -228,8 +228,17 @@ describe 'FundingManagerApi' do
   # @option opts [String] :sort List of sort fields e.g. ?sort&#x3D;name:asc Default is name:asc The supported sort fields are - fundingRef 
   # @return [ListSourceAccountResponse]
   describe 'get_source_accounts test' do
-    skip "skipping test" do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    it 'should work' do
+      opts = {
+        physical_account_name: nil, # String | Physical Account Name
+        payor_id: ENV['PAYOR'], # String | The account owner Payor ID
+        page: 1, # Integer | Page number. Default is 1.
+        page_size: 25, # Integer | The number of results to return in a page
+        sort: 'fundingRef:asc' # String | List of sort fields e.g. ?sort=name:asc Default is name:asc The supported sort fields are - fundingRef 
+      }
+      res = @api_instance.get_source_accounts(opts)
+      expect(res.content.length()).to be >= 1
+      expect(@api_instance).to respond_to(:get_source_accounts) 
     end
   end
 
@@ -246,8 +255,20 @@ describe 'FundingManagerApi' do
   # @option opts [String] :sort List of sort fields e.g. ?sort&#x3D;name:asc Default is name:asc The supported sort fields are - fundingRef, name, balance 
   # @return [ListSourceAccountResponseV2]
   describe 'get_source_accounts_v2 test' do
-    skip "skipping test" do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    it 'should work' do
+      opts = {
+        physical_account_name: nil, # String | Physical Account Name
+        physical_account_id: nil, # String | The physical account ID
+        payor_id: ENV['PAYOR'], # String | The account owner Payor ID
+        funding_account_id: nil, # String | The funding account ID
+        page: 1, # Integer | Page number. Default is 1.
+        page_size: 25, # Integer | The number of results to return in a page
+        sort: 'fundingRef:asc' # String | List of sort fields e.g. ?sort=name:asc Default is name:asc The supported sort fields are - fundingRef, name, balance 
+      }
+
+      res = @api_instance.get_source_accounts_v2(opts)
+      expect(res.content.length()).to be >= 1
+      expect(@api_instance).to respond_to(:get_source_accounts_v2) 
     end
   end
 
@@ -265,8 +286,21 @@ describe 'FundingManagerApi' do
   # @option opts [String] :sort List of sort fields e.g. ?sort&#x3D;name:asc Default is name:asc The supported sort fields are - fundingRef, name, balance 
   # @return [ListSourceAccountResponseV3]
   describe 'get_source_accounts_v3 test' do
-    skip "skipping test" do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    it 'should work' do
+      opts = {
+        physical_account_name: nil, # String | Physical Account Name
+        physical_account_id: nil, # String | The physical account ID
+        payor_id: ENV['PAYOR'], # String | The account owner Payor ID
+        funding_account_id: nil, # String | The funding account ID
+        type: 'FBO', # VeloPayments::SourceAccountType.new, # SourceAccountType | The type of source account.
+        page: 1, # Integer | Page number. Default is 1.
+        page_size: 25, # Integer | The number of results to return in a page
+        sort: 'fundingRef:asc' # String | List of sort fields e.g. ?sort=name:asc Default is name:asc The supported sort fields are - fundingRef, name, balance 
+      }
+
+      res = @api_instance.get_source_accounts_v3(opts)
+      expect(res.content.length()).to be >= 1
+      expect(@api_instance).to respond_to(:get_source_accounts_v3) 
     end
   end
 
@@ -280,8 +314,17 @@ describe 'FundingManagerApi' do
   # @option opts [Integer] :page_size The number of results to return in a page
   # @return [PageResourceFundingPayorStatusAuditResponseFundingPayorStatusAuditResponse]
   describe 'list_funding_audit_deltas test' do
-    skip "skipping test" do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    it 'should work' do
+      payor_id = ENV['PAYOR'] # String | 
+      updated_since = DateTime.parse('2013-10-20T19:20:30+01:00') # DateTime | 
+      opts = {
+        page: 1, # Integer | Page number. Default is 1.
+        page_size: 25, # Integer | The number of results to return in a page
+      }
+
+      res = @api_instance.list_funding_audit_deltas(payor_id, updated_since, opts)
+      expect(res.content.length()).to be >= 1
+      expect(@api_instance).to respond_to(:list_funding_audit_deltas) 
     end
   end
 
