@@ -19,6 +19,30 @@ require 'json'
 describe 'PaymentAuditServiceApi' do
   before do
     # run before each test
+    if ENV['APITOKEN'] == ""
+      VeloPayments.configure do |config|
+        config.username = ENV['KEY']
+        config.password =  ENV['SECRET']
+      end
+      
+      api_instance = VeloPayments::LoginApi.new
+      opts = {
+        grant_type: 'client_credentials'
+      }
+      
+      begin
+        res = api_instance.velo_auth(opts)
+
+        ENV['APITOKEN'] = res.access_token
+      rescue VeloPayments::ApiError => e
+        puts "Exception when calling LoginApi->velo_auth: #{e}"
+      end
+    end
+
+    VeloPayments.configure do |config|
+      config.access_token = ENV['APITOKEN']
+    end
+
     @api_instance = VeloPayments::PaymentAuditServiceApi.new
   end
 
@@ -71,8 +95,16 @@ describe 'PaymentAuditServiceApi' do
   # @option opts [String] :sort List of sort fields. Example: &#x60;&#x60;&#x60;?sort&#x3D;destinationCurrency:asc,destinationAmount:asc&#x60;&#x60;&#x60; Default is no sort. The supported sort fields are: dateTime and amount. 
   # @return [GetFundingsResponse]
   describe 'get_fundings_v1 test' do
-    skip "skipping test" do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    it 'should work' do
+      payor_id = ENV['PAYOR']
+      opts = {
+        page: 1, # Integer | Page number. Default is 1.
+        page_size: 25, # Integer | The number of results to return in a page
+        sort: 'dateTime:desc' # String | List of sort fields. Example: ```?sort=destinationCurrency:asc,destinationAmount:asc``` Default is no sort. The supported sort fields are: dateTime and amount. 
+      }
+      res = @api_instance.get_fundings_v1(payor_id, opts)
+      expect(res.content.length()).to be >= 1
+      expect(@api_instance).to respond_to(:get_fundings_v1) 
     end
   end
 
@@ -87,7 +119,16 @@ describe 'PaymentAuditServiceApi' do
   # @return [GetFundingsResponse]
   describe 'get_fundings_v4 test' do
     skip "skipping test" do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    # it 'should work' do
+    #   payor_id = ENV['PAYOR']
+    #   opts = {
+    #     page: 1, # Integer | Page number. Default is 1.
+    #     page_size: 25, # Integer | The number of results to return in a page
+    #     sort: 'dateTime:desc' # String | List of sort fields. Example: ```?sort=destinationCurrency:asc,destinationAmount:asc``` Default is no sort. The supported sort fields are: dateTime and amount. 
+    #   }
+    #   res = @api_instance.get_fundings_v4(payor_id, opts)
+    #   expect(res.content.length()).to be >= 1
+    #   expect(@api_instance).to respond_to(:get_fundings_v4) 
     end
   end
 
@@ -172,8 +213,13 @@ describe 'PaymentAuditServiceApi' do
   # @option opts [String] :payor_id The account owner Payor ID. Required for external users.
   # @return [GetPayoutStatistics]
   describe 'get_payout_stats_v1 test' do
-    skip "skipping test" do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    it 'should work' do
+      opts = {
+        payor_id: ENV['PAYOR']
+      }
+      res = @api_instance.get_payout_stats_v1(opts)
+      expect(res.this_month_payouts_count).to be >= 1
+      expect(@api_instance).to respond_to(:get_payout_stats_v1) 
     end
   end
 
@@ -184,8 +230,13 @@ describe 'PaymentAuditServiceApi' do
   # @option opts [String] :payor_id The account owner Payor ID. Required for external users.
   # @return [GetPayoutStatistics]
   describe 'get_payout_stats_v4 test' do
-    skip "skipping test" do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    it 'should work' do
+      opts = {
+        payor_id: ENV['PAYOR']
+      }
+      res = @api_instance.get_payout_stats_v4(opts)
+      expect(res.this_month_payouts_count).to be >= 1
+      expect(@api_instance).to respond_to(:get_payout_stats_v4) 
     end
   end
 
@@ -203,8 +254,21 @@ describe 'PaymentAuditServiceApi' do
   # @option opts [String] :sort List of sort fields (e.g. ?sort&#x3D;submittedDateTime:asc,instructedDateTime:asc,status:asc) Default is submittedDateTime:asc The supported sort fields are: submittedDateTime, instructedDateTime, status. 
   # @return [GetPayoutsResponseV3]
   describe 'get_payouts_for_payor_v3 test' do
-    skip "skipping test" do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    it 'should work' do
+      payor_id = ENV['PAYOR'] # String | The account owner Payor ID
+      opts = {
+        payout_memo: nil, # String | Payout Memo filter - case insensitive sub-string match
+        status: nil, # String | Payout Status
+        submitted_date_from: nil, # Date.parse('2013-10-20'), # Date | The submitted date from range filter. Format is yyyy-MM-dd.
+        submitted_date_to: nil, # Date.parse('2013-10-20'), # Date | The submitted date to range filter. Format is yyyy-MM-dd.
+        page: 1, # Integer | Page number. Default is 1.
+        page_size: 25, # Integer | The number of results to return in a page
+        sort: 'submittedDateTime:desc' # String | List of sort fields (e.g. ?sort=submittedDateTime:asc,instructedDateTime:asc,status:asc) Default is submittedDateTime:asc The supported sort fields are: submittedDateTime, instructedDateTime, status. 
+      }
+
+      res = @api_instance.get_payouts_for_payor_v3(payor_id, opts)
+      expect(res.content.length()).to be >= 1
+      expect(@api_instance).to respond_to(:get_payouts_for_payor_v3) 
     end
   end
 
@@ -223,8 +287,22 @@ describe 'PaymentAuditServiceApi' do
   # @option opts [String] :sort List of sort fields (e.g. ?sort&#x3D;submittedDateTime:asc,instructedDateTime:asc,status:asc) Default is submittedDateTime:asc The supported sort fields are: submittedDateTime, instructedDateTime, status, totalPayments, payoutId 
   # @return [GetPayoutsResponseV4]
   describe 'get_payouts_for_payor_v4 test' do
-    skip "skipping test" do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    it 'should work' do
+      opts = {
+        payor_id: ENV['PAYOR'], # String | The id (UUID) of the payor funding the payout or the payor whose payees are being paid.
+        payout_memo: nil, # # String | Payout Memo filter - case insensitive sub-string match
+        status: nil, # String | Payout Status
+        submitted_date_from: nil, # Date.parse('2013-10-20'), # Date | The submitted date from range filter. Format is yyyy-MM-dd.
+        submitted_date_to: nil, # Date.parse('2013-10-20'), # Date | The submitted date to range filter. Format is yyyy-MM-dd.
+        from_payor_name: nil, # String | The name of the payor whose payees are being paid. This filters via a case insensitive substring match.
+        page: 1, # Integer | Page number. Default is 1.
+        page_size: 25, # Integer | The number of results to return in a page
+        sort: 'submittedDateTime:desc' # String | List of sort fields (e.g. ?sort=submittedDateTime:asc,instructedDateTime:asc,status:asc) Default is submittedDateTime:asc The supported sort fields are: submittedDateTime, instructedDateTime, status, totalPayments, payoutId 
+      }
+
+      res = @api_instance.get_payouts_for_payor_v4(opts)
+      expect(res.content.length()).to be >= 1
+      expect(@api_instance).to respond_to(:get_payouts_for_payor_v4) 
     end
   end
 
@@ -238,8 +316,17 @@ describe 'PaymentAuditServiceApi' do
   # @option opts [Integer] :page_size The number of results to return in a page
   # @return [PaymentDeltaResponse]
   describe 'list_payment_changes test' do
-    skip "skipping test" do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    it 'should work' do
+      payor_id = ENV['PAYOR'] # String | The Payor ID to find associated Payments
+      updated_since = DateTime.parse('2013-10-20T19:20:30+01:00') # DateTime | The updatedSince filter in the format YYYY-MM-DDThh:mm:ss+hh:mm
+      opts = {
+        page: 1, # Integer | Page number. Default is 1.
+        page_size: 100 # Integer | The number of results to return in a page
+      }
+
+      res = @api_instance.list_payment_changes(payor_id, updated_since, opts)
+      expect(res.content.length()).to be >= 1
+      expect(@api_instance).to respond_to(:list_payment_changes) 
     end
   end
 
@@ -253,8 +340,18 @@ describe 'PaymentAuditServiceApi' do
   # @option opts [Integer] :page_size The number of results to return in a page
   # @return [PaymentDeltaResponseV4]
   describe 'list_payment_changes_v4 test' do
-    skip "skipping test" do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    skip "skipping broken test" do
+    # it 'should work' do
+    #   payor_id = ENV['PAYOR'] # String | The Payor ID to find associated Payments
+    #   updated_since = DateTime.parse('2013-10-20T19:20:30+01:00') # DateTime | The updatedSince filter in the format YYYY-MM-DDThh:mm:ss+hh:mm
+    #   opts = {
+    #     page: 1, # Integer | Page number. Default is 1.
+    #     page_size: 100 # Integer | The number of results to return in a page
+    #   }
+
+    #   res = @api_instance.list_payment_changes_v4(payor_id, updated_since, opts)
+    #   expect(res.content.length()).to be >= 1
+    #   expect(@api_instance).to respond_to(:list_payment_changes_v4) 
     end
   end
 
@@ -283,8 +380,32 @@ describe 'PaymentAuditServiceApi' do
   # @option opts [Boolean] :sensitive Optional. If omitted or set to false, any Personal Identifiable Information (PII) values are returned masked. If set to true, and you have permission, the PII values will be returned as their original unmasked values. 
   # @return [ListPaymentsResponseV3]
   describe 'list_payments_audit test' do
-    skip "skipping test" do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    it 'should work' do
+      opts = {
+        payee_id: nil, # String | The UUID of the payee.
+        payor_id: ENV['PAYOR'], # String | The account owner Payor Id. Required for external users.
+        payor_name: nil, # String | The payor’s name. This filters via a case insensitive substring match.
+        remote_id: nil, # String | The remote id of the payees.
+        status: nil, # String | Payment Status
+        source_account_name: nil, # String | The source account name filter. This filters via a case insensitive substring match.
+        source_amount_from: nil, # Integer | The source amount from range filter. Filters for sourceAmount >= sourceAmountFrom
+        source_amount_to: nil, # Integer | The source amount to range filter. Filters for sourceAmount ⇐ sourceAmountTo
+        source_currency: nil, # String | The source currency filter. Filters based on an exact match on the currency.
+        payment_amount_from: nil, # Integer | The payment amount from range filter. Filters for paymentAmount >= paymentAmountFrom
+        payment_amount_to: nil, # Integer | The payment amount to range filter. Filters for paymentAmount ⇐ paymentAmountTo
+        payment_currency: nil, # String | The payment currency filter. Filters based on an exact match on the currency.
+        submitted_date_from: nil, # Date.parse('2013-10-20'), # Date | The submitted date from range filter. Format is yyyy-MM-dd.
+        submitted_date_to: nil, # Date.parse('2013-10-20'), # Date | The submitted date to range filter. Format is yyyy-MM-dd.
+        payment_memo: nil, # String | The payment memo filter. This filters via a case insensitive substring match.
+        page: 1, # Integer | Page number. Default is 1.
+        page_size: 25, # Integer | The number of results to return in a page
+        sort: 'submittedDateTime:desc', # String | List of sort fields (e.g. ?sort=submittedDateTime:asc,status:asc). Default is sort by remoteId The supported sort fields are: sourceAmount, sourceCurrency, paymentAmount, paymentCurrency, routingNumber, accountNumber, remoteId, submittedDateTime and status 
+        sensitive: true # Boolean | Optional. If omitted or set to false, any Personal Identifiable Information (PII) values are returned masked. If set to true, and you have permission, the PII values will be returned as their original unmasked values. 
+      }
+
+      res = @api_instance.list_payments_audit(opts)
+      expect(res.content.length()).to be >= 1
+      expect(@api_instance).to respond_to(:list_payments_audit) 
     end
   end
 
@@ -313,8 +434,32 @@ describe 'PaymentAuditServiceApi' do
   # @option opts [Boolean] :sensitive Optional. If omitted or set to false, any Personal Identifiable Information (PII) values are returned masked. If set to true, and you have permission, the PII values will be returned as their original unmasked values. 
   # @return [ListPaymentsResponseV4]
   describe 'list_payments_audit_v4 test' do
-    skip "skipping test" do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    it 'should work' do
+      opts = {
+        payee_id: nil, # String | The UUID of the payee.
+        payor_id: ENV['PAYOR'], # String | The account owner Payor Id. Required for external users.
+        payor_name: nil, # String | The payor’s name. This filters via a case insensitive substring match.
+        remote_id: nil, # String | The remote id of the payees.
+        status: nil, # String | Payment Status
+        source_account_name: nil, # String | The source account name filter. This filters via a case insensitive substring match.
+        source_amount_from: nil, # Integer | The source amount from range filter. Filters for sourceAmount >= sourceAmountFrom
+        source_amount_to: nil, # Integer | The source amount to range filter. Filters for sourceAmount ⇐ sourceAmountTo
+        source_currency: nil, # String | The source currency filter. Filters based on an exact match on the currency.
+        payment_amount_from: nil, # Integer | The payment amount from range filter. Filters for paymentAmount >= paymentAmountFrom
+        payment_amount_to: nil, # Integer | The payment amount to range filter. Filters for paymentAmount ⇐ paymentAmountTo
+        payment_currency: nil, # String | The payment currency filter. Filters based on an exact match on the currency.
+        submitted_date_from: nil, # Date.parse('2013-10-20'), # Date | The submitted date from range filter. Format is yyyy-MM-dd.
+        submitted_date_to: nil, # Date.parse('2013-10-20'), # Date | The submitted date to range filter. Format is yyyy-MM-dd.
+        payment_memo: nil, # String | The payment memo filter. This filters via a case insensitive substring match.
+        page: 1, # Integer | Page number. Default is 1.
+        page_size: 25, # Integer | The number of results to return in a page
+        sort: 'submittedDateTime:desc', # String | List of sort fields (e.g. ?sort=submittedDateTime:asc,status:asc). Default is sort by remoteId The supported sort fields are: sourceAmount, sourceCurrency, paymentAmount, paymentCurrency, routingNumber, accountNumber, remoteId, submittedDateTime and status 
+        sensitive: true # Boolean | Optional. If omitted or set to false, any Personal Identifiable Information (PII) values are returned masked. If set to true, and you have permission, the PII values will be returned as their original unmasked values. 
+      }
+
+      res = @api_instance.list_payments_audit_v4(opts)
+      expect(res.content.length()).to be >= 1
+      expect(@api_instance).to respond_to(:list_payments_audit_v4) 
     end
   end
 

@@ -19,6 +19,30 @@ require 'json'
 describe 'PayeeInvitationApi' do
   before do
     # run before each test
+    if ENV['APITOKEN'] == ""
+      VeloPayments.configure do |config|
+        config.username = ENV['KEY']
+        config.password =  ENV['SECRET']
+      end
+      
+      api_instance = VeloPayments::LoginApi.new
+      opts = {
+        grant_type: 'client_credentials'
+      }
+      
+      begin
+        res = api_instance.velo_auth(opts)
+
+        ENV['APITOKEN'] = res.access_token
+      rescue VeloPayments::ApiError => e
+        puts "Exception when calling LoginApi->velo_auth: #{e}"
+      end
+    end
+
+    VeloPayments.configure do |config|
+      config.access_token = ENV['APITOKEN']
+    end
+
     @api_instance = VeloPayments::PayeeInvitationApi.new
   end
 
@@ -39,8 +63,12 @@ describe 'PayeeInvitationApi' do
   # @param [Hash] opts the optional parameters
   # @return [InvitationStatusResponse]
   describe 'get_payees_invitation_status_v1 test' do
-    skip "skipping test" do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    it 'should work' do
+      payor_id = ENV['PAYOR']
+
+      res = @api_instance.get_payees_invitation_status_v1(payor_id)
+      expect(res.payee_invitation_statuses.length()).to be >= 1
+      expect(@api_instance).to respond_to(:get_payees_invitation_status_v1) 
     end
   end
 
@@ -55,8 +83,18 @@ describe 'PayeeInvitationApi' do
   # @option opts [Integer] :page_size Page size. Default is 25. Max allowable is 100.
   # @return [PagedPayeeInvitationStatusResponse]
   describe 'get_payees_invitation_status_v2 test' do
-    skip "skipping test" do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    it 'should work' do
+      payor_id = ENV['PAYOR']
+      opts = {
+        payee_id: nil, # String | The UUID of the payee.
+        invitation_status: nil, # VeloPayments::InvitationStatus.new, # InvitationStatus | The invitation status of the payees.
+        page: 1, # Integer | Page number. Default is 1.
+        page_size: 25 # Integer | Page size. Default is 25. Max allowable is 100.
+      }
+
+      res = @api_instance.get_payees_invitation_status_v2(payor_id, opts)
+      expect(res.content.length()).to be >= 1
+      expect(@api_instance).to respond_to(:get_payees_invitation_status_v2) 
     end
   end
 
@@ -71,8 +109,18 @@ describe 'PayeeInvitationApi' do
   # @option opts [Integer] :page_size Page size. Default is 25. Max allowable is 100.
   # @return [PagedPayeeInvitationStatusResponse2]
   describe 'get_payees_invitation_status_v3 test' do
-    skip "skipping test" do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    it 'should work' do
+      payor_id = ENV['PAYOR']
+      opts = {
+        payee_id: nil, # String | The UUID of the payee.
+        invitation_status: nil, # VeloPayments::InvitationStatus.new, # InvitationStatus | The invitation status of the payees.
+        page: 1, # Integer | Page number. Default is 1.
+        page_size: 25 # Integer | Page size. Default is 25. Max allowable is 100.
+      }
+
+      res = @api_instance.get_payees_invitation_status_v3(payor_id, opts)
+      expect(res.content.length()).to be >= 1
+      expect(@api_instance).to respond_to(:get_payees_invitation_status_v3) 
     end
   end
 

@@ -19,6 +19,30 @@ require 'json'
 describe 'PayeesApi' do
   before do
     # run before each test
+    if ENV['APITOKEN'] == ""
+      VeloPayments.configure do |config|
+        config.username = ENV['KEY']
+        config.password =  ENV['SECRET']
+      end
+      
+      api_instance = VeloPayments::LoginApi.new
+      opts = {
+        grant_type: 'client_credentials'
+      }
+      
+      begin
+        res = api_instance.velo_auth(opts)
+
+        ENV['APITOKEN'] = res.access_token
+      rescue VeloPayments::ApiError => e
+        puts "Exception when calling LoginApi->velo_auth: #{e}"
+      end
+    end
+
+    VeloPayments.configure do |config|
+      config.access_token = ENV['APITOKEN']
+    end
+
     @api_instance = VeloPayments::PayeesApi.new
   end
 
@@ -105,8 +129,16 @@ describe 'PayeesApi' do
   # @option opts [Integer] :page_size Page size. Default is 100. Max allowable is 1000.
   # @return [PayeeDeltaResponse]
   describe 'list_payee_changes test' do
-    skip "skipping test" do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    it 'should work' do
+      payor_id = ENV['PAYOR']
+      updated_since = DateTime.parse('2013-10-20T19:20:30+01:00') # DateTime | The updatedSince filter in the format YYYY-MM-DDThh:mm:ss+hh:mm
+      opts = {
+        page: 1, # Integer | Page number. Default is 1.
+        page_size: 100 # Integer | Page size. Default is 100. Max allowable is 1000.
+      }
+      res = @api_instance.list_payee_changes(payor_id, updated_since, opts)
+      expect(res.content.length()).to be >= 1
+      expect(@api_instance).to respond_to(:list_payee_changes) 
     end
   end
 
@@ -120,8 +152,16 @@ describe 'PayeesApi' do
   # @option opts [Integer] :page_size Page size. Default is 100. Max allowable is 1000.
   # @return [PayeeDeltaResponse2]
   describe 'list_payee_changes_v3 test' do
-    skip "skipping test" do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    it 'should work' do
+      payor_id = ENV['PAYOR']
+      updated_since = DateTime.parse('2013-10-20T19:20:30+01:00') # DateTime | The updatedSince filter in the format YYYY-MM-DDThh:mm:ss+hh:mm
+      opts = {
+        page: 1, # Integer | Page number. Default is 1.
+        page_size: 100 # Integer | Page size. Default is 100. Max allowable is 1000.
+      }
+      res = @api_instance.list_payee_changes_v3(payor_id, updated_since, opts)
+      expect(res.content.length()).to be >= 1
+      expect(@api_instance).to respond_to(:list_payee_changes_v3) 
     end
   end
 
@@ -142,8 +182,23 @@ describe 'PayeesApi' do
   # @option opts [String] :sort List of sort fields (e.g. ?sort&#x3D;onboardedStatus:asc,name:asc) Default is name:asc &#39;name&#39; is treated as company name for companies - last name + &#39;,&#39; + firstName for individuals The supported sort fields are - payeeId, displayName, payoutStatus, onboardedStatus. 
   # @return [PagedPayeeResponse]
   describe 'list_payees_v1 test' do
-    skip "skipping test" do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    it 'should work' do
+      payor_id = ENV['PAYOR']
+      opts = {
+        ofac_status: nil, # VeloPayments::OfacStatus.new, # OfacStatus | The ofacStatus of the payees.
+        onboarded_status: nil, # VeloPayments::OnboardedStatus.new, # OnboardedStatus | The onboarded status of the payees.
+        email: nil, # String | Email address
+        display_name: nil, # String | The display name of the payees.
+        remote_id: 'remoteId123', # String | The remote id of the payees.
+        payee_type: nil, # VeloPayments::PayeeType.new, # PayeeType | The onboarded status of the payees.
+        payee_country: 'US', # String | The country of the payee - 2 letter ISO 3166-1 country code (upper case)
+        page: 1, # Integer | Page number. Default is 1.
+        page_size: 25, # Integer | Page size. Default is 25. Max allowable is 100.
+        sort: 'displayName:asc' # String | List of sort fields (e.g. ?sort=onboardedStatus:asc,name:asc) Default is name:asc 'name' is treated as company name for companies - last name + ',' + firstName for individuals The supported sort fields are - payeeId, displayName, payoutStatus, onboardedStatus. 
+      }
+      res = @api_instance.list_payees_v1(payor_id, opts)
+      expect(res.content.length()).to be >= 0
+      expect(@api_instance).to respond_to(:list_payees_v1) 
     end
   end
 
@@ -165,8 +220,24 @@ describe 'PayeesApi' do
   # @option opts [String] :sort List of sort fields (e.g. ?sort&#x3D;onboardedStatus:asc,name:asc) Default is name:asc &#39;name&#39; is treated as company name for companies - last name + &#39;,&#39; + firstName for individuals The supported sort fields are - payeeId, displayName, payoutStatus, onboardedStatus. 
   # @return [PagedPayeeResponse2]
   describe 'list_payees_v3 test' do
-    skip "skipping test" do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    it 'should work' do
+      payor_id = ENV['PAYOR']
+      opts = {
+        watchlist_status: nil, # VeloPayments::WatchlistStatus.new, # WatchlistStatus | The watchlistStatus of the payees.
+        disabled: true, # Boolean | Payee disabled
+        onboarded_status: nil, # VeloPayments::OnboardedStatus.new, # OnboardedStatus | The onboarded status of the payees.
+        email: nil, # String | Email address
+        display_name: nil, #  String | The display name of the payees.
+        remote_id: nil, # String | The remote id of the payees.
+        payee_type: nil, # VeloPayments::PayeeType.new, # PayeeType | The onboarded status of the payees.
+        payee_country: 'US', # String | The country of the payee - 2 letter ISO 3166-1 country code (upper case)
+        page: 1, # Integer | Page number. Default is 1.
+        page_size: 25, # Integer | Page size. Default is 25. Max allowable is 100.
+        sort: 'displayName:asc' # String | List of sort fields (e.g. ?sort=onboardedStatus:asc,name:asc) Default is name:asc 'name' is treated as company name for companies - last name + ',' + firstName for individuals The supported sort fields are - payeeId, displayName, payoutStatus, onboardedStatus. 
+      }
+      res = @api_instance.list_payees_v1(payor_id, opts)
+      expect(res.content.length()).to be >= 0
+      expect(@api_instance).to respond_to(:list_payees_v1) 
     end
   end
 

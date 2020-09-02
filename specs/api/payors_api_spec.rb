@@ -19,6 +19,30 @@ require 'json'
 describe 'PayorsApi' do
   before do
     # run before each test
+    if ENV['APITOKEN'] == ""
+      VeloPayments.configure do |config|
+        config.username = ENV['KEY']
+        config.password =  ENV['SECRET']
+      end
+      
+      api_instance = VeloPayments::LoginApi.new
+      opts = {
+        grant_type: 'client_credentials'
+      }
+      
+      begin
+        res = api_instance.velo_auth(opts)
+
+        ENV['APITOKEN'] = res.access_token
+      rescue VeloPayments::ApiError => e
+        puts "Exception when calling LoginApi->velo_auth: #{e}"
+      end
+    end
+
+    VeloPayments.configure do |config|
+      config.access_token = ENV['APITOKEN']
+    end
+
     @api_instance = VeloPayments::PayorsApi.new
   end
 
@@ -130,8 +154,15 @@ describe 'PayorsApi' do
   # @option opts [String] :fields List of additional Payor fields to include in the response for each Payor. The values of payorId and payorName and always included for each Payor - &#39;fields&#39; allows you to add to this. Example: &#x60;&#x60;&#x60;fields&#x3D;primaryContactEmail,kycState&#x60;&#x60;&#x60; - will include payorId+payorName+primaryContactEmail+kycState for each Payor Default if not specified is to include only payorId and payorName. The supported fields are any combination of: primaryContactEmail,kycState 
   # @return [PayorLinksResponse]
   describe 'payor_links test' do
-    skip "skipping test" do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    it 'should work' do
+      opts = {
+        descendants_of_payor: ENV['PAYOR'], # String | The Payor ID from which to start the query to show all descendants
+        parent_of_payor: nil, # String | Look for the parent payor details for this payor id
+        fields: nil # String | List of additional Payor fields to include in the response for each Payor. The values of payorId and payorName and always included for each Payor - 'fields' allows you to add to this. Example: ```fields=primaryContactEmail,kycState``` - will include payorId+payorName+primaryContactEmail+kycState for each Payor Default if not specified is to include only payorId and payorName. The supported fields are any combination of: primaryContactEmail,kycState 
+      }
+      res = @api_instance.payor_links(opts)
+      expect(res.payors.length()).to be >= 0
+      expect(@api_instance).to respond_to(:payor_links) 
     end
   end
 

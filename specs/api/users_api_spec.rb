@@ -116,7 +116,18 @@ describe 'UsersApi' do
   # @return [PagedUserResponse]
   describe 'list_users test' do
     skip "skipping test" do
-      # assertion here. ref: https://www.relishapp.com/rspec/rspec-expectations/docs/built-in-matchers
+    # it 'should work' do
+    #   opts = {
+    #     type: nil, # VeloPayments::UserType.new, # UserType | The Type of the User.
+    #     status: nil, # VeloPayments::UserStatus.new, # UserStatus | The status of the User.
+    #     entity_id: ENV['PAYOR'], # String | The entityId of the User.
+    #     page: 1, # Integer | Page number. Default is 1.
+    #     page_size: 25, # Integer | The number of results to return in a page
+    #     sort: 'email:asc' # String | List of sort fields (e.g. ?sort=email:asc,lastName:asc) Default is email:asc 'name' The supported sort fields are - email, lastNmae. 
+    #   }
+    #   res = @api_instance.list_users(opts)
+    #   expect(res.payors.length()).to be >= 0
+    #   expect(@api_instance).to respond_to(:list_users) 
     end
   end
 
