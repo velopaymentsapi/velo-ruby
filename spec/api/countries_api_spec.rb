@@ -41,8 +41,10 @@ describe 'CountriesApi' do
       end
     end
 
+    uri = URI.parse(ENV['APIURL'])
     VeloPayments.configure do |config|
       config.access_token = ENV['APITOKEN']
+      config.host = uri.host
     end
 
     @api_instance = VeloPayments::CountriesApi.new

@@ -19,6 +19,32 @@ require 'json'
 describe 'UsersApi' do
   before do
     # run before each test
+    if ENV['APITOKEN'] == ""
+      VeloPayments.configure do |config|
+        config.username = ENV['KEY']
+        config.password =  ENV['SECRET']
+      end
+      
+      api_instance = VeloPayments::LoginApi.new
+      opts = {
+        grant_type: 'client_credentials'
+      }
+      
+      begin
+        res = api_instance.velo_auth(opts)
+
+        ENV['APITOKEN'] = res.access_token
+      rescue VeloPayments::ApiError => e
+        puts "Exception when calling LoginApi->velo_auth: #{e}"
+      end
+    end
+
+    uri = URI.parse(ENV['APIURL'])
+    VeloPayments.configure do |config|
+      config.access_token = ENV['APITOKEN']
+      config.host = uri.host
+    end
+
     @api_instance = VeloPayments::UsersApi.new
   end
 
