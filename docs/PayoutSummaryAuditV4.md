@@ -7,10 +7,10 @@ Name | Type | Description | Notes
 **payout_id** | **String** |  | [optional] 
 **payor_id** | **String** |  | [optional] 
 **status** | [**PayoutStatusV4**](PayoutStatusV4.md) |  | 
-**date_time** | **DateTime** |  | [optional] 
+**date_time** | **Time** |  | [optional] 
 **submitted_date_time** | **String** |  | 
 **instructed_date_time** | **String** |  | [optional] 
-**withdrawn_date_time** | **DateTime** |  | [optional] 
+**withdrawn_date_time** | **Time** |  | [optional] 
 **total_payments** | **Integer** |  | [optional] 
 **total_incomplete_payments** | **Integer** |  | [optional] 
 **total_returned_payments** | **Integer** |  | [optional] 

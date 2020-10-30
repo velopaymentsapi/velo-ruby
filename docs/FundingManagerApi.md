@@ -802,7 +802,7 @@ end
 
 api_instance = VeloPayments::FundingManagerApi.new
 payor_id = 'payor_id_example' # String | 
-updated_since = DateTime.parse('2013-10-20T19:20:30+01:00') # DateTime | 
+updated_since = Time.parse('2013-10-20T19:20:30+01:00') # Time | 
 opts = {
   page: 1, # Integer | Page number. Default is 1.
   page_size: 25 # Integer | The number of results to return in a page
@@ -823,7 +823,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **payor_id** | [**String**](.md)|  | 
- **updated_since** | **DateTime**|  | 
+ **updated_since** | **Time**|  | 
  **page** | **Integer**| Page number. Default is 1. | [optional] [default to 1]
  **page_size** | **Integer**| The number of results to return in a page | [optional] [default to 25]
 

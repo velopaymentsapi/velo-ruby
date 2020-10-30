@@ -106,7 +106,7 @@ No authorization required
 
 ## validate_access_token
 
-> AccessTokenResponse validate_access_token(access_token_validation_request)
+> AccessTokenResponse validate_access_token(access_token_validation_request, opts)
 
 validate
 
@@ -125,10 +125,13 @@ end
 
 api_instance = VeloPayments::LoginApi.new
 access_token_validation_request = VeloPayments::AccessTokenValidationRequest.new # AccessTokenValidationRequest | An OTP from the user's registered MFA Device 
+opts = {
+  authorization: 'authorization_example' # String | Bearer token authorization leg of validate
+}
 
 begin
   #validate
-  result = api_instance.validate_access_token(access_token_validation_request)
+  result = api_instance.validate_access_token(access_token_validation_request, opts)
   p result
 rescue VeloPayments::ApiError => e
   puts "Exception when calling LoginApi->validate_access_token: #{e}"
@@ -141,6 +144,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **access_token_validation_request** | [**AccessTokenValidationRequest**](AccessTokenValidationRequest.md)| An OTP from the user&#39;s registered MFA Device  | 
+ **authorization** | **String**| Bearer token authorization leg of validate | [optional] 
 
 ### Return type
 

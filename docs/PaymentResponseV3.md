@@ -18,7 +18,7 @@ Name | Type | Description | Notes
 **payment_currency** | [**PaymentAuditCurrencyV3**](PaymentAuditCurrencyV3.md) |  | [optional] 
 **rate** | **Float** | The FX rate for the payment, if FX was involved. **Note** that (depending on the role of the caller) this information may not be displayed | [optional] 
 **inverted_rate** | **Float** | The inverted FX rate for the payment, if FX was involved. **Note** that (depending on the role of the caller) this information may not be displayed | [optional] 
-**submitted_date_time** | **DateTime** |  | 
+**submitted_date_time** | **Time** |  | 
 **status** | **String** |  | 
 **funding_status** | **String** | The funding status of the payment | 
 **routing_number** | **String** | The routing number for the payment. | [optional] 

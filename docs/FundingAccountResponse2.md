@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **currency** | **String** | ISO 4217 currency code | [optional] 
 **country** | **String** | ISO 3166-1 2 letter country code (upper case) | [optional] 
 **type** | **String** | Funding account type | [optional] 
+**archived** | **Boolean** | A flag for whether the funding account has been archived.  Only present in the response if true. | [optional] 
 
 ## Code Sample
 
@@ -27,7 +28,8 @@ instance = VeloPayments::FundingAccountResponse2.new(id: null,
                                  name: My Funding Account,
                                  currency: USD,
                                  country: US,
-                                 type: FBO)
+                                 type: FBO,
+                                 archived: null)
 ```
 
 

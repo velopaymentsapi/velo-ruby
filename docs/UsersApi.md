@@ -655,7 +655,7 @@ nil (empty response body)
 
 ## unregister_mfa_for_self
 
-> unregister_mfa_for_self(self_mfa_type_unregister_request)
+> unregister_mfa_for_self(self_mfa_type_unregister_request, opts)
 
 Unregister MFA for Self
 
@@ -674,10 +674,13 @@ end
 
 api_instance = VeloPayments::UsersApi.new
 self_mfa_type_unregister_request = VeloPayments::SelfMFATypeUnregisterRequest.new # SelfMFATypeUnregisterRequest | The MFA Type to unregister
+opts = {
+  authorization: 'authorization_example' # String | Bearer token authorization leg of validate
+}
 
 begin
   #Unregister MFA for Self
-  api_instance.unregister_mfa_for_self(self_mfa_type_unregister_request)
+  api_instance.unregister_mfa_for_self(self_mfa_type_unregister_request, opts)
 rescue VeloPayments::ApiError => e
   puts "Exception when calling UsersApi->unregister_mfa_for_self: #{e}"
 end
@@ -689,6 +692,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **self_mfa_type_unregister_request** | [**SelfMFATypeUnregisterRequest**](SelfMFATypeUnregisterRequest.md)| The MFA Type to unregister | 
+ **authorization** | **String**| Bearer token authorization leg of validate | [optional] 
 
 ### Return type
 

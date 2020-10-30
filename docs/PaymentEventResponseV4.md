@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **event_id** | **String** | The id of the event. | 
-**event_date_time** | **DateTime** | The date/time at which the event occurred. | 
+**event_date_time** | **Time** | The date/time at which the event occurred. | 
 **event_type** | **String** | The type of the event. | 
 **source_currency** | [**PaymentAuditCurrencyV4**](PaymentAuditCurrencyV4.md) |  | [optional] 
 **source_amount** | **Integer** | The source amount exposed by the event. | [optional] 

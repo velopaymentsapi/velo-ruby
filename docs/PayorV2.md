@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **payor_id** | **String** |  | [readonly] 
 **payor_name** | **String** | The name of the payor. | 
+**payor_xid** | **String** | A unique identifier that an external system uses to reference the payor in their system | [optional] 
 **address** | [**PayorAddressV2**](PayorAddressV2.md) |  | [optional] 
 **primary_contact_name** | **String** | Name of primary contact for the payor. | [optional] 
 **primary_contact_phone** | **String** | Primary contact phone number for the payor. | [optional] 
@@ -33,6 +34,7 @@ require 'VeloPayments'
 
 instance = VeloPayments::PayorV2.new(payor_id: null,
                                  payor_name: Example, Corp,
+                                 payor_xid: ABC_201234,
                                  address: null,
                                  primary_contact_name: Joe Buck,
                                  primary_contact_phone: 123-123-1234,

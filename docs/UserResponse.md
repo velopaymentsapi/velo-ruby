@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **mfa_type** | **String** | The type of the MFA device | [optional] 
 **mfa_status** | **String** | The status of the MFA device | [optional] 
 **locked_out** | **Boolean** | If true the user is currently locked out and unable to log in | [optional] 
-**locked_out_timestamp** | **DateTime** | A timestamp showing when the user was locked out If null then the user is not currently locked out  | [optional] 
+**locked_out_timestamp** | **Time** | A timestamp showing when the user was locked out If null then the user is not currently locked out  | [optional] 
 
 ## Code Sample
 

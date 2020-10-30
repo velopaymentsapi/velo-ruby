@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **opted_in** | **Boolean** |  | [optional] 
-**timestamp** | **DateTime** |  | [optional] 
+**timestamp** | **Time** |  | [optional] 
 
 ## Code Sample
 

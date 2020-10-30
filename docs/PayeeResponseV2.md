@@ -10,13 +10,13 @@ Name | Type | Description | Notes
 **onboarded_status** | [**OnboardedStatus2**](OnboardedStatus2.md) |  | [optional] 
 **ofac_status** | [**OfacStatus2**](OfacStatus2.md) |  | [optional] 
 **language** | [**Language2**](Language2.md) |  | [optional] 
-**created** | **DateTime** |  | [optional] 
+**created** | **Time** |  | [optional] 
 **country** | **String** |  | [optional] 
 **display_name** | **String** |  | [optional] 
 **payee_type** | [**PayeeType**](PayeeType.md) |  | [optional] 
 **disabled** | **Boolean** |  | [optional] 
 **disabled_comment** | **String** |  | [optional] 
-**disabled_updated_timestamp** | **DateTime** |  | [optional] 
+**disabled_updated_timestamp** | **Time** |  | [optional] 
 **address** | [**PayeeAddress2**](PayeeAddress2.md) |  | [optional] 
 **individual** | [**Individual**](Individual.md) |  | [optional] 
 **company** | [**Company**](Company.md) |  | [optional] 
@@ -32,7 +32,7 @@ Name | Type | Description | Notes
 **pause_payment_timestamp** | **String** |  | [optional] 
 **marketing_opt_in_decision** | **Boolean** |  | [optional] 
 **marketing_opt_in_timestamp** | **String** |  | [optional] 
-**accept_terms_and_conditions_timestamp** | **DateTime** | The timestamp when the payee last accepted T&amp;Cs | [optional] [readonly] 
+**accept_terms_and_conditions_timestamp** | **Time** | The timestamp when the payee last accepted T&amp;Cs | [optional] [readonly] 
 
 ## Code Sample
 

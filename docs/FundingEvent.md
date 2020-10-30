@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **event_id** | **String** |  | [optional] 
-**event_date_time** | **DateTime** |  | [optional] 
+**event_date_time** | **Time** |  | [optional] 
 **funding_event_type** | [**FundingEventType**](FundingEventType.md) |  | [optional] 
 **principal** | **String** |  | [optional] 
 

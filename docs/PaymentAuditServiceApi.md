@@ -796,7 +796,7 @@ end
 
 api_instance = VeloPayments::PaymentAuditServiceApi.new
 payor_id = 'payor_id_example' # String | The Payor ID to find associated Payments
-updated_since = DateTime.parse('2013-10-20T19:20:30+01:00') # DateTime | The updatedSince filter in the format YYYY-MM-DDThh:mm:ss+hh:mm
+updated_since = Time.parse('2013-10-20T19:20:30+01:00') # Time | The updatedSince filter in the format YYYY-MM-DDThh:mm:ss+hh:mm
 opts = {
   page: 1, # Integer | Page number. Default is 1.
   page_size: 100 # Integer | The number of results to return in a page
@@ -817,7 +817,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **payor_id** | [**String**](.md)| The Payor ID to find associated Payments | 
- **updated_since** | **DateTime**| The updatedSince filter in the format YYYY-MM-DDThh:mm:ss+hh:mm | 
+ **updated_since** | **Time**| The updatedSince filter in the format YYYY-MM-DDThh:mm:ss+hh:mm | 
  **page** | **Integer**| Page number. Default is 1. | [optional] [default to 1]
  **page_size** | **Integer**| The number of results to return in a page | [optional] [default to 100]
 
@@ -856,7 +856,7 @@ end
 
 api_instance = VeloPayments::PaymentAuditServiceApi.new
 payor_id = 'payor_id_example' # String | The Payor ID to find associated Payments
-updated_since = DateTime.parse('2013-10-20T19:20:30+01:00') # DateTime | The updatedSince filter in the format YYYY-MM-DDThh:mm:ss+hh:mm
+updated_since = Time.parse('2013-10-20T19:20:30+01:00') # Time | The updatedSince filter in the format YYYY-MM-DDThh:mm:ss+hh:mm
 opts = {
   page: 1, # Integer | Page number. Default is 1.
   page_size: 100 # Integer | The number of results to return in a page
@@ -877,7 +877,7 @@ end
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **payor_id** | [**String**](.md)| The Payor ID to find associated Payments | 
- **updated_since** | **DateTime**| The updatedSince filter in the format YYYY-MM-DDThh:mm:ss+hh:mm | 
+ **updated_since** | **Time**| The updatedSince filter in the format YYYY-MM-DDThh:mm:ss+hh:mm | 
  **page** | **Integer**| Page number. Default is 1. | [optional] [default to 1]
  **page_size** | **Integer**| The number of results to return in a page | [optional] [default to 100]
 

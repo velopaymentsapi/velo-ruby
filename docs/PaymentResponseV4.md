@@ -19,7 +19,7 @@ Name | Type | Description | Notes
 **rate** | **Float** | The FX rate for the payment, if FX was involved. **Note** that (depending on the role of the caller) this information may not be displayed | [optional] 
 **inverted_rate** | **Float** | The inverted FX rate for the payment, if FX was involved. **Note** that (depending on the role of the caller) this information may not be displayed | [optional] 
 **is_payment_ccy_base_ccy** | **Boolean** |  | [optional] 
-**submitted_date_time** | **DateTime** |  | 
+**submitted_date_time** | **Time** |  | 
 **status** | **String** |  | 
 **funding_status** | **String** | The funding status of the payment | 
 **routing_number** | **String** | The routing number for the payment. | [optional] 

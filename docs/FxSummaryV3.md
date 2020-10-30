@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **quote_id** | **String** |  | 
-**creation_date_time** | **DateTime** |  | 
+**creation_date_time** | **Time** |  | 
 **rate** | **Float** |  | 
 **inverted_rate** | **Float** |  | 
 **total_cost** | **Integer** |  | 

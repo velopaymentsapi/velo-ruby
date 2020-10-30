@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **amount** | **Float** | The amount funded | [optional] 
 **currency** | **String** | The currency of the funding | [optional] 
-**date_time** | **DateTime** |  | [optional] 
+**date_time** | **Time** |  | [optional] 
 **status** | **String** |  | [optional] 
 **source_account_name** | **String** |  | [optional] 
 **funding_account_name** | **String** |  | [optional] 

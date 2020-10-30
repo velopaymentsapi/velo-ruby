@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **payor_id** | **String** |  | [optional] 
 **remote_id** | **String** |  | [optional] 
 **invitation_status** | [**InvitationStatus2**](InvitationStatus2.md) |  | [optional] 
-**invitation_status_timestamp** | **DateTime** | The timestamp when the invitation status is updated | [optional] 
+**invitation_status_timestamp** | **Time** | The timestamp when the invitation status is updated | [optional] 
 **payment_channel_id** | **String** |  | [optional] 
 
 ## Code Sample

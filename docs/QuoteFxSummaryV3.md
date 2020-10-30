@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **rate** | **Float** |  | 
 **inverted_rate** | **Float** |  | [optional] 
-**creation_time** | **DateTime** |  | 
-**expiry_time** | **DateTime** |  | [optional] 
+**creation_time** | **Time** |  | 
+**expiry_time** | **Time** |  | [optional] 
 **quote_id** | **String** |  | 
 **total_source_amount** | **Integer** |  | 
 **total_payment_amount** | **Integer** |  | 
