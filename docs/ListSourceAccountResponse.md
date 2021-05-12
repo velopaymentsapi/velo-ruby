@@ -2,20 +2,21 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**page** | [**ListSourceAccountResponsePage**](ListSourceAccountResponsePage.md) |  | [optional] 
-**links** | [**Array&lt;ListSourceAccountResponseLinks&gt;**](ListSourceAccountResponseLinks.md) |  | [optional] 
-**content** | [**Array&lt;SourceAccountResponse&gt;**](SourceAccountResponse.md) |  | [optional] 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **page** | [**ListSourceAccountResponsePage**](ListSourceAccountResponsePage.md) |  | [optional] |
+| **links** | [**Array&lt;ListSourceAccountResponseLinks&gt;**](ListSourceAccountResponseLinks.md) |  | [optional] |
+| **content** | [**Array&lt;SourceAccountResponse&gt;**](SourceAccountResponse.md) |  | [optional] |
 
-## Code Sample
+## Example
 
 ```ruby
-require 'VeloPayments'
+require 'velopayments'
 
-instance = VeloPayments::ListSourceAccountResponse.new(page: null,
-                                 links: null,
-                                 content: null)
+instance = VeloPayments::ListSourceAccountResponse.new(
+  page: null,
+  links: null,
+  content: null
+)
 ```
-
 

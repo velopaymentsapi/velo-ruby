@@ -2,24 +2,27 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**id** | **String** |  | [optional] 
-**payor_id** | **String** |  | [optional] 
-**webhook_url** | **String** |  | [optional] 
-**authorization_header** | **String** |  | [optional] 
-**enabled** | **Boolean** |  | [optional] 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **id** | **String** |  | [optional] |
+| **payor_id** | **String** |  | [optional] |
+| **webhook_url** | **String** |  | [optional] |
+| **authorization_header** | **String** |  | [optional] |
+| **enabled** | **Boolean** |  | [optional] |
+| **categories** | [**Array&lt;Category&gt;**](Category.md) |  | [optional] |
 
-## Code Sample
+## Example
 
 ```ruby
-require 'VeloPayments'
+require 'velopayments'
 
-instance = VeloPayments::WebhookResponse.new(id: null,
-                                 payor_id: null,
-                                 webhook_url: null,
-                                 authorization_header: null,
-                                 enabled: null)
+instance = VeloPayments::WebhookResponse.new(
+  id: null,
+  payor_id: null,
+  webhook_url: null,
+  authorization_header: null,
+  enabled: null,
+  categories: null
+)
 ```
-
 

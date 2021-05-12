@@ -2,18 +2,19 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**links** | [**Array&lt;PayorLinksResponseLinks&gt;**](PayorLinksResponseLinks.md) |  | [optional] 
-**payors** | [**Array&lt;PayorLinksResponsePayors&gt;**](PayorLinksResponsePayors.md) |  | [optional] 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **links** | [**Array&lt;PayorLinksResponseLinks&gt;**](PayorLinksResponseLinks.md) |  | [optional] |
+| **payors** | [**Array&lt;PayorLinksResponsePayors&gt;**](PayorLinksResponsePayors.md) |  | [optional] |
 
-## Code Sample
+## Example
 
 ```ruby
-require 'VeloPayments'
+require 'velopayments'
 
-instance = VeloPayments::PayorLinksResponse.new(links: null,
-                                 payors: null)
+instance = VeloPayments::PayorLinksResponse.new(
+  links: null,
+  payors: null
+)
 ```
-
 

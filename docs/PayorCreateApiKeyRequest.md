@@ -2,20 +2,21 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**name** | **String** | A name for the key. | 
-**description** | **String** | Description of the key. | [optional] 
-**roles** | **Array&lt;String&gt;** | A list of roles to assign to the key. | 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **name** | **String** | A name for the key. |  |
+| **description** | **String** | Description of the key. | [optional] |
+| **roles** | **Array&lt;String&gt;** | A list of roles to assign to the key. |  |
 
-## Code Sample
+## Example
 
 ```ruby
-require 'VeloPayments'
+require 'velopayments'
 
-instance = VeloPayments::PayorCreateApiKeyRequest.new(name: iOS Key,
-                                 description: Key for iOS mobile application,
-                                 roles: [&quot;payor.admin&quot;])
+instance = VeloPayments::PayorCreateApiKeyRequest.new(
+  name: iOS Key,
+  description: Key for iOS mobile application,
+  roles: [&quot;payor.admin&quot;]
+)
 ```
-
 

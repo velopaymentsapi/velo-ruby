@@ -2,18 +2,19 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**name** | **String** |  | [optional] 
-**abbreviation** | **String** |  | [optional] 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **name** | **String** |  | [optional] |
+| **abbreviation** | **String** |  | [optional] |
 
-## Code Sample
+## Example
 
 ```ruby
-require 'VeloPayments'
+require 'velopayments'
 
-instance = VeloPayments::RegionV2.new(name: California,
-                                 abbreviation: CA)
+instance = VeloPayments::RegionV2.new(
+  name: California,
+  abbreviation: CA
+)
 ```
-
 

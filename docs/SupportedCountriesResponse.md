@@ -2,16 +2,17 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**countries** | [**Array&lt;SupportedCountry&gt;**](SupportedCountry.md) |  | [optional] 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **countries** | [**Array&lt;SupportedCountry&gt;**](SupportedCountry.md) |  | [optional] |
 
-## Code Sample
+## Example
 
 ```ruby
-require 'VeloPayments'
+require 'velopayments'
 
-instance = VeloPayments::SupportedCountriesResponse.new(countries: null)
+instance = VeloPayments::SupportedCountriesResponse.new(
+  countries: null
+)
 ```
-
 

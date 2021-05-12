@@ -2,16 +2,17 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**fx_summaries** | [**Array&lt;QuoteFxSummaryV3&gt;**](QuoteFxSummaryV3.md) |  | [optional] 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **fx_summaries** | [**Array&lt;QuoteFxSummaryV3&gt;**](QuoteFxSummaryV3.md) |  | [optional] |
 
-## Code Sample
+## Example
 
 ```ruby
-require 'VeloPayments'
+require 'velopayments'
 
-instance = VeloPayments::QuoteResponseV3.new(fx_summaries: null)
+instance = VeloPayments::QuoteResponseV3.new(
+  fx_summaries: null
+)
 ```
-
 

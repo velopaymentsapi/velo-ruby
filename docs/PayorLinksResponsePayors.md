@@ -2,22 +2,23 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**payor_id** | **String** |  | 
-**payor_name** | **String** |  | 
-**primary_contact_email** | **String** |  | [optional] 
-**kyc_state** | **String** |  | [optional] 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **payor_id** | **String** |  |  |
+| **payor_name** | **String** |  |  |
+| **primary_contact_email** | **String** |  | [optional] |
+| **kyc_state** | **String** |  | [optional] |
 
-## Code Sample
+## Example
 
 ```ruby
-require 'VeloPayments'
+require 'velopayments'
 
-instance = VeloPayments::PayorLinksResponsePayors.new(payor_id: null,
-                                 payor_name: null,
-                                 primary_contact_email: null,
-                                 kyc_state: null)
+instance = VeloPayments::PayorLinksResponsePayors.new(
+  payor_id: null,
+  payor_name: null,
+  primary_contact_email: null,
+  kyc_state: null
+)
 ```
-
 

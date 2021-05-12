@@ -2,18 +2,19 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**name** | **String** |  | [optional] 
-**operating_name** | **String** |  | [optional] 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **name** | **String** |  | [optional] |
+| **operating_name** | **String** |  | [optional] |
 
-## Code Sample
+## Example
 
 ```ruby
-require 'VeloPayments'
+require 'velopayments'
 
-instance = VeloPayments::GetPayeeListResponseCompany.new(name: ABC Group Plc,
-                                 operating_name: ABC Co)
+instance = VeloPayments::GetPayeeListResponseCompany.new(
+  name: ABC Group Plc,
+  operating_name: ABC Co
+)
 ```
-
 

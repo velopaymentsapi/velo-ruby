@@ -2,16 +2,17 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**amount** | **Integer** | Amount to fund, decimal implied | 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **amount** | **Integer** | Amount to fund, decimal implied |  |
 
-## Code Sample
+## Example
 
 ```ruby
-require 'VeloPayments'
+require 'velopayments'
 
-instance = VeloPayments::FundingRequestV1.new(amount: null)
+instance = VeloPayments::FundingRequestV1.new(
+  amount: null
+)
 ```
-
 

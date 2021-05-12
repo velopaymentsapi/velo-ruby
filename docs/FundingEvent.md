@@ -2,22 +2,23 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**event_id** | **String** |  | [optional] 
-**event_date_time** | **Time** |  | [optional] 
-**funding_event_type** | [**FundingEventType**](FundingEventType.md) |  | [optional] 
-**principal** | **String** |  | [optional] 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **event_id** | **String** |  | [optional] |
+| **event_date_time** | **Time** |  | [optional] |
+| **funding_event_type** | [**FundingEventType**](FundingEventType.md) |  | [optional] |
+| **principal** | **String** |  | [optional] |
 
-## Code Sample
+## Example
 
 ```ruby
-require 'VeloPayments'
+require 'velopayments'
 
-instance = VeloPayments::FundingEvent.new(event_id: null,
-                                 event_date_time: null,
-                                 funding_event_type: null,
-                                 principal: null)
+instance = VeloPayments::FundingEvent.new(
+  event_id: null,
+  event_date_time: null,
+  funding_event_type: null,
+  principal: null
+)
 ```
-
 

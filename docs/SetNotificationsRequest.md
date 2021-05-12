@@ -2,16 +2,17 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**minimum_balance** | **Integer** | Amount to set as minimum balance in minor units | 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **minimum_balance** | **Integer** | Amount to set as minimum balance in minor units |  |
 
-## Code Sample
+## Example
 
 ```ruby
-require 'VeloPayments'
+require 'velopayments'
 
-instance = VeloPayments::SetNotificationsRequest.new(minimum_balance: null)
+instance = VeloPayments::SetNotificationsRequest.new(
+  minimum_balance: null
+)
 ```
-
 

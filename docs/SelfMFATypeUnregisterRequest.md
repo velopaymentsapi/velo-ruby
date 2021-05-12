@@ -2,16 +2,17 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**mfa_type** | **String** | The type of the MFA device | 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **mfa_type** | **String** | The type of the MFA device |  |
 
-## Code Sample
+## Example
 
 ```ruby
-require 'VeloPayments'
+require 'velopayments'
 
-instance = VeloPayments::SelfMFATypeUnregisterRequest.new(mfa_type: TOTP)
+instance = VeloPayments::SelfMFATypeUnregisterRequest.new(
+  mfa_type: TOTP
+)
 ```
-
 

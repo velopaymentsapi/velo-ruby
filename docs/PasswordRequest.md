@@ -2,16 +2,17 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**password** | **String** | a password that passes validation | 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **password** | **String** | a password that passes validation |  |
 
-## Code Sample
+## Example
 
 ```ruby
-require 'VeloPayments'
+require 'velopayments'
 
-instance = VeloPayments::PasswordRequest.new(password: My_strong_password)
+instance = VeloPayments::PasswordRequest.new(
+  password: My_strong_password
+)
 ```
-
 

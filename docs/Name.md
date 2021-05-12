@@ -2,22 +2,23 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**title** | **String** |  | [optional] 
-**first_name** | **String** |  | [optional] 
-**other_names** | **String** |  | [optional] 
-**last_name** | **String** |  | [optional] 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **title** | **String** |  | [optional] |
+| **first_name** | **String** |  | [optional] |
+| **other_names** | **String** |  | [optional] |
+| **last_name** | **String** |  | [optional] |
 
-## Code Sample
+## Example
 
 ```ruby
-require 'VeloPayments'
+require 'velopayments'
 
-instance = VeloPayments::Name.new(title: Mr,
-                                 first_name: Bob,
-                                 other_names: H,
-                                 last_name: Smith)
+instance = VeloPayments::Name.new(
+  title: Mr,
+  first_name: Bob,
+  other_names: H,
+  last_name: Smith
+)
 ```
-
 

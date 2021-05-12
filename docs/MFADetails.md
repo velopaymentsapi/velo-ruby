@@ -2,18 +2,19 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**mfa_type** | [**MFAType**](MFAType.md) |  | [optional] 
-**verified** | **Boolean** | true if the user has used the MFA device for login | [optional] 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **mfa_type** | [**MFAType**](MFAType.md) |  | [optional] |
+| **verified** | **Boolean** | true if the user has used the MFA device for login | [optional] |
 
-## Code Sample
+## Example
 
 ```ruby
-require 'VeloPayments'
+require 'velopayments'
 
-instance = VeloPayments::MFADetails.new(mfa_type: null,
-                                 verified: true)
+instance = VeloPayments::MFADetails.new(
+  mfa_type: null,
+  verified: true
+)
 ```
-
 

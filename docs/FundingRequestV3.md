@@ -2,18 +2,19 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**funding_account_id** | **String** | The funding account id | 
-**amount** | **Integer** | Amount to fund in minor units | 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **funding_account_id** | **String** | The funding account id |  |
+| **amount** | **Integer** | Amount to fund in minor units |  |
 
-## Code Sample
+## Example
 
 ```ruby
-require 'VeloPayments'
+require 'velopayments'
 
-instance = VeloPayments::FundingRequestV3.new(funding_account_id: null,
-                                 amount: null)
+instance = VeloPayments::FundingRequestV3.new(
+  funding_account_id: null,
+  amount: null
+)
 ```
-
 

@@ -2,16 +2,17 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**minimum_balance** | **Integer** |  | [optional] 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **minimum_balance** | **Integer** |  | [optional] |
 
-## Code Sample
+## Example
 
 ```ruby
-require 'VeloPayments'
+require 'velopayments'
 
-instance = VeloPayments::Notifications.new(minimum_balance: 120000)
+instance = VeloPayments::Notifications.new(
+  minimum_balance: 120000
+)
 ```
-
 

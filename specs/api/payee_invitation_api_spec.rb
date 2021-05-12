@@ -58,48 +58,6 @@ describe 'PayeeInvitationApi' do
     end
   end
 
-  # unit tests for get_payees_invitation_status_v1
-  # Get Payee Invitation Status
-  # &lt;p&gt;Returns a list of payees associated with a payor, along with invitation status and grace period end date.&lt;/p&gt; &lt;p&gt;Please use V3 instead&lt;/p&gt; 
-  # @param payor_id The account owner Payor ID
-  # @param [Hash] opts the optional parameters
-  # @return [InvitationStatusResponse]
-  describe 'get_payees_invitation_status_v1 test' do
-    it 'should work' do
-      payor_id = ENV['PAYOR']
-
-      res = @api_instance.get_payees_invitation_status_v1(payor_id)
-      expect(res.payee_invitation_statuses.length()).to be >= 1
-      expect(@api_instance).to respond_to(:get_payees_invitation_status_v1) 
-    end
-  end
-
-  # unit tests for get_payees_invitation_status_v2
-  # Get Payee Invitation Status
-  # &lt;p&gt;Returns a filtered, paginated list of payees associated with a payor, along with invitation status and grace period end date.&lt;/p&gt; &lt;p&gt;Please use V3 instead&lt;/p&gt; 
-  # @param payor_id The account owner Payor ID
-  # @param [Hash] opts the optional parameters
-  # @option opts [String] :payee_id The UUID of the payee.
-  # @option opts [InvitationStatus] :invitation_status The invitation status of the payees.
-  # @option opts [Integer] :page Page number. Default is 1.
-  # @option opts [Integer] :page_size Page size. Default is 25. Max allowable is 100.
-  # @return [PagedPayeeInvitationStatusResponse]
-  describe 'get_payees_invitation_status_v2 test' do
-    it 'should work' do
-      payor_id = ENV['PAYOR']
-      opts = {
-        payee_id: nil, # String | The UUID of the payee.
-        invitation_status: nil, # VeloPayments::InvitationStatus.new, # InvitationStatus | The invitation status of the payees.
-        page: 1, # Integer | Page number. Default is 1.
-        page_size: 25 # Integer | Page size. Default is 25. Max allowable is 100.
-      }
-
-      res = @api_instance.get_payees_invitation_status_v2(payor_id, opts)
-      expect(res.content.length()).to be >= 1
-      expect(@api_instance).to respond_to(:get_payees_invitation_status_v2) 
-    end
-  end
-
   # unit tests for get_payees_invitation_status_v3
   # Get Payee Invitation Status
   # Returns a filtered, paginated list of payees associated with a payor, along with invitation status and grace period end date. 

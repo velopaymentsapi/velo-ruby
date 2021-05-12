@@ -2,20 +2,21 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**page** | [**PagedUserResponsePage**](PagedUserResponsePage.md) |  | [optional] 
-**links** | [**Array&lt;GetFundingsResponseLinks&gt;**](GetFundingsResponseLinks.md) |  | [optional] 
-**content** | [**Array&lt;FundingAudit&gt;**](FundingAudit.md) |  | [optional] 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **page** | [**PagedUserResponsePage**](PagedUserResponsePage.md) |  | [optional] |
+| **links** | [**Array&lt;GetFundingsResponseLinks&gt;**](GetFundingsResponseLinks.md) |  | [optional] |
+| **content** | [**Array&lt;FundingAudit&gt;**](FundingAudit.md) |  | [optional] |
 
-## Code Sample
+## Example
 
 ```ruby
-require 'VeloPayments'
+require 'velopayments'
 
-instance = VeloPayments::GetFundingsResponse.new(page: null,
-                                 links: null,
-                                 content: null)
+instance = VeloPayments::GetFundingsResponse.new(
+  page: null,
+  links: null,
+  content: null
+)
 ```
-
 

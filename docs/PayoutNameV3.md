@@ -2,18 +2,19 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**first_name** | **String** |  | 
-**last_name** | **String** |  | 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **first_name** | **String** |  |  |
+| **last_name** | **String** |  |  |
 
-## Code Sample
+## Example
 
 ```ruby
-require 'VeloPayments'
+require 'velopayments'
 
-instance = VeloPayments::PayoutNameV3.new(first_name: Fred,
-                                 last_name: Flintstone)
+instance = VeloPayments::PayoutNameV3.new(
+  first_name: Fred,
+  last_name: Flintstone
+)
 ```
-
 

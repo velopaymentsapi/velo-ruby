@@ -121,29 +121,6 @@ describe 'PayeesApi' do
     end
   end
 
-  # unit tests for list_payee_changes
-  # List Payee Changes
-  # &lt;p&gt;Get a paginated response listing payee changes.&lt;/p&gt; &lt;p&gt;Please use V3 instead.&lt;/p&gt; 
-  # @param payor_id The Payor ID to find associated Payees
-  # @param updated_since The updatedSince filter in the format YYYY-MM-DDThh:mm:ss+hh:mm
-  # @param [Hash] opts the optional parameters
-  # @option opts [Integer] :page Page number. Default is 1.
-  # @option opts [Integer] :page_size Page size. Default is 100. Max allowable is 1000.
-  # @return [PayeeDeltaResponse]
-  describe 'list_payee_changes test' do
-    it 'should work' do
-      payor_id = ENV['PAYOR']
-      updated_since = DateTime.parse('2013-10-20T19:20:30+01:00') # DateTime | The updatedSince filter in the format YYYY-MM-DDThh:mm:ss+hh:mm
-      opts = {
-        page: 1, # Integer | Page number. Default is 1.
-        page_size: 100 # Integer | Page size. Default is 100. Max allowable is 1000.
-      }
-      res = @api_instance.list_payee_changes(payor_id, updated_since, opts)
-      expect(res.content.length()).to be >= 1
-      expect(@api_instance).to respond_to(:list_payee_changes) 
-    end
-  end
-
   # unit tests for list_payee_changes_v3
   # List Payee Changes
   # Get a paginated response listing payee changes.
@@ -164,82 +141,6 @@ describe 'PayeesApi' do
       res = @api_instance.list_payee_changes_v3(payor_id, updated_since, opts)
       expect(res.content.length()).to be >= 1
       expect(@api_instance).to respond_to(:list_payee_changes_v3) 
-    end
-  end
-
-  # unit tests for list_payees_v1
-  # List Payees V1
-  # &lt;p&gt;Get a paginated response listing the payees for a payor.&lt;/p&gt; &lt;p&gt;Please use V3 instead.&lt;/&gt; 
-  # @param payor_id The account owner Payor ID
-  # @param [Hash] opts the optional parameters
-  # @option opts [OfacStatus] :ofac_status The ofacStatus of the payees.
-  # @option opts [OnboardedStatus] :onboarded_status The onboarded status of the payees.
-  # @option opts [String] :email Email address
-  # @option opts [String] :display_name The display name of the payees.
-  # @option opts [String] :remote_id The remote id of the payees.
-  # @option opts [PayeeType] :payee_type The onboarded status of the payees.
-  # @option opts [String] :payee_country The country of the payee - 2 letter ISO 3166-1 country code (upper case)
-  # @option opts [Integer] :page Page number. Default is 1.
-  # @option opts [Integer] :page_size Page size. Default is 25. Max allowable is 100.
-  # @option opts [String] :sort List of sort fields (e.g. ?sort&#x3D;onboardedStatus:asc,name:asc) Default is name:asc &#39;name&#39; is treated as company name for companies - last name + &#39;,&#39; + firstName for individuals The supported sort fields are - payeeId, displayName, payoutStatus, onboardedStatus. 
-  # @return [PagedPayeeResponse]
-  describe 'list_payees_v1 test' do
-    it 'should work' do
-      payor_id = ENV['PAYOR']
-      opts = {
-        ofac_status: nil, # VeloPayments::OfacStatus.new, # OfacStatus | The ofacStatus of the payees.
-        onboarded_status: nil, # VeloPayments::OnboardedStatus.new, # OnboardedStatus | The onboarded status of the payees.
-        email: nil, # String | Email address
-        display_name: nil, # String | The display name of the payees.
-        remote_id: 'remoteId123', # String | The remote id of the payees.
-        payee_type: nil, # VeloPayments::PayeeType.new, # PayeeType | The onboarded status of the payees.
-        payee_country: 'US', # String | The country of the payee - 2 letter ISO 3166-1 country code (upper case)
-        page: 1, # Integer | Page number. Default is 1.
-        page_size: 25, # Integer | Page size. Default is 25. Max allowable is 100.
-        sort: 'displayName:asc' # String | List of sort fields (e.g. ?sort=onboardedStatus:asc,name:asc) Default is name:asc 'name' is treated as company name for companies - last name + ',' + firstName for individuals The supported sort fields are - payeeId, displayName, payoutStatus, onboardedStatus. 
-      }
-      res = @api_instance.list_payees_v1(payor_id, opts)
-      expect(res.content.length()).to be >= 0
-      expect(@api_instance).to respond_to(:list_payees_v1) 
-    end
-  end
-
-  # unit tests for list_payees_v3
-  # List Payees
-  # Get a paginated response listing the payees for a payor.
-  # @param payor_id The account owner Payor ID
-  # @param [Hash] opts the optional parameters
-  # @option opts [WatchlistStatus] :watchlist_status The watchlistStatus of the payees.
-  # @option opts [Boolean] :disabled Payee disabled
-  # @option opts [OnboardedStatus] :onboarded_status The onboarded status of the payees.
-  # @option opts [String] :email Email address
-  # @option opts [String] :display_name The display name of the payees.
-  # @option opts [String] :remote_id The remote id of the payees.
-  # @option opts [PayeeType] :payee_type The onboarded status of the payees.
-  # @option opts [String] :payee_country The country of the payee - 2 letter ISO 3166-1 country code (upper case)
-  # @option opts [Integer] :page Page number. Default is 1.
-  # @option opts [Integer] :page_size Page size. Default is 25. Max allowable is 100.
-  # @option opts [String] :sort List of sort fields (e.g. ?sort&#x3D;onboardedStatus:asc,name:asc) Default is name:asc &#39;name&#39; is treated as company name for companies - last name + &#39;,&#39; + firstName for individuals The supported sort fields are - payeeId, displayName, payoutStatus, onboardedStatus. 
-  # @return [PagedPayeeResponse2]
-  describe 'list_payees_v3 test' do
-    it 'should work' do
-      payor_id = ENV['PAYOR']
-      opts = {
-        watchlist_status: nil, # VeloPayments::WatchlistStatus.new, # WatchlistStatus | The watchlistStatus of the payees.
-        disabled: true, # Boolean | Payee disabled
-        onboarded_status: nil, # VeloPayments::OnboardedStatus.new, # OnboardedStatus | The onboarded status of the payees.
-        email: nil, # String | Email address
-        display_name: nil, #  String | The display name of the payees.
-        remote_id: nil, # String | The remote id of the payees.
-        payee_type: nil, # VeloPayments::PayeeType.new, # PayeeType | The onboarded status of the payees.
-        payee_country: 'US', # String | The country of the payee - 2 letter ISO 3166-1 country code (upper case)
-        page: 1, # Integer | Page number. Default is 1.
-        page_size: 25, # Integer | Page size. Default is 25. Max allowable is 100.
-        sort: 'displayName:asc' # String | List of sort fields (e.g. ?sort=onboardedStatus:asc,name:asc) Default is name:asc 'name' is treated as company name for companies - last name + ',' + firstName for individuals The supported sort fields are - payeeId, displayName, payoutStatus, onboardedStatus. 
-      }
-      res = @api_instance.list_payees_v1(payor_id, opts)
-      expect(res.content.length()).to be >= 0
-      expect(@api_instance).to respond_to(:list_payees_v1) 
     end
   end
 

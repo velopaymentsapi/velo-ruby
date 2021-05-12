@@ -2,20 +2,21 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**page** | [**PagedUserResponsePage**](PagedUserResponsePage.md) |  | [optional] 
-**links** | [**Array&lt;PagedUserResponseLinks&gt;**](PagedUserResponseLinks.md) |  | [optional] 
-**content** | [**Array&lt;UserResponse&gt;**](UserResponse.md) |  | [optional] 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **page** | [**PagedUserResponsePage**](PagedUserResponsePage.md) |  | [optional] |
+| **links** | [**Array&lt;PagedUserResponseLinks&gt;**](PagedUserResponseLinks.md) |  | [optional] |
+| **content** | [**Array&lt;UserResponse&gt;**](UserResponse.md) |  | [optional] |
 
-## Code Sample
+## Example
 
 ```ruby
-require 'VeloPayments'
+require 'velopayments'
 
-instance = VeloPayments::PagedUserResponse.new(page: null,
-                                 links: null,
-                                 content: null)
+instance = VeloPayments::PagedUserResponse.new(
+  page: null,
+  links: null,
+  content: null
+)
 ```
-
 

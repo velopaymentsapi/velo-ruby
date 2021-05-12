@@ -2,18 +2,19 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**batch_id** | **String** |  | [optional] 
-**rejected_csv_rows** | [**Array&lt;CreatePayeesCSVResponseRejectedCsvRows&gt;**](CreatePayeesCSVResponseRejectedCsvRows.md) |  | [optional] 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **batch_id** | **String** |  | [optional] |
+| **rejected_csv_rows** | [**Array&lt;CreatePayeesCSVResponseRejectedCsvRows&gt;**](CreatePayeesCSVResponseRejectedCsvRows.md) |  | [optional] |
 
-## Code Sample
+## Example
 
 ```ruby
-require 'VeloPayments'
+require 'velopayments'
 
-instance = VeloPayments::CreatePayeesCSVResponse2.new(batch_id: cb6ff8c6-85e9-45a6-b7d9-d05305db67f3,
-                                 rejected_csv_rows: null)
+instance = VeloPayments::CreatePayeesCSVResponse2.new(
+  batch_id: cb6ff8c6-85e9-45a6-b7d9-d05305db67f3,
+  rejected_csv_rows: null
+)
 ```
-
 

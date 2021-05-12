@@ -2,16 +2,17 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**name** | [**PayoutNameV3**](PayoutNameV3.md) |  | 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **name** | [**PayoutNameV3**](PayoutNameV3.md) |  |  |
 
-## Code Sample
+## Example
 
 ```ruby
-require 'VeloPayments'
+require 'velopayments'
 
-instance = VeloPayments::PayoutIndividualV3.new(name: null)
+instance = VeloPayments::PayoutIndividualV3.new(
+  name: null
+)
 ```
-
 

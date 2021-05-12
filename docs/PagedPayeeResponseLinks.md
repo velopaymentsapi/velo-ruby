@@ -2,18 +2,19 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**rel** | **String** |  | [optional] 
-**href** | **String** |  | [optional] 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **rel** | **String** |  | [optional] |
+| **href** | **String** |  | [optional] |
 
-## Code Sample
+## Example
 
 ```ruby
-require 'VeloPayments'
+require 'velopayments'
 
-instance = VeloPayments::PagedPayeeResponseLinks.new(rel: null,
-                                 href: null)
+instance = VeloPayments::PagedPayeeResponseLinks.new(
+  rel: null,
+  href: null
+)
 ```
-
 

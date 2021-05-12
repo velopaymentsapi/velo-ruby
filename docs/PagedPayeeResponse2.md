@@ -2,22 +2,23 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**summary** | [**PagedPayeeResponse2Summary**](PagedPayeeResponse2Summary.md) |  | [optional] 
-**page** | [**PagedPayeeResponsePage**](PagedPayeeResponsePage.md) |  | [optional] 
-**links** | [**Array&lt;PagedPayeeResponseLinks&gt;**](PagedPayeeResponseLinks.md) |  | [optional] 
-**content** | [**Array&lt;GetPayeeListResponse&gt;**](GetPayeeListResponse.md) |  | [optional] 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **summary** | [**PagedPayeeResponseSummary**](PagedPayeeResponseSummary.md) |  | [optional] |
+| **page** | [**PagedPayeeResponsePage**](PagedPayeeResponsePage.md) |  | [optional] |
+| **links** | [**Array&lt;PagedPayeeResponseLinks&gt;**](PagedPayeeResponseLinks.md) |  | [optional] |
+| **content** | [**Array&lt;GetPayeeListResponse2&gt;**](GetPayeeListResponse2.md) |  | [optional] |
 
-## Code Sample
+## Example
 
 ```ruby
-require 'VeloPayments'
+require 'velopayments'
 
-instance = VeloPayments::PagedPayeeResponse2.new(summary: null,
-                                 page: null,
-                                 links: null,
-                                 content: null)
+instance = VeloPayments::PagedPayeeResponse2.new(
+  summary: null,
+  page: null,
+  links: null,
+  content: null
+)
 ```
-
 

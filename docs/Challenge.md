@@ -2,18 +2,19 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**value** | **String** |  | 
-**description** | **String** |  | 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **value** | **String** |  |  |
+| **description** | **String** |  |  |
 
-## Code Sample
+## Example
 
 ```ruby
-require 'VeloPayments'
+require 'velopayments'
 
-instance = VeloPayments::Challenge.new(value: challenge test,
-                                 description: challenge description)
+instance = VeloPayments::Challenge.new(
+  value: challenge test,
+  description: challenge description
+)
 ```
-
 

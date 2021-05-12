@@ -2,18 +2,19 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**failed_submission** | [**Payee2**](Payee2.md) |  | [optional] 
-**failure_message** | **String** |  | [optional] 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **failed_submission** | [**FailedPayee2**](FailedPayee2.md) |  | [optional] |
+| **failure_message** | **String** |  | [optional] |
 
-## Code Sample
+## Example
 
 ```ruby
-require 'VeloPayments'
+require 'velopayments'
 
-instance = VeloPayments::FailedSubmission2.new(failed_submission: null,
-                                 failure_message: failure reason)
+instance = VeloPayments::FailedSubmission2.new(
+  failed_submission: null,
+  failure_message: failure reason
+)
 ```
-
 

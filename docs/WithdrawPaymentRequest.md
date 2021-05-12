@@ -2,16 +2,17 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**reason** | **String** | Reason for withdrawal | 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **reason** | **String** | Reason for withdrawal |  |
 
-## Code Sample
+## Example
 
 ```ruby
-require 'VeloPayments'
+require 'velopayments'
 
-instance = VeloPayments::WithdrawPaymentRequest.new(reason: Payment submitted in error)
+instance = VeloPayments::WithdrawPaymentRequest.new(
+  reason: Payment submitted in error
+)
 ```
-
 

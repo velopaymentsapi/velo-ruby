@@ -2,18 +2,21 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**errors** | [**Array&lt;InlineResponse400Errors&gt;**](InlineResponse400Errors.md) | one or more errors | [optional] 
-**correlation_id** | **String** | a unique identifier to track a request or related sequence of requests | [optional] 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **errors** | [**Array&lt;Error&gt;**](Error.md) | one or more errors | [optional] |
+| **correlation_id** | **String** | a unique identifier to track a request or related sequence of requests | [optional] |
+| **http_status_code** | **Integer** | this will mirror the Status-Code part of the Status-Line http response header and is included for extra clarity | [optional] |
 
-## Code Sample
+## Example
 
 ```ruby
-require 'VeloPayments'
+require 'velopayments'
 
-instance = VeloPayments::InlineResponse400.new(errors: null,
-                                 correlation_id: ee53e01d-c078-43fd-abd4-47e92f4a06cf)
+instance = VeloPayments::InlineResponse400.new(
+  errors: null,
+  correlation_id: ee53e01d-c078-43fd-abd4-47e92f4a06cf,
+  http_status_code: 400
+)
 ```
-
 

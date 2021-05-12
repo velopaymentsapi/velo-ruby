@@ -43,8 +43,7 @@ trim:
 info:
 	sed -i.bak '1s/.*/# Ruby client for Velo/' README.md && rm README.md.bak
 	sed -i.bak '2s/.*/[![License](https:\/\/img.shields.io\/badge\/License-Apache%202.0-blue.svg)](https:\/\/opensource.org\/licenses\/Apache-2.0) [![npm version](https:\/\/badge.fury.io\/rb\/velopayments.svg)](https:\/\/badge.fury.io\/rb\/velopayments) [![CircleCI](https:\/\/circleci.com\/gh\/velopaymentsapi\/velo-ruby.svg?style=svg)](https:\/\/circleci.com\/gh\/velopaymentsapi\/velo-ruby)\\/' README.md && rm README.md.bak
-	# - sed -i.bak "14s/.*/require 'velopayments\/models\/paged_response'/" lib/velopayments/models/get_fundings_response.rb  && rm lib/velopayments/models/get_fundings_response.rb.bak
-
+	
 build_client:
 	#
 

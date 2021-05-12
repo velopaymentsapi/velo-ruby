@@ -87,29 +87,6 @@ describe 'PaymentAuditServiceApi' do
     end
   end
 
-  # unit tests for get_fundings_v1
-  # Get Fundings for Payor
-  # &lt;p&gt;Get a list of Fundings for a payor.&lt;/p&gt; &lt;p&gt;Deprecated (use v4/paymentaudit/fundings)&lt;/p&gt; 
-  # @param payor_id The account owner Payor ID
-  # @param [Hash] opts the optional parameters
-  # @option opts [Integer] :page Page number. Default is 1.
-  # @option opts [Integer] :page_size The number of results to return in a page
-  # @option opts [String] :sort List of sort fields. Example: &#x60;&#x60;&#x60;?sort&#x3D;destinationCurrency:asc,destinationAmount:asc&#x60;&#x60;&#x60; Default is no sort. The supported sort fields are: dateTime and amount. 
-  # @return [GetFundingsResponse]
-  describe 'get_fundings_v1 test' do
-    it 'should work' do
-      payor_id = ENV['PAYOR']
-      opts = {
-        page: 1, # Integer | Page number. Default is 1.
-        page_size: 25, # Integer | The number of results to return in a page
-        sort: 'dateTime:desc' # String | List of sort fields. Example: ```?sort=destinationCurrency:asc,destinationAmount:asc``` Default is no sort. The supported sort fields are: dateTime and amount. 
-      }
-      res = @api_instance.get_fundings_v1(payor_id, opts)
-      expect(res.content.length()).to be >= 1
-      expect(@api_instance).to respond_to(:get_fundings_v1) 
-    end
-  end
-
   # unit tests for get_fundings_v4
   # Get Fundings for Payor
   # &lt;p&gt;Get a list of Fundings for a payor.&lt;/p&gt; 
@@ -208,23 +185,6 @@ describe 'PaymentAuditServiceApi' do
     end
   end
 
-  # unit tests for get_payout_stats_v1
-  # Get Payout Statistics
-  # &lt;p&gt;Get payout statistics for a payor.&lt;/p&gt; &lt;p&gt;Deprecated (Use /v4/paymentaudit/payoutStatistics)&lt;/p&gt; 
-  # @param [Hash] opts the optional parameters
-  # @option opts [String] :payor_id The account owner Payor ID. Required for external users.
-  # @return [GetPayoutStatistics]
-  describe 'get_payout_stats_v1 test' do
-    it 'should work' do
-      opts = {
-        payor_id: ENV['PAYOR']
-      }
-      res = @api_instance.get_payout_stats_v1(opts)
-      expect(res.this_month_payouts_count).to be >= 1
-      expect(@api_instance).to respond_to(:get_payout_stats_v1) 
-    end
-  end
-
   # unit tests for get_payout_stats_v4
   # Get Payout Statistics
   # &lt;p&gt;Get payout statistics for a payor.&lt;/p&gt; 
@@ -239,38 +199,6 @@ describe 'PaymentAuditServiceApi' do
       res = @api_instance.get_payout_stats_v4(opts)
       expect(res.this_month_payouts_count).to be >= 1
       expect(@api_instance).to respond_to(:get_payout_stats_v4) 
-    end
-  end
-
-  # unit tests for get_payouts_for_payor_v3
-  # Get Payouts for Payor
-  # &lt;p&gt;Get List of payouts for payor&lt;/p&gt; &lt;p&gt;Deprecated Use v4&lt;/p&gt; 
-  # @param payor_id The account owner Payor ID
-  # @param [Hash] opts the optional parameters
-  # @option opts [String] :payout_memo Payout Memo filter - case insensitive sub-string match
-  # @option opts [String] :status Payout Status
-  # @option opts [Date] :submitted_date_from The submitted date from range filter. Format is yyyy-MM-dd.
-  # @option opts [Date] :submitted_date_to The submitted date to range filter. Format is yyyy-MM-dd.
-  # @option opts [Integer] :page Page number. Default is 1.
-  # @option opts [Integer] :page_size The number of results to return in a page
-  # @option opts [String] :sort List of sort fields (e.g. ?sort&#x3D;submittedDateTime:asc,instructedDateTime:asc,status:asc) Default is submittedDateTime:asc The supported sort fields are: submittedDateTime, instructedDateTime, status. 
-  # @return [GetPayoutsResponseV3]
-  describe 'get_payouts_for_payor_v3 test' do
-    it 'should work' do
-      payor_id = ENV['PAYOR'] # String | The account owner Payor ID
-      opts = {
-        payout_memo: nil, # String | Payout Memo filter - case insensitive sub-string match
-        status: nil, # String | Payout Status
-        submitted_date_from: nil, # Date.parse('2013-10-20'), # Date | The submitted date from range filter. Format is yyyy-MM-dd.
-        submitted_date_to: nil, # Date.parse('2013-10-20'), # Date | The submitted date to range filter. Format is yyyy-MM-dd.
-        page: 1, # Integer | Page number. Default is 1.
-        page_size: 25, # Integer | The number of results to return in a page
-        sort: 'submittedDateTime:desc' # String | List of sort fields (e.g. ?sort=submittedDateTime:asc,instructedDateTime:asc,status:asc) Default is submittedDateTime:asc The supported sort fields are: submittedDateTime, instructedDateTime, status. 
-      }
-
-      res = @api_instance.get_payouts_for_payor_v3(payor_id, opts)
-      expect(res.content.length()).to be >= 1
-      expect(@api_instance).to respond_to(:get_payouts_for_payor_v3) 
     end
   end
 
@@ -308,30 +236,6 @@ describe 'PaymentAuditServiceApi' do
     end
   end
 
-  # unit tests for list_payment_changes
-  # List Payment Changes
-  # Get a paginated response listing payment changes.
-  # @param payor_id The Payor ID to find associated Payments
-  # @param updated_since The updatedSince filter in the format YYYY-MM-DDThh:mm:ss+hh:mm
-  # @param [Hash] opts the optional parameters
-  # @option opts [Integer] :page Page number. Default is 1.
-  # @option opts [Integer] :page_size The number of results to return in a page
-  # @return [PaymentDeltaResponse]
-  describe 'list_payment_changes test' do
-    it 'should work' do
-      payor_id = ENV['PAYOR'] # String | The Payor ID to find associated Payments
-      updated_since = DateTime.parse('2013-10-20T19:20:30+01:00') # DateTime | The updatedSince filter in the format YYYY-MM-DDThh:mm:ss+hh:mm
-      opts = {
-        page: 1, # Integer | Page number. Default is 1.
-        page_size: 100 # Integer | The number of results to return in a page
-      }
-
-      res = @api_instance.list_payment_changes(payor_id, updated_since, opts)
-      expect(res.content.length()).to be >= 1
-      expect(@api_instance).to respond_to(:list_payment_changes) 
-    end
-  end
-
   # unit tests for list_payment_changes_v4
   # List Payment Changes
   # Get a paginated response listing payment changes.
@@ -354,60 +258,6 @@ describe 'PaymentAuditServiceApi' do
     #   res = @api_instance.list_payment_changes_v4(payor_id, updated_since, opts)
     #   expect(res.content.length()).to be >= 1
     #   expect(@api_instance).to respond_to(:list_payment_changes_v4) 
-    end
-  end
-
-  # unit tests for list_payments_audit
-  # Get List of Payments
-  # Get payments for the given payor Id
-  # @param [Hash] opts the optional parameters
-  # @option opts [String] :payee_id The UUID of the payee.
-  # @option opts [String] :payor_id The account owner Payor Id. Required for external users.
-  # @option opts [String] :payor_name The payor’s name. This filters via a case insensitive substring match.
-  # @option opts [String] :remote_id The remote id of the payees.
-  # @option opts [String] :status Payment Status
-  # @option opts [String] :source_account_name The source account name filter. This filters via a case insensitive substring match.
-  # @option opts [Integer] :source_amount_from The source amount from range filter. Filters for sourceAmount &gt;&#x3D; sourceAmountFrom
-  # @option opts [Integer] :source_amount_to The source amount to range filter. Filters for sourceAmount ⇐ sourceAmountTo
-  # @option opts [String] :source_currency The source currency filter. Filters based on an exact match on the currency.
-  # @option opts [Integer] :payment_amount_from The payment amount from range filter. Filters for paymentAmount &gt;&#x3D; paymentAmountFrom
-  # @option opts [Integer] :payment_amount_to The payment amount to range filter. Filters for paymentAmount ⇐ paymentAmountTo
-  # @option opts [String] :payment_currency The payment currency filter. Filters based on an exact match on the currency.
-  # @option opts [Date] :submitted_date_from The submitted date from range filter. Format is yyyy-MM-dd.
-  # @option opts [Date] :submitted_date_to The submitted date to range filter. Format is yyyy-MM-dd.
-  # @option opts [String] :payment_memo The payment memo filter. This filters via a case insensitive substring match.
-  # @option opts [Integer] :page Page number. Default is 1.
-  # @option opts [Integer] :page_size The number of results to return in a page
-  # @option opts [String] :sort List of sort fields (e.g. ?sort&#x3D;submittedDateTime:asc,status:asc). Default is sort by remoteId The supported sort fields are: sourceAmount, sourceCurrency, paymentAmount, paymentCurrency, routingNumber, accountNumber, remoteId, submittedDateTime and status 
-  # @option opts [Boolean] :sensitive Optional. If omitted or set to false, any Personal Identifiable Information (PII) values are returned masked. If set to true, and you have permission, the PII values will be returned as their original unmasked values. 
-  # @return [ListPaymentsResponseV3]
-  describe 'list_payments_audit test' do
-    it 'should work' do
-      opts = {
-        payee_id: nil, # String | The UUID of the payee.
-        payor_id: ENV['PAYOR'], # String | The account owner Payor Id. Required for external users.
-        payor_name: nil, # String | The payor’s name. This filters via a case insensitive substring match.
-        remote_id: nil, # String | The remote id of the payees.
-        status: nil, # String | Payment Status
-        source_account_name: nil, # String | The source account name filter. This filters via a case insensitive substring match.
-        source_amount_from: nil, # Integer | The source amount from range filter. Filters for sourceAmount >= sourceAmountFrom
-        source_amount_to: nil, # Integer | The source amount to range filter. Filters for sourceAmount ⇐ sourceAmountTo
-        source_currency: nil, # String | The source currency filter. Filters based on an exact match on the currency.
-        payment_amount_from: nil, # Integer | The payment amount from range filter. Filters for paymentAmount >= paymentAmountFrom
-        payment_amount_to: nil, # Integer | The payment amount to range filter. Filters for paymentAmount ⇐ paymentAmountTo
-        payment_currency: nil, # String | The payment currency filter. Filters based on an exact match on the currency.
-        submitted_date_from: nil, # Date.parse('2013-10-20'), # Date | The submitted date from range filter. Format is yyyy-MM-dd.
-        submitted_date_to: nil, # Date.parse('2013-10-20'), # Date | The submitted date to range filter. Format is yyyy-MM-dd.
-        payment_memo: nil, # String | The payment memo filter. This filters via a case insensitive substring match.
-        page: 1, # Integer | Page number. Default is 1.
-        page_size: 25, # Integer | The number of results to return in a page
-        sort: 'submittedDateTime:desc', # String | List of sort fields (e.g. ?sort=submittedDateTime:asc,status:asc). Default is sort by remoteId The supported sort fields are: sourceAmount, sourceCurrency, paymentAmount, paymentCurrency, routingNumber, accountNumber, remoteId, submittedDateTime and status 
-        sensitive: true # Boolean | Optional. If omitted or set to false, any Personal Identifiable Information (PII) values are returned masked. If set to true, and you have permission, the PII values will be returned as their original unmasked values. 
-      }
-
-      res = @api_instance.list_payments_audit(opts)
-      expect(res.content.length()).to be >= 1
-      expect(@api_instance).to respond_to(:list_payments_audit) 
     end
   end
 

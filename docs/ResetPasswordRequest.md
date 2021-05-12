@@ -2,16 +2,17 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**email** | **String** | the email address of the user requesting the reset password | 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **email** | **String** | the email address of the user requesting the reset password |  |
 
-## Code Sample
+## Example
 
 ```ruby
-require 'VeloPayments'
+require 'velopayments'
 
-instance = VeloPayments::ResetPasswordRequest.new(email: foo@example.com)
+instance = VeloPayments::ResetPasswordRequest.new(
+  email: foo@example.com
+)
 ```
-
 

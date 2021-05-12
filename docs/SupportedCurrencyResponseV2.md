@@ -2,16 +2,17 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**currencies** | [**Array&lt;SupportedCurrencyV2&gt;**](SupportedCurrencyV2.md) |  | [optional] 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **currencies** | [**Array&lt;SupportedCurrencyV2&gt;**](SupportedCurrencyV2.md) |  | [optional] |
 
-## Code Sample
+## Example
 
 ```ruby
-require 'VeloPayments'
+require 'velopayments'
 
-instance = VeloPayments::SupportedCurrencyResponseV2.new(currencies: null)
+instance = VeloPayments::SupportedCurrencyResponseV2.new(
+  currencies: null
+)
 ```
-
 

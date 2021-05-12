@@ -2,16 +2,17 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**reminder_emails_opt_out** | **Boolean** |  | 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **reminder_emails_opt_out** | **Boolean** |  |  |
 
-## Code Sample
+## Example
 
 ```ruby
-require 'VeloPayments'
+require 'velopayments'
 
-instance = VeloPayments::PayorEmailOptOutRequest.new(reminder_emails_opt_out: null)
+instance = VeloPayments::PayorEmailOptOutRequest.new(
+  reminder_emails_opt_out: null
+)
 ```
-
 

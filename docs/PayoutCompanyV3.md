@@ -2,16 +2,17 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**company_name** | **String** |  | 
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **company_name** | **String** |  |  |
 
-## Code Sample
+## Example
 
 ```ruby
-require 'VeloPayments'
+require 'velopayments'
 
-instance = VeloPayments::PayoutCompanyV3.new(company_name: ACME Anvils PLC)
+instance = VeloPayments::PayoutCompanyV3.new(
+  company_name: ACME Anvils PLC
+)
 ```
-
 
