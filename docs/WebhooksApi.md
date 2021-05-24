@@ -7,7 +7,6 @@ All URIs are relative to *https://api.sandbox.velopayments.com*
 | [**create_webhook_v1**](WebhooksApi.md#create_webhook_v1) | **POST** /v1/webhooks | Create Webhook |
 | [**get_webhook_v1**](WebhooksApi.md#get_webhook_v1) | **GET** /v1/webhooks/{webhookId} | Get details about the given webhook. |
 | [**list_webhooks_v1**](WebhooksApi.md#list_webhooks_v1) | **GET** /v1/webhooks | List the details about the webhooks for the given payor. |
-| [**ping_webhook_v1**](WebhooksApi.md#ping_webhook_v1) | **POST** /v1/webhooks/{webhookId}/ping |  |
 | [**update_webhook_v1**](WebhooksApi.md#update_webhook_v1) | **POST** /v1/webhooks/{webhookId} | Update Webhook |
 
 
@@ -214,73 +213,6 @@ end
 ### Return type
 
 [**WebhooksResponse**](WebhooksResponse.md)
-
-### Authorization
-
-[OAuth2](../README.md#OAuth2)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: application/json
-
-
-## ping_webhook_v1
-
-> <PingResponse> ping_webhook_v1(webhook_id)
-
-
-
-### Examples
-
-```ruby
-require 'time'
-require 'velopayments'
-# setup authorization
-VeloPayments.configure do |config|
-  # Configure OAuth2 access token for authorization: OAuth2
-  config.access_token = 'YOUR ACCESS TOKEN'
-end
-
-api_instance = VeloPayments::WebhooksApi.new
-webhook_id = TODO # String | Webhook id
-
-begin
-  
-  result = api_instance.ping_webhook_v1(webhook_id)
-  p result
-rescue VeloPayments::ApiError => e
-  puts "Error when calling WebhooksApi->ping_webhook_v1: #{e}"
-end
-```
-
-#### Using the ping_webhook_v1_with_http_info variant
-
-This returns an Array which contains the response data, status code and headers.
-
-> <Array(<PingResponse>, Integer, Hash)> ping_webhook_v1_with_http_info(webhook_id)
-
-```ruby
-begin
-  
-  data, status_code, headers = api_instance.ping_webhook_v1_with_http_info(webhook_id)
-  p status_code # => 2xx
-  p headers # => { ... }
-  p data # => <PingResponse>
-rescue VeloPayments::ApiError => e
-  puts "Error when calling WebhooksApi->ping_webhook_v1_with_http_info: #{e}"
-end
-```
-
-### Parameters
-
-| Name | Type | Description | Notes |
-| ---- | ---- | ----------- | ----- |
-| **webhook_id** | [**String**](.md) | Webhook id |  |
-
-### Return type
-
-[**PingResponse**](PingResponse.md)
 
 ### Authorization
 
