@@ -34,9 +34,9 @@ VeloPayments.configure do |config|
 end
 
 api_instance = VeloPayments::PayeeInvitationApi.new
-payor_id = TODO # String | The account owner Payor ID
+payor_id = '9ac75325-5dcd-42d5-b992-175d7e0a035e' # String | The account owner Payor ID
 opts = {
-  payee_id: TODO, # String | The UUID of the payee.
+  payee_id: '2aa5d7e0-2ecb-403f-8494-1865ed0454e9', # String | The UUID of the payee.
   invitation_status: VeloPayments::InvitationStatus::ACCEPTED, # InvitationStatus | The invitation status of the payees.
   page: 1, # Integer | Page number. Default is 1.
   page_size: 25 # Integer | Page size. Default is 25. Max allowable is 100.
@@ -73,8 +73,8 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **payor_id** | [**String**](.md) | The account owner Payor ID |  |
-| **payee_id** | [**String**](.md) | The UUID of the payee. | [optional] |
+| **payor_id** | **String** | The account owner Payor ID |  |
+| **payee_id** | **String** | The UUID of the payee. | [optional] |
 | **invitation_status** | [**InvitationStatus**](.md) | The invitation status of the payees. | [optional] |
 | **page** | **Integer** | Page number. Default is 1. | [optional][default to 1] |
 | **page_size** | **Integer** | Page size. Default is 25. Max allowable is 100. | [optional][default to 25] |
@@ -113,9 +113,9 @@ VeloPayments.configure do |config|
 end
 
 api_instance = VeloPayments::PayeeInvitationApi.new
-payor_id = TODO # String | The account owner Payor ID
+payor_id = '9ac75325-5dcd-42d5-b992-175d7e0a035e' # String | The account owner Payor ID
 opts = {
-  payee_id: TODO, # String | The UUID of the payee.
+  payee_id: '2aa5d7e0-2ecb-403f-8494-1865ed0454e9', # String | The UUID of the payee.
   invitation_status: VeloPayments::InvitationStatus::ACCEPTED, # InvitationStatus | The invitation status of the payees.
   page: 1, # Integer | Page number. Default is 1.
   page_size: 25 # Integer | Page size. Default is 25. Max allowable is 100.
@@ -152,8 +152,8 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **payor_id** | [**String**](.md) | The account owner Payor ID |  |
-| **payee_id** | [**String**](.md) | The UUID of the payee. | [optional] |
+| **payor_id** | **String** | The account owner Payor ID |  |
+| **payee_id** | **String** | The UUID of the payee. | [optional] |
 | **invitation_status** | [**InvitationStatus**](.md) | The invitation status of the payees. | [optional] |
 | **page** | **Integer** | Page number. Default is 1. | [optional][default to 1] |
 | **page_size** | **Integer** | Page size. Default is 25. Max allowable is 100. | [optional][default to 25] |
@@ -192,7 +192,7 @@ VeloPayments.configure do |config|
 end
 
 api_instance = VeloPayments::PayeeInvitationApi.new
-batch_id = TODO # String | Batch Id
+batch_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | Batch Id
 
 begin
   # Query Batch Status
@@ -225,7 +225,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **batch_id** | [**String**](.md) | Batch Id |  |
+| **batch_id** | **String** | Batch Id |  |
 
 ### Return type
 
@@ -261,7 +261,7 @@ VeloPayments.configure do |config|
 end
 
 api_instance = VeloPayments::PayeeInvitationApi.new
-batch_id = TODO # String | Batch Id
+batch_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | Batch Id
 
 begin
   # Query Batch Status
@@ -294,7 +294,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **batch_id** | [**String**](.md) | Batch Id |  |
+| **batch_id** | **String** | Batch Id |  |
 
 ### Return type
 
@@ -330,7 +330,7 @@ VeloPayments.configure do |config|
 end
 
 api_instance = VeloPayments::PayeeInvitationApi.new
-payee_id = TODO # String | The UUID of the payee.
+payee_id = '2aa5d7e0-2ecb-403f-8494-1865ed0454e9' # String | The UUID of the payee.
 invite_payee_request = VeloPayments::InvitePayeeRequest.new({payor_id: '9ac75325-5dcd-42d5-b992-175d7e0a035e'}) # InvitePayeeRequest | Provide Payor Id in body of request
 
 begin
@@ -363,7 +363,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **payee_id** | [**String**](.md) | The UUID of the payee. |  |
+| **payee_id** | **String** | The UUID of the payee. |  |
 | **invite_payee_request** | [**InvitePayeeRequest**](InvitePayeeRequest.md) | Provide Payor Id in body of request |  |
 
 ### Return type
@@ -400,7 +400,7 @@ VeloPayments.configure do |config|
 end
 
 api_instance = VeloPayments::PayeeInvitationApi.new
-payee_id = TODO # String | The UUID of the payee.
+payee_id = '2aa5d7e0-2ecb-403f-8494-1865ed0454e9' # String | The UUID of the payee.
 invite_payee_request2 = VeloPayments::InvitePayeeRequest2.new({payor_id: '9ac75325-5dcd-42d5-b992-175d7e0a035e'}) # InvitePayeeRequest2 | Provide Payor Id in body of request
 
 begin
@@ -433,7 +433,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **payee_id** | [**String**](.md) | The UUID of the payee. |  |
+| **payee_id** | **String** | The UUID of the payee. |  |
 | **invite_payee_request2** | [**InvitePayeeRequest2**](InvitePayeeRequest2.md) | Provide Payor Id in body of request |  |
 
 ### Return type
@@ -471,7 +471,7 @@ end
 
 api_instance = VeloPayments::PayeeInvitationApi.new
 opts = {
-  create_payees_request: VeloPayments::CreatePayeesRequest.new({payor_id: '9ac75325-5dcd-42d5-b992-175d7e0a035e', payees: [VeloPayments::CreatePayee.new({email: 'bob@example.com', remote_id: 'Remote ID', type: VeloPayments::PayeeType::INDIVIDUAL, address: VeloPayments::CreatePayeeAddress.new({line1: '500 Duval St', city: 'Key West', country: 'AF'})})]}) # CreatePayeesRequest | Post payees to create.
+  create_payees_request: VeloPayments::CreatePayeesRequest.new({payor_id: '9ac75325-5dcd-42d5-b992-175d7e0a035e', payees: [VeloPayments::CreatePayee.new({email: 'bob@example.com', remote_id: 'Remote ID', type: VeloPayments::PayeeType2::INDIVIDUAL, address: VeloPayments::CreatePayeeAddress.new({line1: '500 Duval St', city: 'Key West', country: 'AF'})})]}) # CreatePayeesRequest | Post payees to create.
 }
 
 begin
@@ -542,7 +542,7 @@ end
 
 api_instance = VeloPayments::PayeeInvitationApi.new
 opts = {
-  create_payees_request2: VeloPayments::CreatePayeesRequest2.new({payor_id: '9ac75325-5dcd-42d5-b992-175d7e0a035e', payees: [VeloPayments::CreatePayee2.new({email: 'bob@example.com', remote_id: 'Remote ID', type: VeloPayments::PayeeType::INDIVIDUAL, address: VeloPayments::CreatePayeeAddress2.new({line1: '500 Duval St', city: 'Key West', country: 'AF'})})]}) # CreatePayeesRequest2 | Post payees to create.
+  create_payees_request2: VeloPayments::CreatePayeesRequest2.new({payor_id: '9ac75325-5dcd-42d5-b992-175d7e0a035e', payees: [VeloPayments::CreatePayee2.new({email: 'bob@example.com', remote_id: 'Remote ID', type: VeloPayments::PayeeType2::INDIVIDUAL, address: VeloPayments::CreatePayeeAddress2.new({line1: '500 Duval St', city: 'Key West', country: 'AF'})})]}) # CreatePayeesRequest2 | Post payees to create.
 }
 
 begin

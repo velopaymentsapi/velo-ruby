@@ -1,6 +1,6 @@
 {
     "gemName": "velopayments",
-    "gemVersion": "2.26.124",
+    "gemVersion": "2.29.130",
     "gemHomepage": "https://github.com/velopaymentsapi/velo-ruby",
     "gemAuthor": "Velo Payments API",
     "gemDescription": "This library provides a Ruby client that simplifies interactions with the Velo Payments API. For full details covering the API visit our docs at Velo Payments APIs https://apidocs.velopayments.com. Note: some of the Velo API calls which require authorization via an access token, see the full docs on how to configure.",

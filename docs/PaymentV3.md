@@ -17,6 +17,7 @@
 | **transmission_type** | [**TransmissionType**](TransmissionType.md) |  | [optional] |
 | **remote_system_id** | **String** |  | [optional] |
 | **payment_metadata** | **String** |  | [optional] |
+| **auto_withdrawn_reason_code** | **String** | Populated only if the payment was automatically withdrawn during instruction for being invalid | [optional] |
 
 ## Example
 
@@ -36,7 +37,8 @@ instance = VeloPayments::PaymentV3.new(
   status: null,
   transmission_type: null,
   remote_system_id: Remote_System_Id_101234,
-  payment_metadata: invoiceeId_123|abc001:12345|xyz002:4567
+  payment_metadata: invoiceeId_123|abc001:12345|xyz002:4567,
+  auto_withdrawn_reason_code: VE0003
 )
 ```
 

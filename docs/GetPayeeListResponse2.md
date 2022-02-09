@@ -15,7 +15,7 @@
 | **created** | **Time** |  | [optional] |
 | **country** | **String** |  | [optional] |
 | **display_name** | **String** |  | [optional] |
-| **payee_type** | [**PayeeType**](PayeeType.md) |  | [optional] |
+| **payee_type** | [**PayeeType2**](PayeeType2.md) |  | [optional] |
 | **disabled** | **Boolean** |  | [optional] |
 | **disabled_comment** | **String** |  | [optional] |
 | **disabled_updated_timestamp** | **Time** |  | [optional] |

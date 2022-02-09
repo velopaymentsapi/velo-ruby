@@ -45,9 +45,11 @@
 | **rejection_reason** | **String** |  | [optional] |
 | **withdrawn_reason** | **String** |  | [optional] |
 | **withdrawable** | **Boolean** |  | [optional] |
+| **auto_withdrawn_reason_code** | **String** | Populated with rejection reason code if the payment was withdrawn automatically at instruct time | [optional] |
 | **transmission_type** | **String** | The transmission type of the payment, e.g. ACH, SAME_DAY_ACH, WIRE | [optional] |
 | **payment_tracking_reference** | **String** |  | [optional] |
 | **payment_metadata** | **String** | Metadata for the payment | [optional] |
+| **schedule** | [**PayoutSchedule**](PayoutSchedule.md) |  | [optional] |
 | **payout** | [**PaymentResponseV4Payout**](PaymentResponseV4Payout.md) |  | [optional] |
 
 ## Example
@@ -97,9 +99,11 @@ instance = VeloPayments::PaymentResponseV4.new(
   rejection_reason: null,
   withdrawn_reason: null,
   withdrawable: null,
+  auto_withdrawn_reason_code: null,
   transmission_type: null,
   payment_tracking_reference: null,
   payment_metadata: sample metadata,
+  schedule: null,
   payout: null
 )
 ```

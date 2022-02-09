@@ -34,7 +34,7 @@ VeloPayments.configure do |config|
 end
 
 api_instance = VeloPayments::PayorsApi.new
-payor_id = TODO # String | The Payor Id
+payor_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | The Payor Id
 
 begin
   # Get Payor
@@ -67,7 +67,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **payor_id** | [**String**](.md) | The Payor Id |  |
+| **payor_id** | **String** | The Payor Id |  |
 
 ### Return type
 
@@ -103,7 +103,7 @@ VeloPayments.configure do |config|
 end
 
 api_instance = VeloPayments::PayorsApi.new
-payor_id = TODO # String | The Payor Id
+payor_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | The Payor Id
 
 begin
   # Get Payor
@@ -136,7 +136,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **payor_id** | [**String**](.md) | The Payor Id |  |
+| **payor_id** | **String** | The Payor Id |  |
 
 ### Return type
 
@@ -172,7 +172,7 @@ VeloPayments.configure do |config|
 end
 
 api_instance = VeloPayments::PayorsApi.new
-payor_id = TODO # String | The Payor Id
+payor_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | The Payor Id
 opts = {
   logo: File.new('/path/to/some/file') # File | 
 }
@@ -207,7 +207,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **payor_id** | [**String**](.md) | The Payor Id |  |
+| **payor_id** | **String** | The Payor Id |  |
 | **logo** | **File** |  | [optional] |
 
 ### Return type
@@ -244,9 +244,9 @@ VeloPayments.configure do |config|
 end
 
 api_instance = VeloPayments::PayorsApi.new
-payor_id = TODO # String | The Payor Id
-application_id = TODO # String | Application ID
-payor_create_api_key_request = VeloPayments::PayorCreateApiKeyRequest.new({name: 'iOS Key', roles: ['payor.admin']}) # PayorCreateApiKeyRequest | Details of application API key to create
+payor_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | The Payor Id
+application_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | Application ID
+payor_create_api_key_request = VeloPayments::PayorCreateApiKeyRequest.new({name: 'iOS Key', roles: ["payor.admin"]}) # PayorCreateApiKeyRequest | Details of application API key to create
 
 begin
   # Create API Key
@@ -279,8 +279,8 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **payor_id** | [**String**](.md) | The Payor Id |  |
-| **application_id** | [**String**](.md) | Application ID |  |
+| **payor_id** | **String** | The Payor Id |  |
+| **application_id** | **String** | Application ID |  |
 | **payor_create_api_key_request** | [**PayorCreateApiKeyRequest**](PayorCreateApiKeyRequest.md) | Details of application API key to create |  |
 
 ### Return type
@@ -317,7 +317,7 @@ VeloPayments.configure do |config|
 end
 
 api_instance = VeloPayments::PayorsApi.new
-payor_id = TODO # String | The Payor Id
+payor_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | The Payor Id
 payor_create_application_request = VeloPayments::PayorCreateApplicationRequest.new({name: 'SAP'}) # PayorCreateApplicationRequest | Details of application to create
 
 begin
@@ -350,7 +350,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **payor_id** | [**String**](.md) | The Payor Id |  |
+| **payor_id** | **String** | The Payor Id |  |
 | **payor_create_application_request** | [**PayorCreateApplicationRequest**](PayorCreateApplicationRequest.md) | Details of application to create |  |
 
 ### Return type
@@ -387,7 +387,7 @@ VeloPayments.configure do |config|
 end
 
 api_instance = VeloPayments::PayorsApi.new
-payor_id = TODO # String | The Payor Id
+payor_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | The Payor Id
 payor_email_opt_out_request = VeloPayments::PayorEmailOptOutRequest.new({reminder_emails_opt_out: false}) # PayorEmailOptOutRequest | Reminder Emails Opt-Out Request
 
 begin
@@ -420,7 +420,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **payor_id** | [**String**](.md) | The Payor Id |  |
+| **payor_id** | **String** | The Payor Id |  |
 | **payor_email_opt_out_request** | [**PayorEmailOptOutRequest**](PayorEmailOptOutRequest.md) | Reminder Emails Opt-Out Request |  |
 
 ### Return type
@@ -457,7 +457,7 @@ VeloPayments.configure do |config|
 end
 
 api_instance = VeloPayments::PayorsApi.new
-payor_id = TODO # String | The Payor Id
+payor_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | The Payor Id
 
 begin
   # Get Branding
@@ -490,7 +490,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **payor_id** | [**String**](.md) | The Payor Id |  |
+| **payor_id** | **String** | The Payor Id |  |
 
 ### Return type
 
@@ -527,8 +527,8 @@ end
 
 api_instance = VeloPayments::PayorsApi.new
 opts = {
-  descendants_of_payor: TODO, # String | The Payor ID from which to start the query to show all descendants
-  parent_of_payor: TODO, # String | Look for the parent payor details for this payor id
+  descendants_of_payor: '38400000-8cf0-11bd-b23e-10b96e4ef00d', # String | The Payor ID from which to start the query to show all descendants
+  parent_of_payor: '38400000-8cf0-11bd-b23e-10b96e4ef00d', # String | Look for the parent payor details for this payor id
   fields: 'fields_example' # String | List of additional Payor fields to include in the response for each Payor. The values of payorId and payorName and always included for each Payor - 'fields' allows you to add to this. Example: ```fields=primaryContactEmail,kycState``` - will include payorId+payorName+primaryContactEmail+kycState for each Payor Default if not specified is to include only payorId and payorName. The supported fields are any combination of: primaryContactEmail,kycState 
 }
 
@@ -563,8 +563,8 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **descendants_of_payor** | [**String**](.md) | The Payor ID from which to start the query to show all descendants | [optional] |
-| **parent_of_payor** | [**String**](.md) | Look for the parent payor details for this payor id | [optional] |
+| **descendants_of_payor** | **String** | The Payor ID from which to start the query to show all descendants | [optional] |
+| **parent_of_payor** | **String** | Look for the parent payor details for this payor id | [optional] |
 | **fields** | **String** | List of additional Payor fields to include in the response for each Payor. The values of payorId and payorName and always included for each Payor - &#39;fields&#39; allows you to add to this. Example: &#x60;&#x60;&#x60;fields&#x3D;primaryContactEmail,kycState&#x60;&#x60;&#x60; - will include payorId+payorName+primaryContactEmail+kycState for each Payor Default if not specified is to include only payorId and payorName. The supported fields are any combination of: primaryContactEmail,kycState  | [optional] |
 
 ### Return type

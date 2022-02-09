@@ -98,7 +98,7 @@ VeloPayments.configure do |config|
 end
 
 api_instance = VeloPayments::FundingManagerPrivateApi.new
-source_account_id = TODO # String | Source account id
+source_account_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | Source account id
 
 begin
   # Delete a source account by ID
@@ -130,7 +130,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **source_account_id** | [**String**](.md) | Source account id |  |
+| **source_account_id** | **String** | Source account id |  |
 
 ### Return type
 

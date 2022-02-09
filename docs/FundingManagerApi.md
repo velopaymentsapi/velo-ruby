@@ -43,7 +43,7 @@ VeloPayments.configure do |config|
 end
 
 api_instance = VeloPayments::FundingManagerApi.new
-source_account_id = TODO # String | Source account id
+source_account_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | Source account id
 funding_request_v1 = VeloPayments::FundingRequestV1.new({amount: 3.56}) # FundingRequestV1 | Body to included amount to be funded
 
 begin
@@ -76,7 +76,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **source_account_id** | [**String**](.md) | Source account id |  |
+| **source_account_id** | **String** | Source account id |  |
 | **funding_request_v1** | [**FundingRequestV1**](FundingRequestV1.md) | Body to included amount to be funded |  |
 
 ### Return type
@@ -113,7 +113,7 @@ VeloPayments.configure do |config|
 end
 
 api_instance = VeloPayments::FundingManagerApi.new
-source_account_id = TODO # String | Source account id
+source_account_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | Source account id
 funding_request_v2 = VeloPayments::FundingRequestV2.new({amount: 3.56}) # FundingRequestV2 | Body to included amount to be funded
 
 begin
@@ -146,7 +146,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **source_account_id** | [**String**](.md) | Source account id |  |
+| **source_account_id** | **String** | Source account id |  |
 | **funding_request_v2** | [**FundingRequestV2**](FundingRequestV2.md) | Body to included amount to be funded |  |
 
 ### Return type
@@ -183,7 +183,7 @@ VeloPayments.configure do |config|
 end
 
 api_instance = VeloPayments::FundingManagerApi.new
-source_account_id = TODO # String | Source account id
+source_account_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | Source account id
 funding_request_v3 = VeloPayments::FundingRequestV3.new({funding_account_id: 'funding_account_id_example', amount: 3.56}) # FundingRequestV3 | Body to included amount to be funded
 
 begin
@@ -216,7 +216,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **source_account_id** | [**String**](.md) | Source account id |  |
+| **source_account_id** | **String** | Source account id |  |
 | **funding_request_v3** | [**FundingRequestV3**](FundingRequestV3.md) | Body to included amount to be funded |  |
 
 ### Return type
@@ -253,7 +253,7 @@ VeloPayments.configure do |config|
 end
 
 api_instance = VeloPayments::FundingManagerApi.new
-funding_account_id = TODO # String | 
+funding_account_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   sensitive: true # Boolean | 
 }
@@ -289,7 +289,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **funding_account_id** | [**String**](.md) |  |  |
+| **funding_account_id** | **String** |  |  |
 | **sensitive** | **Boolean** |  | [optional][default to false] |
 
 ### Return type
@@ -326,7 +326,7 @@ VeloPayments.configure do |config|
 end
 
 api_instance = VeloPayments::FundingManagerApi.new
-funding_account_id = TODO # String | 
+funding_account_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 opts = {
   sensitive: true # Boolean | 
 }
@@ -362,7 +362,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **funding_account_id** | [**String**](.md) |  |  |
+| **funding_account_id** | **String** |  |  |
 | **sensitive** | **Boolean** |  | [optional][default to false] |
 
 ### Return type
@@ -400,8 +400,8 @@ end
 
 api_instance = VeloPayments::FundingManagerApi.new
 opts = {
-  payor_id: TODO, # String | 
-  source_account_id: TODO, # String | 
+  payor_id: '38400000-8cf0-11bd-b23e-10b96e4ef00d', # String | 
+  source_account_id: '38400000-8cf0-11bd-b23e-10b96e4ef00d', # String | 
   page: 56, # Integer | Page number. Default is 1.
   page_size: 56, # Integer | The number of results to return in a page
   sort: 'sort_example', # String | List of sort fields (e.g. ?sort=accountName:asc,name:asc) Default is accountName:asc The supported sort fields are - accountName, name and currency.
@@ -439,8 +439,8 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **payor_id** | [**String**](.md) |  | [optional] |
-| **source_account_id** | [**String**](.md) |  | [optional] |
+| **payor_id** | **String** |  | [optional] |
+| **source_account_id** | **String** |  | [optional] |
 | **page** | **Integer** | Page number. Default is 1. | [optional][default to 1] |
 | **page_size** | **Integer** | The number of results to return in a page | [optional][default to 25] |
 | **sort** | **String** | List of sort fields (e.g. ?sort&#x3D;accountName:asc,name:asc) Default is accountName:asc The supported sort fields are - accountName, name and currency. | [optional][default to &#39;accountName:asc&#39;] |
@@ -481,7 +481,7 @@ end
 
 api_instance = VeloPayments::FundingManagerApi.new
 opts = {
-  payor_id: TODO, # String | 
+  payor_id: '38400000-8cf0-11bd-b23e-10b96e4ef00d', # String | 
   name: 'name_example', # String | The descriptive funding account name
   country: 'US', # String | The 2 letter ISO 3166-1 country code (upper case)
   currency: 'USD', # String | The ISO 4217 currency code
@@ -523,7 +523,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **payor_id** | [**String**](.md) |  | [optional] |
+| **payor_id** | **String** |  | [optional] |
 | **name** | **String** | The descriptive funding account name | [optional] |
 | **country** | **String** | The 2 letter ISO 3166-1 country code (upper case) | [optional] |
 | **currency** | **String** | The ISO 4217 currency code | [optional] |
@@ -567,7 +567,7 @@ VeloPayments.configure do |config|
 end
 
 api_instance = VeloPayments::FundingManagerApi.new
-source_account_id = TODO # String | Source account id
+source_account_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | Source account id
 
 begin
   # Get details about given source account.
@@ -600,7 +600,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **source_account_id** | [**String**](.md) | Source account id |  |
+| **source_account_id** | **String** | Source account id |  |
 
 ### Return type
 
@@ -636,7 +636,7 @@ VeloPayments.configure do |config|
 end
 
 api_instance = VeloPayments::FundingManagerApi.new
-source_account_id = TODO # String | Source account id
+source_account_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | Source account id
 
 begin
   # Get details about given source account.
@@ -669,7 +669,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **source_account_id** | [**String**](.md) | Source account id |  |
+| **source_account_id** | **String** | Source account id |  |
 
 ### Return type
 
@@ -705,7 +705,7 @@ VeloPayments.configure do |config|
 end
 
 api_instance = VeloPayments::FundingManagerApi.new
-source_account_id = TODO # String | Source account id
+source_account_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | Source account id
 
 begin
   # Get details about given source account.
@@ -738,7 +738,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **source_account_id** | [**String**](.md) | Source account id |  |
+| **source_account_id** | **String** | Source account id |  |
 
 ### Return type
 
@@ -776,7 +776,7 @@ end
 api_instance = VeloPayments::FundingManagerApi.new
 opts = {
   physical_account_name: 'physical_account_name_example', # String | Physical Account Name
-  payor_id: TODO, # String | The account owner Payor ID
+  payor_id: '38400000-8cf0-11bd-b23e-10b96e4ef00d', # String | The account owner Payor ID
   page: 56, # Integer | Page number. Default is 1.
   page_size: 56, # Integer | The number of results to return in a page
   sort: 'sort_example' # String | List of sort fields e.g. ?sort=name:asc Default is name:asc The supported sort fields are - fundingRef 
@@ -814,7 +814,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **physical_account_name** | **String** | Physical Account Name | [optional] |
-| **payor_id** | [**String**](.md) | The account owner Payor ID | [optional] |
+| **payor_id** | **String** | The account owner Payor ID | [optional] |
 | **page** | **Integer** | Page number. Default is 1. | [optional][default to 1] |
 | **page_size** | **Integer** | The number of results to return in a page | [optional][default to 25] |
 | **sort** | **String** | List of sort fields e.g. ?sort&#x3D;name:asc Default is name:asc The supported sort fields are - fundingRef  | [optional][default to &#39;fundingRef:asc&#39;] |
@@ -855,9 +855,9 @@ end
 api_instance = VeloPayments::FundingManagerApi.new
 opts = {
   physical_account_name: 'physical_account_name_example', # String | Physical Account Name
-  physical_account_id: TODO, # String | The physical account ID
-  payor_id: TODO, # String | The account owner Payor ID
-  funding_account_id: TODO, # String | The funding account ID
+  physical_account_id: '38400000-8cf0-11bd-b23e-10b96e4ef00d', # String | The physical account ID
+  payor_id: '38400000-8cf0-11bd-b23e-10b96e4ef00d', # String | The account owner Payor ID
+  funding_account_id: '38400000-8cf0-11bd-b23e-10b96e4ef00d', # String | The funding account ID
   page: 56, # Integer | Page number. Default is 1.
   page_size: 56, # Integer | The number of results to return in a page
   sort: 'sort_example' # String | List of sort fields e.g. ?sort=name:asc Default is name:asc The supported sort fields are - fundingRef, name, balance 
@@ -895,9 +895,9 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **physical_account_name** | **String** | Physical Account Name | [optional] |
-| **physical_account_id** | [**String**](.md) | The physical account ID | [optional] |
-| **payor_id** | [**String**](.md) | The account owner Payor ID | [optional] |
-| **funding_account_id** | [**String**](.md) | The funding account ID | [optional] |
+| **physical_account_id** | **String** | The physical account ID | [optional] |
+| **payor_id** | **String** | The account owner Payor ID | [optional] |
+| **funding_account_id** | **String** | The funding account ID | [optional] |
 | **page** | **Integer** | Page number. Default is 1. | [optional][default to 1] |
 | **page_size** | **Integer** | The number of results to return in a page | [optional][default to 25] |
 | **sort** | **String** | List of sort fields e.g. ?sort&#x3D;name:asc Default is name:asc The supported sort fields are - fundingRef, name, balance  | [optional][default to &#39;fundingRef:asc&#39;] |
@@ -938,9 +938,9 @@ end
 api_instance = VeloPayments::FundingManagerApi.new
 opts = {
   physical_account_name: 'physical_account_name_example', # String | Physical Account Name
-  physical_account_id: TODO, # String | The physical account ID
-  payor_id: TODO, # String | The account owner Payor ID
-  funding_account_id: TODO, # String | The funding account ID
+  physical_account_id: '38400000-8cf0-11bd-b23e-10b96e4ef00d', # String | The physical account ID
+  payor_id: '38400000-8cf0-11bd-b23e-10b96e4ef00d', # String | The account owner Payor ID
+  funding_account_id: '38400000-8cf0-11bd-b23e-10b96e4ef00d', # String | The funding account ID
   include_user_deleted: 'include_user_deleted_example', # Boolean | A filter for retrieving both active accounts and user deleted ones
   type: VeloPayments::SourceAccountType::FBO, # SourceAccountType | The type of source account.
   page: 56, # Integer | Page number. Default is 1.
@@ -980,9 +980,9 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **physical_account_name** | **String** | Physical Account Name | [optional] |
-| **physical_account_id** | [**String**](.md) | The physical account ID | [optional] |
-| **payor_id** | [**String**](.md) | The account owner Payor ID | [optional] |
-| **funding_account_id** | [**String**](.md) | The funding account ID | [optional] |
+| **physical_account_id** | **String** | The physical account ID | [optional] |
+| **payor_id** | **String** | The account owner Payor ID | [optional] |
+| **funding_account_id** | **String** | The funding account ID | [optional] |
 | **include_user_deleted** | **Boolean** | A filter for retrieving both active accounts and user deleted ones | [optional] |
 | **type** | [**SourceAccountType**](.md) | The type of source account. | [optional] |
 | **page** | **Integer** | Page number. Default is 1. | [optional][default to 1] |
@@ -1023,7 +1023,7 @@ VeloPayments.configure do |config|
 end
 
 api_instance = VeloPayments::FundingManagerApi.new
-payor_id = TODO # String | 
+payor_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | 
 updated_since = Time.parse('2013-10-20T19:20:30+01:00') # Time | 
 opts = {
   page: 56, # Integer | Page number. Default is 1.
@@ -1061,7 +1061,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **payor_id** | [**String**](.md) |  |  |
+| **payor_id** | **String** |  |  |
 | **updated_since** | **Time** |  |  |
 | **page** | **Integer** | Page number. Default is 1. | [optional][default to 1] |
 | **page_size** | **Integer** | The number of results to return in a page | [optional][default to 25] |
@@ -1100,7 +1100,7 @@ VeloPayments.configure do |config|
 end
 
 api_instance = VeloPayments::FundingManagerApi.new
-source_account_id = TODO # String | Source account id
+source_account_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | Source account id
 set_notifications_request = VeloPayments::SetNotificationsRequest.new({minimum_balance: 3.56}) # SetNotificationsRequest | Body to included minimum balance to set
 
 begin
@@ -1133,7 +1133,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **source_account_id** | [**String**](.md) | Source account id |  |
+| **source_account_id** | **String** | Source account id |  |
 | **set_notifications_request** | [**SetNotificationsRequest**](SetNotificationsRequest.md) | Body to included minimum balance to set |  |
 
 ### Return type
@@ -1170,7 +1170,7 @@ VeloPayments.configure do |config|
 end
 
 api_instance = VeloPayments::FundingManagerApi.new
-source_account_id = TODO # String | The 'from' source account id, which will be debited
+source_account_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | The 'from' source account id, which will be debited
 transfer_request = VeloPayments::TransferRequest.new({to_source_account_id: 'to_source_account_id_example', amount: 3.56, currency: 'USD'}) # TransferRequest | Body
 
 begin
@@ -1203,7 +1203,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **source_account_id** | [**String**](.md) | The &#39;from&#39; source account id, which will be debited |  |
+| **source_account_id** | **String** | The &#39;from&#39; source account id, which will be debited |  |
 | **transfer_request** | [**TransferRequest**](TransferRequest.md) | Body |  |
 
 ### Return type
@@ -1240,7 +1240,7 @@ VeloPayments.configure do |config|
 end
 
 api_instance = VeloPayments::FundingManagerApi.new
-source_account_id = TODO # String | The 'from' source account id, which will be debited
+source_account_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | The 'from' source account id, which will be debited
 transfer_request2 = VeloPayments::TransferRequest2.new({to_source_account_id: 'to_source_account_id_example', amount: 3.56, currency: 'USD'}) # TransferRequest2 | Body
 
 begin
@@ -1273,7 +1273,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **source_account_id** | [**String**](.md) | The &#39;from&#39; source account id, which will be debited |  |
+| **source_account_id** | **String** | The &#39;from&#39; source account id, which will be debited |  |
 | **transfer_request2** | [**TransferRequest2**](TransferRequest2.md) | Body |  |
 
 ### Return type

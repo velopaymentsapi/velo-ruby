@@ -8,7 +8,7 @@
 | **payor_refs** | [**Array&lt;PayeePayorRefV3&gt;**](PayeePayorRefV3.md) |  | [optional][readonly] |
 | **email** | **String** |  |  |
 | **remote_id** | **String** |  |  |
-| **type** | [**PayeeType**](PayeeType.md) |  |  |
+| **type** | [**PayeeType2**](PayeeType2.md) |  |  |
 | **address** | [**CreatePayeeAddress**](CreatePayeeAddress.md) |  |  |
 | **payment_channel** | [**CreatePaymentChannel**](CreatePaymentChannel.md) |  | [optional] |
 | **challenge** | [**Challenge**](Challenge.md) |  | [optional] |

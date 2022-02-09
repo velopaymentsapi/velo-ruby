@@ -38,7 +38,7 @@ VeloPayments.configure do |config|
 end
 
 api_instance = VeloPayments::PayeesApi.new
-payee_id = TODO # String | The UUID of the payee.
+payee_id = '2aa5d7e0-2ecb-403f-8494-1865ed0454e9' # String | The UUID of the payee.
 
 begin
   # Delete Payee by Id
@@ -70,7 +70,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **payee_id** | [**String**](.md) | The UUID of the payee. |  |
+| **payee_id** | **String** | The UUID of the payee. |  |
 
 ### Return type
 
@@ -106,7 +106,7 @@ VeloPayments.configure do |config|
 end
 
 api_instance = VeloPayments::PayeesApi.new
-payee_id = TODO # String | The UUID of the payee.
+payee_id = '2aa5d7e0-2ecb-403f-8494-1865ed0454e9' # String | The UUID of the payee.
 
 begin
   # Delete Payee by Id
@@ -138,7 +138,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **payee_id** | [**String**](.md) | The UUID of the payee. |  |
+| **payee_id** | **String** | The UUID of the payee. |  |
 
 ### Return type
 
@@ -174,7 +174,7 @@ VeloPayments.configure do |config|
 end
 
 api_instance = VeloPayments::PayeesApi.new
-payee_id = TODO # String | The UUID of the payee.
+payee_id = '2aa5d7e0-2ecb-403f-8494-1865ed0454e9' # String | The UUID of the payee.
 opts = {
   sensitive: true # Boolean | Optional. If omitted or set to false, any Personal Identifiable Information (PII) values are returned masked. If set to true, and you have permission, the PII values will be returned as their original unmasked values. 
 }
@@ -210,7 +210,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **payee_id** | [**String**](.md) | The UUID of the payee. |  |
+| **payee_id** | **String** | The UUID of the payee. |  |
 | **sensitive** | **Boolean** | Optional. If omitted or set to false, any Personal Identifiable Information (PII) values are returned masked. If set to true, and you have permission, the PII values will be returned as their original unmasked values.  | [optional] |
 
 ### Return type
@@ -247,7 +247,7 @@ VeloPayments.configure do |config|
 end
 
 api_instance = VeloPayments::PayeesApi.new
-payee_id = TODO # String | The UUID of the payee.
+payee_id = '2aa5d7e0-2ecb-403f-8494-1865ed0454e9' # String | The UUID of the payee.
 opts = {
   sensitive: true # Boolean | Optional. If omitted or set to false, any Personal Identifiable Information (PII) values are returned masked. If set to true, and you have permission, the PII values will be returned as their original unmasked values. 
 }
@@ -283,7 +283,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **payee_id** | [**String**](.md) | The UUID of the payee. |  |
+| **payee_id** | **String** | The UUID of the payee. |  |
 | **sensitive** | **Boolean** | Optional. If omitted or set to false, any Personal Identifiable Information (PII) values are returned masked. If set to true, and you have permission, the PII values will be returned as their original unmasked values.  | [optional] |
 
 ### Return type
@@ -320,7 +320,7 @@ VeloPayments.configure do |config|
 end
 
 api_instance = VeloPayments::PayeesApi.new
-payor_id = TODO # String | The Payor ID to find associated Payees
+payor_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | The Payor ID to find associated Payees
 updated_since = Time.parse('2013-10-20T19:20:30+01:00') # Time | The updatedSince filter in the format YYYY-MM-DDThh:mm:ss+hh:mm
 opts = {
   page: 1, # Integer | Page number. Default is 1.
@@ -358,7 +358,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **payor_id** | [**String**](.md) | The Payor ID to find associated Payees |  |
+| **payor_id** | **String** | The Payor ID to find associated Payees |  |
 | **updated_since** | **Time** | The updatedSince filter in the format YYYY-MM-DDThh:mm:ss+hh:mm |  |
 | **page** | **Integer** | Page number. Default is 1. | [optional][default to 1] |
 | **page_size** | **Integer** | Page size. Default is 100. Max allowable is 1000. | [optional][default to 100] |
@@ -397,7 +397,7 @@ VeloPayments.configure do |config|
 end
 
 api_instance = VeloPayments::PayeesApi.new
-payor_id = TODO # String | The Payor ID to find associated Payees
+payor_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | The Payor ID to find associated Payees
 updated_since = Time.parse('2013-10-20T19:20:30+01:00') # Time | The updatedSince filter in the format YYYY-MM-DDThh:mm:ss+hh:mm
 opts = {
   page: 1, # Integer | Page number. Default is 1.
@@ -435,7 +435,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **payor_id** | [**String**](.md) | The Payor ID to find associated Payees |  |
+| **payor_id** | **String** | The Payor ID to find associated Payees |  |
 | **updated_since** | **Time** | The updatedSince filter in the format YYYY-MM-DDThh:mm:ss+hh:mm |  |
 | **page** | **Integer** | Page number. Default is 1. | [optional][default to 1] |
 | **page_size** | **Integer** | Page size. Default is 100. Max allowable is 1000. | [optional][default to 100] |
@@ -474,15 +474,15 @@ VeloPayments.configure do |config|
 end
 
 api_instance = VeloPayments::PayeesApi.new
-payor_id = TODO # String | The account owner Payor ID
+payor_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | The account owner Payor ID
 opts = {
   watchlist_status: VeloPayments::WatchlistStatus::NONE, # WatchlistStatus | The watchlistStatus of the payees.
   disabled: true, # Boolean | Payee disabled
   onboarded_status: VeloPayments::OnboardedStatus::CREATED, # OnboardedStatus | The onboarded status of the payees.
-  email: TODO, # String | Email address
+  email: 'bob@example.com', # String | Email address
   display_name: 'Bob Smith', # String | The display name of the payees.
   remote_id: 'remoteId123', # String | The remote id of the payees.
-  payee_type: VeloPayments::PayeeType::INDIVIDUAL, # PayeeType | The onboarded status of the payees.
+  payee_type: VeloPayments::PayeeType2::INDIVIDUAL, # PayeeType2 | The onboarded status of the payees.
   payee_country: 'US', # String | The country of the payee - 2 letter ISO 3166-1 country code (upper case)
   page: 1, # Integer | Page number. Default is 1.
   page_size: 25, # Integer | Page size. Default is 25. Max allowable is 100.
@@ -520,14 +520,14 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **payor_id** | [**String**](.md) | The account owner Payor ID |  |
+| **payor_id** | **String** | The account owner Payor ID |  |
 | **watchlist_status** | [**WatchlistStatus**](.md) | The watchlistStatus of the payees. | [optional] |
 | **disabled** | **Boolean** | Payee disabled | [optional] |
 | **onboarded_status** | [**OnboardedStatus**](.md) | The onboarded status of the payees. | [optional] |
-| **email** | [**String**](.md) | Email address | [optional] |
+| **email** | **String** | Email address | [optional] |
 | **display_name** | **String** | The display name of the payees. | [optional] |
 | **remote_id** | **String** | The remote id of the payees. | [optional] |
-| **payee_type** | [**PayeeType**](.md) | The onboarded status of the payees. | [optional] |
+| **payee_type** | [**PayeeType2**](.md) | The onboarded status of the payees. | [optional] |
 | **payee_country** | **String** | The country of the payee - 2 letter ISO 3166-1 country code (upper case) | [optional] |
 | **page** | **Integer** | Page number. Default is 1. | [optional][default to 1] |
 | **page_size** | **Integer** | Page size. Default is 25. Max allowable is 100. | [optional][default to 25] |
@@ -567,15 +567,15 @@ VeloPayments.configure do |config|
 end
 
 api_instance = VeloPayments::PayeesApi.new
-payor_id = TODO # String | The account owner Payor ID
+payor_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | The account owner Payor ID
 opts = {
   watchlist_status: VeloPayments::WatchlistStatus::NONE, # WatchlistStatus | The watchlistStatus of the payees.
   disabled: true, # Boolean | Payee disabled
   onboarded_status: VeloPayments::OnboardedStatus::CREATED, # OnboardedStatus | The onboarded status of the payees.
-  email: TODO, # String | Email address
+  email: 'bob@example.com', # String | Email address
   display_name: 'Bob Smith', # String | The display name of the payees.
   remote_id: 'remoteId123', # String | The remote id of the payees.
-  payee_type: VeloPayments::PayeeType::INDIVIDUAL, # PayeeType | The onboarded status of the payees.
+  payee_type: VeloPayments::PayeeType2::INDIVIDUAL, # PayeeType2 | The onboarded status of the payees.
   payee_country: 'US', # String | The country of the payee - 2 letter ISO 3166-1 country code (upper case)
   ofac_status: VeloPayments::OfacStatus::PENDING, # OfacStatus | The ofacStatus of the payees.
   page: 1, # Integer | Page number. Default is 1.
@@ -614,14 +614,14 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **payor_id** | [**String**](.md) | The account owner Payor ID |  |
+| **payor_id** | **String** | The account owner Payor ID |  |
 | **watchlist_status** | [**WatchlistStatus**](.md) | The watchlistStatus of the payees. | [optional] |
 | **disabled** | **Boolean** | Payee disabled | [optional] |
 | **onboarded_status** | [**OnboardedStatus**](.md) | The onboarded status of the payees. | [optional] |
-| **email** | [**String**](.md) | Email address | [optional] |
+| **email** | **String** | Email address | [optional] |
 | **display_name** | **String** | The display name of the payees. | [optional] |
 | **remote_id** | **String** | The remote id of the payees. | [optional] |
-| **payee_type** | [**PayeeType**](.md) | The onboarded status of the payees. | [optional] |
+| **payee_type** | [**PayeeType2**](.md) | The onboarded status of the payees. | [optional] |
 | **payee_country** | **String** | The country of the payee - 2 letter ISO 3166-1 country code (upper case) | [optional] |
 | **ofac_status** | [**OfacStatus**](.md) | The ofacStatus of the payees. | [optional] |
 | **page** | **Integer** | Page number. Default is 1. | [optional][default to 1] |
@@ -662,7 +662,7 @@ VeloPayments.configure do |config|
 end
 
 api_instance = VeloPayments::PayeesApi.new
-payee_id = TODO # String | The UUID of the payee.
+payee_id = '2aa5d7e0-2ecb-403f-8494-1865ed0454e9' # String | The UUID of the payee.
 update_payee_details_request = VeloPayments::UpdatePayeeDetailsRequest.new # UpdatePayeeDetailsRequest | Request to update payee details
 
 begin
@@ -695,7 +695,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **payee_id** | [**String**](.md) | The UUID of the payee. |  |
+| **payee_id** | **String** | The UUID of the payee. |  |
 | **update_payee_details_request** | [**UpdatePayeeDetailsRequest**](UpdatePayeeDetailsRequest.md) | Request to update payee details |  |
 
 ### Return type
@@ -718,7 +718,7 @@ nil (empty response body)
 
 Update Payee Details
 
-<p>Update payee details for the given Payee Id.<p> 
+<p>Update payee details for the given Payee Id.</p> <p>Payors may only update the payee details if the payee has not yet onboarded</p> 
 
 ### Examples
 
@@ -732,7 +732,7 @@ VeloPayments.configure do |config|
 end
 
 api_instance = VeloPayments::PayeesApi.new
-payee_id = TODO # String | The UUID of the payee.
+payee_id = '2aa5d7e0-2ecb-403f-8494-1865ed0454e9' # String | The UUID of the payee.
 update_payee_details_request2 = VeloPayments::UpdatePayeeDetailsRequest2.new # UpdatePayeeDetailsRequest2 | Request to update payee details
 
 begin
@@ -765,7 +765,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **payee_id** | [**String**](.md) | The UUID of the payee. |  |
+| **payee_id** | **String** | The UUID of the payee. |  |
 | **update_payee_details_request2** | [**UpdatePayeeDetailsRequest2**](UpdatePayeeDetailsRequest2.md) | Request to update payee details |  |
 
 ### Return type
@@ -802,7 +802,7 @@ VeloPayments.configure do |config|
 end
 
 api_instance = VeloPayments::PayeesApi.new
-payee_id = TODO # String | The UUID of the payee.
+payee_id = '2aa5d7e0-2ecb-403f-8494-1865ed0454e9' # String | The UUID of the payee.
 update_remote_id_request = VeloPayments::UpdateRemoteIdRequest.new({payor_id: '9ac75325-5dcd-42d5-b992-175d7e0a035e', remote_id: 'remoteId123'}) # UpdateRemoteIdRequest | Request to update payee remote id v3
 
 begin
@@ -835,7 +835,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **payee_id** | [**String**](.md) | The UUID of the payee. |  |
+| **payee_id** | **String** | The UUID of the payee. |  |
 | **update_remote_id_request** | [**UpdateRemoteIdRequest**](UpdateRemoteIdRequest.md) | Request to update payee remote id v3 |  |
 
 ### Return type
@@ -872,7 +872,7 @@ VeloPayments.configure do |config|
 end
 
 api_instance = VeloPayments::PayeesApi.new
-payee_id = TODO # String | The UUID of the payee.
+payee_id = '2aa5d7e0-2ecb-403f-8494-1865ed0454e9' # String | The UUID of the payee.
 update_remote_id_request2 = VeloPayments::UpdateRemoteIdRequest2.new({payor_id: '9ac75325-5dcd-42d5-b992-175d7e0a035e', remote_id: 'remoteId123'}) # UpdateRemoteIdRequest2 | Request to update payee remote id v4
 
 begin
@@ -905,7 +905,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **payee_id** | [**String**](.md) | The UUID of the payee. |  |
+| **payee_id** | **String** | The UUID of the payee. |  |
 | **update_remote_id_request2** | [**UpdateRemoteIdRequest2**](UpdateRemoteIdRequest2.md) | Request to update payee remote id v4 |  |
 
 ### Return type

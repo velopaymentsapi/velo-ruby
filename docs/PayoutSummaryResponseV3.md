@@ -14,6 +14,7 @@
 | **accounts** | [**Array&lt;SourceAccountV3&gt;**](SourceAccountV3.md) |  |  |
 | **accepted_payments** | [**Array&lt;AcceptedPaymentV3&gt;**](AcceptedPaymentV3.md) |  |  |
 | **rejected_payments** | [**Array&lt;RejectedPaymentV3&gt;**](RejectedPaymentV3.md) |  |  |
+| **schedule** | [**PayoutSchedule2**](PayoutSchedule2.md) |  | [optional] |
 
 ## Example
 
@@ -30,7 +31,8 @@ instance = VeloPayments::PayoutSummaryResponseV3.new(
   fx_summaries: null,
   accounts: null,
   accepted_payments: null,
-  rejected_payments: null
+  rejected_payments: null,
+  schedule: null
 )
 ```
 

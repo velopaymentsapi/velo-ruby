@@ -27,7 +27,7 @@ VeloPayments.configure do |config|
 end
 
 api_instance = VeloPayments::TokensApi.new
-user_id = TODO # String | The UUID of the User.
+user_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | The UUID of the User.
 resend_token_request = VeloPayments::ResendTokenRequest.new({token_type: 'INVITE_MFA_USER'}) # ResendTokenRequest | The type of token to resend
 
 begin
@@ -60,7 +60,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **user_id** | [**String**](.md) | The UUID of the User. |  |
+| **user_id** | **String** | The UUID of the User. |  |
 | **resend_token_request** | [**ResendTokenRequest**](ResendTokenRequest.md) | The type of token to resend |  |
 
 ### Return type

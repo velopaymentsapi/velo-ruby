@@ -20,6 +20,7 @@
 | **payout_memo** | **String** |  | [optional] |
 | **payout_type** | [**PayoutType**](PayoutType.md) |  |  |
 | **payor_name** | **String** |  |  |
+| **schedule** | [**PayoutSchedule**](PayoutSchedule.md) |  | [optional] |
 
 ## Example
 
@@ -42,7 +43,8 @@ instance = VeloPayments::PayoutSummaryAudit.new(
   fx_summaries: null,
   payout_memo: null,
   payout_type: null,
-  payor_name: null
+  payor_name: null,
+  schedule: null
 )
 ```
 

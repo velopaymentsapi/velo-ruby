@@ -23,6 +23,7 @@
 | **quoted** | [**PayoutPrincipal**](PayoutPrincipal.md) |  | [optional] |
 | **instructed** | [**PayoutPrincipal**](PayoutPrincipal.md) |  | [optional] |
 | **withdrawn** | [**PayoutPrincipal**](PayoutPrincipal.md) |  | [optional] |
+| **schedule** | [**PayoutSchedule**](PayoutSchedule.md) |  | [optional] |
 
 ## Example
 
@@ -48,7 +49,8 @@ instance = VeloPayments::GetPaymentsForPayoutResponseV4Summary.new(
   payout_to: null,
   quoted: null,
   instructed: null,
-  withdrawn: null
+  withdrawn: null,
+  schedule: null
 )
 ```
 
