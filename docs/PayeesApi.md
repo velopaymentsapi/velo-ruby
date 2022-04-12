@@ -156,7 +156,7 @@ nil (empty response body)
 
 ## get_payee_by_id_v3
 
-> <PayeeDetailResponse> get_payee_by_id_v3(payee_id, opts)
+> <PayeeDetailResponseV3> get_payee_by_id_v3(payee_id, opts)
 
 Get Payee by Id
 
@@ -192,7 +192,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<PayeeDetailResponse>, Integer, Hash)> get_payee_by_id_v3_with_http_info(payee_id, opts)
+> <Array(<PayeeDetailResponseV3>, Integer, Hash)> get_payee_by_id_v3_with_http_info(payee_id, opts)
 
 ```ruby
 begin
@@ -200,7 +200,7 @@ begin
   data, status_code, headers = api_instance.get_payee_by_id_v3_with_http_info(payee_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <PayeeDetailResponse>
+  p data # => <PayeeDetailResponseV3>
 rescue VeloPayments::ApiError => e
   puts "Error when calling PayeesApi->get_payee_by_id_v3_with_http_info: #{e}"
 end
@@ -215,7 +215,7 @@ end
 
 ### Return type
 
-[**PayeeDetailResponse**](PayeeDetailResponse.md)
+[**PayeeDetailResponseV3**](PayeeDetailResponseV3.md)
 
 ### Authorization
 
@@ -229,7 +229,7 @@ end
 
 ## get_payee_by_id_v4
 
-> <PayeeDetailResponse2> get_payee_by_id_v4(payee_id, opts)
+> <PayeeDetailResponseV4> get_payee_by_id_v4(payee_id, opts)
 
 Get Payee by Id
 
@@ -265,7 +265,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<PayeeDetailResponse2>, Integer, Hash)> get_payee_by_id_v4_with_http_info(payee_id, opts)
+> <Array(<PayeeDetailResponseV4>, Integer, Hash)> get_payee_by_id_v4_with_http_info(payee_id, opts)
 
 ```ruby
 begin
@@ -273,7 +273,7 @@ begin
   data, status_code, headers = api_instance.get_payee_by_id_v4_with_http_info(payee_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <PayeeDetailResponse2>
+  p data # => <PayeeDetailResponseV4>
 rescue VeloPayments::ApiError => e
   puts "Error when calling PayeesApi->get_payee_by_id_v4_with_http_info: #{e}"
 end
@@ -288,7 +288,7 @@ end
 
 ### Return type
 
-[**PayeeDetailResponse2**](PayeeDetailResponse2.md)
+[**PayeeDetailResponseV4**](PayeeDetailResponseV4.md)
 
 ### Authorization
 
@@ -302,7 +302,7 @@ end
 
 ## list_payee_changes_v3
 
-> <PayeeDeltaResponse> list_payee_changes_v3(payor_id, updated_since, opts)
+> <PayeeDeltaResponseV3> list_payee_changes_v3(payor_id, updated_since, opts)
 
 List Payee Changes
 
@@ -340,7 +340,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<PayeeDeltaResponse>, Integer, Hash)> list_payee_changes_v3_with_http_info(payor_id, updated_since, opts)
+> <Array(<PayeeDeltaResponseV3>, Integer, Hash)> list_payee_changes_v3_with_http_info(payor_id, updated_since, opts)
 
 ```ruby
 begin
@@ -348,7 +348,7 @@ begin
   data, status_code, headers = api_instance.list_payee_changes_v3_with_http_info(payor_id, updated_since, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <PayeeDeltaResponse>
+  p data # => <PayeeDeltaResponseV3>
 rescue VeloPayments::ApiError => e
   puts "Error when calling PayeesApi->list_payee_changes_v3_with_http_info: #{e}"
 end
@@ -365,7 +365,7 @@ end
 
 ### Return type
 
-[**PayeeDeltaResponse**](PayeeDeltaResponse.md)
+[**PayeeDeltaResponseV3**](PayeeDeltaResponseV3.md)
 
 ### Authorization
 
@@ -379,7 +379,7 @@ end
 
 ## list_payee_changes_v4
 
-> <PayeeDeltaResponse2> list_payee_changes_v4(payor_id, updated_since, opts)
+> <PayeeDeltaResponseV4> list_payee_changes_v4(payor_id, updated_since, opts)
 
 List Payee Changes
 
@@ -417,7 +417,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<PayeeDeltaResponse2>, Integer, Hash)> list_payee_changes_v4_with_http_info(payor_id, updated_since, opts)
+> <Array(<PayeeDeltaResponseV4>, Integer, Hash)> list_payee_changes_v4_with_http_info(payor_id, updated_since, opts)
 
 ```ruby
 begin
@@ -425,7 +425,7 @@ begin
   data, status_code, headers = api_instance.list_payee_changes_v4_with_http_info(payor_id, updated_since, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <PayeeDeltaResponse2>
+  p data # => <PayeeDeltaResponseV4>
 rescue VeloPayments::ApiError => e
   puts "Error when calling PayeesApi->list_payee_changes_v4_with_http_info: #{e}"
 end
@@ -442,7 +442,7 @@ end
 
 ### Return type
 
-[**PayeeDeltaResponse2**](PayeeDeltaResponse2.md)
+[**PayeeDeltaResponseV4**](PayeeDeltaResponseV4.md)
 
 ### Authorization
 
@@ -456,7 +456,7 @@ end
 
 ## list_payees_v3
 
-> <PagedPayeeResponse> list_payees_v3(payor_id, opts)
+> <PagedPayeeResponseV3> list_payees_v3(payor_id, opts)
 
 List Payees
 
@@ -476,9 +476,9 @@ end
 api_instance = VeloPayments::PayeesApi.new
 payor_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | The account owner Payor ID
 opts = {
-  watchlist_status: VeloPayments::WatchlistStatus::NONE, # WatchlistStatus | The watchlistStatus of the payees.
+  watchlist_status: VeloPayments::WatchlistStatusV3::NONE, # WatchlistStatusV3 | The watchlistStatus of the payees.
   disabled: true, # Boolean | Payee disabled
-  onboarded_status: VeloPayments::OnboardedStatus::CREATED, # OnboardedStatus | The onboarded status of the payees.
+  onboarded_status: VeloPayments::OnboardedStatusV4::CREATED, # OnboardedStatusV4 | The onboarded status of the payees.
   email: 'bob@example.com', # String | Email address
   display_name: 'Bob Smith', # String | The display name of the payees.
   remote_id: 'remoteId123', # String | The remote id of the payees.
@@ -502,7 +502,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<PagedPayeeResponse>, Integer, Hash)> list_payees_v3_with_http_info(payor_id, opts)
+> <Array(<PagedPayeeResponseV3>, Integer, Hash)> list_payees_v3_with_http_info(payor_id, opts)
 
 ```ruby
 begin
@@ -510,7 +510,7 @@ begin
   data, status_code, headers = api_instance.list_payees_v3_with_http_info(payor_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <PagedPayeeResponse>
+  p data # => <PagedPayeeResponseV3>
 rescue VeloPayments::ApiError => e
   puts "Error when calling PayeesApi->list_payees_v3_with_http_info: #{e}"
 end
@@ -521,9 +521,9 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **payor_id** | **String** | The account owner Payor ID |  |
-| **watchlist_status** | [**WatchlistStatus**](.md) | The watchlistStatus of the payees. | [optional] |
+| **watchlist_status** | [**WatchlistStatusV3**](.md) | The watchlistStatus of the payees. | [optional] |
 | **disabled** | **Boolean** | Payee disabled | [optional] |
-| **onboarded_status** | [**OnboardedStatus**](.md) | The onboarded status of the payees. | [optional] |
+| **onboarded_status** | [**OnboardedStatusV4**](.md) | The onboarded status of the payees. | [optional] |
 | **email** | **String** | Email address | [optional] |
 | **display_name** | **String** | The display name of the payees. | [optional] |
 | **remote_id** | **String** | The remote id of the payees. | [optional] |
@@ -535,7 +535,7 @@ end
 
 ### Return type
 
-[**PagedPayeeResponse**](PagedPayeeResponse.md)
+[**PagedPayeeResponseV3**](PagedPayeeResponseV3.md)
 
 ### Authorization
 
@@ -549,7 +549,7 @@ end
 
 ## list_payees_v4
 
-> <PagedPayeeResponse2> list_payees_v4(payor_id, opts)
+> <PagedPayeeResponseV4> list_payees_v4(payor_id, opts)
 
 List Payees
 
@@ -569,15 +569,15 @@ end
 api_instance = VeloPayments::PayeesApi.new
 payor_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | The account owner Payor ID
 opts = {
-  watchlist_status: VeloPayments::WatchlistStatus::NONE, # WatchlistStatus | The watchlistStatus of the payees.
+  watchlist_status: VeloPayments::WatchlistStatusV3::NONE, # WatchlistStatusV3 | The watchlistStatus of the payees.
   disabled: true, # Boolean | Payee disabled
-  onboarded_status: VeloPayments::OnboardedStatus::CREATED, # OnboardedStatus | The onboarded status of the payees.
+  onboarded_status: VeloPayments::OnboardedStatusV4::CREATED, # OnboardedStatusV4 | The onboarded status of the payees.
   email: 'bob@example.com', # String | Email address
   display_name: 'Bob Smith', # String | The display name of the payees.
   remote_id: 'remoteId123', # String | The remote id of the payees.
   payee_type: VeloPayments::PayeeType2::INDIVIDUAL, # PayeeType2 | The onboarded status of the payees.
   payee_country: 'US', # String | The country of the payee - 2 letter ISO 3166-1 country code (upper case)
-  ofac_status: VeloPayments::OfacStatus::PENDING, # OfacStatus | The ofacStatus of the payees.
+  ofac_status: VeloPayments::OfacStatusV4::PENDING, # OfacStatusV4 | The ofacStatus of the payees.
   page: 1, # Integer | Page number. Default is 1.
   page_size: 25, # Integer | Page size. Default is 25. Max allowable is 100.
   sort: 'displayName:asc' # String | List of sort fields (e.g. ?sort=onboardedStatus:asc,name:asc) Default is name:asc 'name' is treated as company name for companies - last name + ',' + firstName for individuals The supported sort fields are - payeeId, displayName, payoutStatus, onboardedStatus. 
@@ -596,7 +596,7 @@ end
 
 This returns an Array which contains the response data, status code and headers.
 
-> <Array(<PagedPayeeResponse2>, Integer, Hash)> list_payees_v4_with_http_info(payor_id, opts)
+> <Array(<PagedPayeeResponseV4>, Integer, Hash)> list_payees_v4_with_http_info(payor_id, opts)
 
 ```ruby
 begin
@@ -604,7 +604,7 @@ begin
   data, status_code, headers = api_instance.list_payees_v4_with_http_info(payor_id, opts)
   p status_code # => 2xx
   p headers # => { ... }
-  p data # => <PagedPayeeResponse2>
+  p data # => <PagedPayeeResponseV4>
 rescue VeloPayments::ApiError => e
   puts "Error when calling PayeesApi->list_payees_v4_with_http_info: #{e}"
 end
@@ -615,22 +615,22 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **payor_id** | **String** | The account owner Payor ID |  |
-| **watchlist_status** | [**WatchlistStatus**](.md) | The watchlistStatus of the payees. | [optional] |
+| **watchlist_status** | [**WatchlistStatusV3**](.md) | The watchlistStatus of the payees. | [optional] |
 | **disabled** | **Boolean** | Payee disabled | [optional] |
-| **onboarded_status** | [**OnboardedStatus**](.md) | The onboarded status of the payees. | [optional] |
+| **onboarded_status** | [**OnboardedStatusV4**](.md) | The onboarded status of the payees. | [optional] |
 | **email** | **String** | Email address | [optional] |
 | **display_name** | **String** | The display name of the payees. | [optional] |
 | **remote_id** | **String** | The remote id of the payees. | [optional] |
 | **payee_type** | [**PayeeType2**](.md) | The onboarded status of the payees. | [optional] |
 | **payee_country** | **String** | The country of the payee - 2 letter ISO 3166-1 country code (upper case) | [optional] |
-| **ofac_status** | [**OfacStatus**](.md) | The ofacStatus of the payees. | [optional] |
+| **ofac_status** | [**OfacStatusV4**](.md) | The ofacStatus of the payees. | [optional] |
 | **page** | **Integer** | Page number. Default is 1. | [optional][default to 1] |
 | **page_size** | **Integer** | Page size. Default is 25. Max allowable is 100. | [optional][default to 25] |
 | **sort** | **String** | List of sort fields (e.g. ?sort&#x3D;onboardedStatus:asc,name:asc) Default is name:asc &#39;name&#39; is treated as company name for companies - last name + &#39;,&#39; + firstName for individuals The supported sort fields are - payeeId, displayName, payoutStatus, onboardedStatus.  | [optional][default to &#39;displayName:asc&#39;] |
 
 ### Return type
 
-[**PagedPayeeResponse2**](PagedPayeeResponse2.md)
+[**PagedPayeeResponseV4**](PagedPayeeResponseV4.md)
 
 ### Authorization
 
@@ -644,7 +644,7 @@ end
 
 ## payee_details_update_v3
 
-> payee_details_update_v3(payee_id, update_payee_details_request)
+> payee_details_update_v3(payee_id, update_payee_details_request_v3)
 
 Update Payee Details
 
@@ -663,11 +663,11 @@ end
 
 api_instance = VeloPayments::PayeesApi.new
 payee_id = '2aa5d7e0-2ecb-403f-8494-1865ed0454e9' # String | The UUID of the payee.
-update_payee_details_request = VeloPayments::UpdatePayeeDetailsRequest.new # UpdatePayeeDetailsRequest | Request to update payee details
+update_payee_details_request_v3 = VeloPayments::UpdatePayeeDetailsRequestV3.new # UpdatePayeeDetailsRequestV3 | Request to update payee details
 
 begin
   # Update Payee Details
-  api_instance.payee_details_update_v3(payee_id, update_payee_details_request)
+  api_instance.payee_details_update_v3(payee_id, update_payee_details_request_v3)
 rescue VeloPayments::ApiError => e
   puts "Error when calling PayeesApi->payee_details_update_v3: #{e}"
 end
@@ -677,12 +677,12 @@ end
 
 This returns an Array which contains the response data (`nil` in this case), status code and headers.
 
-> <Array(nil, Integer, Hash)> payee_details_update_v3_with_http_info(payee_id, update_payee_details_request)
+> <Array(nil, Integer, Hash)> payee_details_update_v3_with_http_info(payee_id, update_payee_details_request_v3)
 
 ```ruby
 begin
   # Update Payee Details
-  data, status_code, headers = api_instance.payee_details_update_v3_with_http_info(payee_id, update_payee_details_request)
+  data, status_code, headers = api_instance.payee_details_update_v3_with_http_info(payee_id, update_payee_details_request_v3)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => nil
@@ -696,7 +696,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **payee_id** | **String** | The UUID of the payee. |  |
-| **update_payee_details_request** | [**UpdatePayeeDetailsRequest**](UpdatePayeeDetailsRequest.md) | Request to update payee details |  |
+| **update_payee_details_request_v3** | [**UpdatePayeeDetailsRequestV3**](UpdatePayeeDetailsRequestV3.md) | Request to update payee details |  |
 
 ### Return type
 
@@ -714,7 +714,7 @@ nil (empty response body)
 
 ## payee_details_update_v4
 
-> payee_details_update_v4(payee_id, update_payee_details_request2)
+> payee_details_update_v4(payee_id, update_payee_details_request_v4)
 
 Update Payee Details
 
@@ -733,11 +733,11 @@ end
 
 api_instance = VeloPayments::PayeesApi.new
 payee_id = '2aa5d7e0-2ecb-403f-8494-1865ed0454e9' # String | The UUID of the payee.
-update_payee_details_request2 = VeloPayments::UpdatePayeeDetailsRequest2.new # UpdatePayeeDetailsRequest2 | Request to update payee details
+update_payee_details_request_v4 = VeloPayments::UpdatePayeeDetailsRequestV4.new # UpdatePayeeDetailsRequestV4 | Request to update payee details
 
 begin
   # Update Payee Details
-  api_instance.payee_details_update_v4(payee_id, update_payee_details_request2)
+  api_instance.payee_details_update_v4(payee_id, update_payee_details_request_v4)
 rescue VeloPayments::ApiError => e
   puts "Error when calling PayeesApi->payee_details_update_v4: #{e}"
 end
@@ -747,12 +747,12 @@ end
 
 This returns an Array which contains the response data (`nil` in this case), status code and headers.
 
-> <Array(nil, Integer, Hash)> payee_details_update_v4_with_http_info(payee_id, update_payee_details_request2)
+> <Array(nil, Integer, Hash)> payee_details_update_v4_with_http_info(payee_id, update_payee_details_request_v4)
 
 ```ruby
 begin
   # Update Payee Details
-  data, status_code, headers = api_instance.payee_details_update_v4_with_http_info(payee_id, update_payee_details_request2)
+  data, status_code, headers = api_instance.payee_details_update_v4_with_http_info(payee_id, update_payee_details_request_v4)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => nil
@@ -766,7 +766,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **payee_id** | **String** | The UUID of the payee. |  |
-| **update_payee_details_request2** | [**UpdatePayeeDetailsRequest2**](UpdatePayeeDetailsRequest2.md) | Request to update payee details |  |
+| **update_payee_details_request_v4** | [**UpdatePayeeDetailsRequestV4**](UpdatePayeeDetailsRequestV4.md) | Request to update payee details |  |
 
 ### Return type
 
@@ -784,7 +784,7 @@ nil (empty response body)
 
 ## v3_payees_payee_id_remote_id_update_post
 
-> v3_payees_payee_id_remote_id_update_post(payee_id, update_remote_id_request)
+> v3_payees_payee_id_remote_id_update_post(payee_id, update_remote_id_request_v3)
 
 Update Payee Remote Id
 
@@ -803,11 +803,11 @@ end
 
 api_instance = VeloPayments::PayeesApi.new
 payee_id = '2aa5d7e0-2ecb-403f-8494-1865ed0454e9' # String | The UUID of the payee.
-update_remote_id_request = VeloPayments::UpdateRemoteIdRequest.new({payor_id: '9ac75325-5dcd-42d5-b992-175d7e0a035e', remote_id: 'remoteId123'}) # UpdateRemoteIdRequest | Request to update payee remote id v3
+update_remote_id_request_v3 = VeloPayments::UpdateRemoteIdRequestV3.new({payor_id: '9ac75325-5dcd-42d5-b992-175d7e0a035e', remote_id: 'remoteId123'}) # UpdateRemoteIdRequestV3 | Request to update payee remote id v3
 
 begin
   # Update Payee Remote Id
-  api_instance.v3_payees_payee_id_remote_id_update_post(payee_id, update_remote_id_request)
+  api_instance.v3_payees_payee_id_remote_id_update_post(payee_id, update_remote_id_request_v3)
 rescue VeloPayments::ApiError => e
   puts "Error when calling PayeesApi->v3_payees_payee_id_remote_id_update_post: #{e}"
 end
@@ -817,12 +817,12 @@ end
 
 This returns an Array which contains the response data (`nil` in this case), status code and headers.
 
-> <Array(nil, Integer, Hash)> v3_payees_payee_id_remote_id_update_post_with_http_info(payee_id, update_remote_id_request)
+> <Array(nil, Integer, Hash)> v3_payees_payee_id_remote_id_update_post_with_http_info(payee_id, update_remote_id_request_v3)
 
 ```ruby
 begin
   # Update Payee Remote Id
-  data, status_code, headers = api_instance.v3_payees_payee_id_remote_id_update_post_with_http_info(payee_id, update_remote_id_request)
+  data, status_code, headers = api_instance.v3_payees_payee_id_remote_id_update_post_with_http_info(payee_id, update_remote_id_request_v3)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => nil
@@ -836,7 +836,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **payee_id** | **String** | The UUID of the payee. |  |
-| **update_remote_id_request** | [**UpdateRemoteIdRequest**](UpdateRemoteIdRequest.md) | Request to update payee remote id v3 |  |
+| **update_remote_id_request_v3** | [**UpdateRemoteIdRequestV3**](UpdateRemoteIdRequestV3.md) | Request to update payee remote id v3 |  |
 
 ### Return type
 
@@ -854,7 +854,7 @@ nil (empty response body)
 
 ## v4_payees_payee_id_remote_id_update_post
 
-> v4_payees_payee_id_remote_id_update_post(payee_id, update_remote_id_request2)
+> v4_payees_payee_id_remote_id_update_post(payee_id, update_remote_id_request_v4)
 
 Update Payee Remote Id
 
@@ -873,11 +873,11 @@ end
 
 api_instance = VeloPayments::PayeesApi.new
 payee_id = '2aa5d7e0-2ecb-403f-8494-1865ed0454e9' # String | The UUID of the payee.
-update_remote_id_request2 = VeloPayments::UpdateRemoteIdRequest2.new({payor_id: '9ac75325-5dcd-42d5-b992-175d7e0a035e', remote_id: 'remoteId123'}) # UpdateRemoteIdRequest2 | Request to update payee remote id v4
+update_remote_id_request_v4 = VeloPayments::UpdateRemoteIdRequestV4.new({payor_id: '9ac75325-5dcd-42d5-b992-175d7e0a035e', remote_id: 'remoteId123'}) # UpdateRemoteIdRequestV4 | Request to update payee remote id v4
 
 begin
   # Update Payee Remote Id
-  api_instance.v4_payees_payee_id_remote_id_update_post(payee_id, update_remote_id_request2)
+  api_instance.v4_payees_payee_id_remote_id_update_post(payee_id, update_remote_id_request_v4)
 rescue VeloPayments::ApiError => e
   puts "Error when calling PayeesApi->v4_payees_payee_id_remote_id_update_post: #{e}"
 end
@@ -887,12 +887,12 @@ end
 
 This returns an Array which contains the response data (`nil` in this case), status code and headers.
 
-> <Array(nil, Integer, Hash)> v4_payees_payee_id_remote_id_update_post_with_http_info(payee_id, update_remote_id_request2)
+> <Array(nil, Integer, Hash)> v4_payees_payee_id_remote_id_update_post_with_http_info(payee_id, update_remote_id_request_v4)
 
 ```ruby
 begin
   # Update Payee Remote Id
-  data, status_code, headers = api_instance.v4_payees_payee_id_remote_id_update_post_with_http_info(payee_id, update_remote_id_request2)
+  data, status_code, headers = api_instance.v4_payees_payee_id_remote_id_update_post_with_http_info(payee_id, update_remote_id_request_v4)
   p status_code # => 2xx
   p headers # => { ... }
   p data # => nil
@@ -906,7 +906,7 @@ end
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
 | **payee_id** | **String** | The UUID of the payee. |  |
-| **update_remote_id_request2** | [**UpdateRemoteIdRequest2**](UpdateRemoteIdRequest2.md) | Request to update payee remote id v4 |  |
+| **update_remote_id_request_v4** | [**UpdateRemoteIdRequestV4**](UpdateRemoteIdRequestV4.md) | Request to update payee remote id v4 |  |
 
 ### Return type
 

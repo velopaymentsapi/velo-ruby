@@ -29,6 +29,8 @@
 | **payment_rails** | [**PaymentRails**](PaymentRails.md) |  | [optional] |
 | **transmission_types** | [**TransmissionTypes2**](TransmissionTypes2.md) |  | [optional] |
 | **remote_system_ids** | **Array&lt;String&gt;** | The payor’s supported remote systems by id | [optional] |
+| **usd_txn_value_reporting_threshold** | **Integer** | USD in minor units | [optional] |
+| **managing_payees** | **Boolean** |  | [optional] |
 
 ## Example
 
@@ -60,7 +62,9 @@ instance = VeloPayments::PayorV2.new(
   max_master_payor_admins: null,
   payment_rails: null,
   transmission_types: null,
-  remote_system_ids: null
+  remote_system_ids: null,
+  usd_txn_value_reporting_threshold: 1000000,
+  managing_payees: null
 )
 ```
 

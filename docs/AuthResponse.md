@@ -17,7 +17,7 @@
 require 'velopayments'
 
 instance = VeloPayments::AuthResponse.new(
-  access_token: null,
+  access_token: IwOGYzYTlmM2YxOTQ5MGE3YmNmMDFkNTVk,
   token_type: bearer,
   expires_in: 1799,
   refresh_token: IwOGYzYTlmM2YxOTQ5MGE3YmNmMDFkNTVk,

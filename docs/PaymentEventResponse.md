@@ -16,6 +16,9 @@
 | **iban** | **String** |  | [optional] |
 | **account_name** | **String** |  | [optional] |
 | **principal** | **String** |  | [optional] |
+| **scheduled_at** | **Time** |  | [optional] |
+| **scheduled_for** | **Time** |  | [optional] |
+| **scheduled_by** | **String** | Optional display name as a hint for who scheduled the payout. Not populated if payout was scheduled by an application. | [optional] |
 
 ## Example
 
@@ -34,7 +37,10 @@ instance = VeloPayments::PaymentEventResponse.new(
   routing_number: null,
   iban: null,
   account_name: null,
-  principal: null
+  principal: null,
+  scheduled_at: null,
+  scheduled_for: null,
+  scheduled_by: Aphra Behn
 )
 ```
 
