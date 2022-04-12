@@ -53,7 +53,8 @@ adjustments: ## Update the auto generated README.md with Velo info
 	sed -i.bak '2s/.*/[![License](https:\/\/img.shields.io\/badge\/License-Apache%202.0-blue.svg)](https:\/\/opensource.org\/licenses\/Apache-2.0) [![npm version](https:\/\/badge.fury.io\/rb\/velopayments.svg)](https:\/\/badge.fury.io\/rb\/velopayments) [![CircleCI](https:\/\/circleci.com\/gh\/velopaymentsapi\/velo-ruby.svg?style=svg)](https:\/\/circleci.com\/gh\/velopaymentsapi\/velo-ruby)\\/' README.md && rm README.md.bak
 	
 rcnaming: ## 
-	@echo ".beta${RC_BUILD}"
+	$(eval RC_REVISION="$(shell make WORKING_SPEC=${WORKING_SPEC} version)")
+	@echo "${RC_REVISION}.beta${RC_BUILD}"
 
 client: clean generate trim adjustments build_client ## Generate sdk via cli
 
