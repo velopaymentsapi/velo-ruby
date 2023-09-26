@@ -11,6 +11,7 @@
 | **max_length** | **Integer** | maximum length of the element data | [optional] |
 | **validation** | **String** | a regex to validate the element data |  |
 | **display_order** | **Integer** |  | [optional] |
+| **description** | **String** | An optional description, or hint, as to how the user should enter the field value. | [optional] |
 
 ## Example
 
@@ -24,7 +25,8 @@ instance = VeloPayments::PaymentChannelRule.new(
   min_length: 5,
   max_length: 50,
   validation: ^[0-9]{6,11}$,
-  display_order: null
+  display_order: null,
+  description: The bank branch, account number prefix and account number suffix; with hyphen separators.
 )
 ```
 

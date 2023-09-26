@@ -4,7 +4,7 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **payout_status** | [**PayoutStatus**](PayoutStatus.md) |  | [optional] |
+| **payout_status** | **String** | Current status of the Payout. One of the following values: ACCEPTED, REJECTED, SUBMITTED, QUOTED, INSTRUCTED, COMPLETED, INCOMPLETE, CONFIRMED, WITHDRAWN | [optional] |
 | **submitted_date_time** | **Time** | The date/time at which the payout was submitted. | [optional] |
 | **instructed_date_time** | **Time** | The date/time at which the payout was instructed. | [optional] |
 | **withdrawn_date_time** | **Time** |  | [optional] |
@@ -16,13 +16,14 @@
 | **incomplete_payments** | **Integer** | The count of payments within the payout which are incomplete. | [optional] |
 | **returned_payments** | **Integer** | The count of payments within the payout which have been returned. | [optional] |
 | **withdrawn_payments** | **Integer** | The count of payments within the payout which have been withdrawn. | [optional] |
-| **payout_type** | [**PayoutType**](PayoutType.md) |  | [optional] |
+| **payout_type** | **String** | The type of payout. One of the following values: STANDARD, AS, ON_BEHALF_OF | [optional] |
 | **submitting** | [**PayoutPayor**](PayoutPayor.md) |  | [optional] |
 | **payout_from** | [**PayoutPayor**](PayoutPayor.md) |  | [optional] |
 | **payout_to** | [**PayoutPayor**](PayoutPayor.md) |  | [optional] |
 | **quoted** | [**PayoutPrincipal**](PayoutPrincipal.md) |  | [optional] |
 | **instructed** | [**PayoutPrincipal**](PayoutPrincipal.md) |  | [optional] |
 | **withdrawn** | [**PayoutPrincipal**](PayoutPrincipal.md) |  | [optional] |
+| **schedule** | [**PayoutSchedule**](PayoutSchedule.md) |  | [optional] |
 
 ## Example
 
@@ -48,7 +49,8 @@ instance = VeloPayments::GetPaymentsForPayoutResponseV4Summary.new(
   payout_to: null,
   quoted: null,
   instructed: null,
-  withdrawn: null
+  withdrawn: null,
+  schedule: null
 )
 ```
 

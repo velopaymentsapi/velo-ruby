@@ -43,7 +43,7 @@ VeloPayments.configure do |config|
 end
 
 api_instance = VeloPayments::UsersApi.new
-user_id = TODO # String | The UUID of the User.
+user_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | The UUID of the User.
 
 begin
   # Delete a User
@@ -75,7 +75,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **user_id** | [**String**](.md) | The UUID of the User. |  |
+| **user_id** | **String** | The UUID of the User. |  |
 
 ### Return type
 
@@ -111,7 +111,7 @@ VeloPayments.configure do |config|
 end
 
 api_instance = VeloPayments::UsersApi.new
-user_id = TODO # String | The UUID of the User.
+user_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | The UUID of the User.
 
 begin
   # Disable a User
@@ -143,7 +143,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **user_id** | [**String**](.md) | The UUID of the User. |  |
+| **user_id** | **String** | The UUID of the User. |  |
 
 ### Return type
 
@@ -179,7 +179,7 @@ VeloPayments.configure do |config|
 end
 
 api_instance = VeloPayments::UsersApi.new
-user_id = TODO # String | The UUID of the User.
+user_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | The UUID of the User.
 
 begin
   # Enable a User
@@ -211,7 +211,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **user_id** | [**String**](.md) | The UUID of the User. |  |
+| **user_id** | **String** | The UUID of the User. |  |
 
 ### Return type
 
@@ -313,7 +313,7 @@ VeloPayments.configure do |config|
 end
 
 api_instance = VeloPayments::UsersApi.new
-user_id = TODO # String | The UUID of the User.
+user_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | The UUID of the User.
 
 begin
   # Get User
@@ -346,7 +346,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **user_id** | [**String**](.md) | The UUID of the User. |  |
+| **user_id** | **String** | The UUID of the User. |  |
 
 ### Return type
 
@@ -382,7 +382,7 @@ VeloPayments.configure do |config|
 end
 
 api_instance = VeloPayments::UsersApi.new
-invite_user_request = VeloPayments::InviteUserRequest.new({email: 'foo@example.com', mfa_type: 'SMS', sms_number: '11235555555', primary_contact_number: '11235555555', roles: ['roles_example']}) # InviteUserRequest | Details of User to invite
+invite_user_request = VeloPayments::InviteUserRequest.new({email: 'foo@example.com', mfa_type: 'SMS', sms_number: '11235555555', primary_contact_number: '11235555555', roles: ["velo.payor.admin"]}) # InviteUserRequest | Details of User to invite
 
 begin
   # Invite a User
@@ -453,7 +453,8 @@ api_instance = VeloPayments::UsersApi.new
 opts = {
   type: VeloPayments::UserType::BACKOFFICE, # UserType | The Type of the User.
   status: VeloPayments::UserStatus::ENABLED, # UserStatus | The status of the User.
-  entity_id: TODO, # String | The entityId of the User.
+  entity_id: '38400000-8cf0-11bd-b23e-10b96e4ef00d', # String | The entityId of the User.
+  payee_type: VeloPayments::PayeeType::COMPANY, # PayeeType | The Type of the Payee entity. Either COMPANY or INDIVIDUAL.
   page: 56, # Integer | Page number. Default is 1.
   page_size: 56, # Integer | The number of results to return in a page
   sort: 'sort_example' # String | List of sort fields (e.g. ?sort=email:asc,lastName:asc) Default is email:asc 'name' The supported sort fields are - email, lastNmae. 
@@ -492,7 +493,8 @@ end
 | ---- | ---- | ----------- | ----- |
 | **type** | [**UserType**](.md) | The Type of the User. | [optional] |
 | **status** | [**UserStatus**](.md) | The status of the User. | [optional] |
-| **entity_id** | [**String**](.md) | The entityId of the User. | [optional] |
+| **entity_id** | **String** | The entityId of the User. | [optional] |
+| **payee_type** | [**PayeeType**](.md) | The Type of the Payee entity. Either COMPANY or INDIVIDUAL. | [optional] |
 | **page** | **Integer** | Page number. Default is 1. | [optional][default to 1] |
 | **page_size** | **Integer** | The number of results to return in a page | [optional][default to 25] |
 | **sort** | **String** | List of sort fields (e.g. ?sort&#x3D;email:asc,lastName:asc) Default is email:asc &#39;name&#39; The supported sort fields are - email, lastNmae.  | [optional][default to &#39;email:asc&#39;] |
@@ -599,7 +601,7 @@ VeloPayments.configure do |config|
 end
 
 api_instance = VeloPayments::UsersApi.new
-user_id = TODO # String | The UUID of the User.
+user_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | The UUID of the User.
 resend_token_request = VeloPayments::ResendTokenRequest.new({token_type: 'INVITE_MFA_USER'}) # ResendTokenRequest | The type of token to resend
 
 begin
@@ -632,7 +634,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **user_id** | [**String**](.md) | The UUID of the User. |  |
+| **user_id** | **String** | The UUID of the User. |  |
 | **resend_token_request** | [**ResendTokenRequest**](ResendTokenRequest.md) | The type of token to resend |  |
 
 ### Return type
@@ -669,8 +671,8 @@ VeloPayments.configure do |config|
 end
 
 api_instance = VeloPayments::UsersApi.new
-user_id = TODO # String | The UUID of the User.
-role_update_request = VeloPayments::RoleUpdateRequest.new({roles: ['roles_example']}) # RoleUpdateRequest | The Role to change to
+user_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | The UUID of the User.
+role_update_request = VeloPayments::RoleUpdateRequest.new({roles: ["payor.admin"]}) # RoleUpdateRequest | The Role to change to
 
 begin
   # Update User Role
@@ -702,7 +704,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **user_id** | [**String**](.md) | The UUID of the User. |  |
+| **user_id** | **String** | The UUID of the User. |  |
 | **role_update_request** | [**RoleUpdateRequest**](RoleUpdateRequest.md) | The Role to change to |  |
 
 ### Return type
@@ -739,7 +741,7 @@ VeloPayments.configure do |config|
 end
 
 api_instance = VeloPayments::UsersApi.new
-user_id = TODO # String | The UUID of the User.
+user_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | The UUID of the User.
 
 begin
   # Unlock a User
@@ -771,7 +773,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **user_id** | [**String**](.md) | The UUID of the User. |  |
+| **user_id** | **String** | The UUID of the User. |  |
 
 ### Return type
 
@@ -807,7 +809,7 @@ VeloPayments.configure do |config|
 end
 
 api_instance = VeloPayments::UsersApi.new
-user_id = TODO # String | The UUID of the User.
+user_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | The UUID of the User.
 unregister_mfa_request = VeloPayments::UnregisterMFARequest.new({mfa_type: 'YUBIKEY'}) # UnregisterMFARequest | The MFA Type to unregister
 
 begin
@@ -840,7 +842,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **user_id** | [**String**](.md) | The UUID of the User. |  |
+| **user_id** | **String** | The UUID of the User. |  |
 | **unregister_mfa_request** | [**UnregisterMFARequest**](UnregisterMFARequest.md) | The MFA Type to unregister |  |
 
 ### Return type
@@ -1017,7 +1019,7 @@ VeloPayments.configure do |config|
 end
 
 api_instance = VeloPayments::UsersApi.new
-user_id = TODO # String | The UUID of the User.
+user_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | The UUID of the User.
 user_details_update_request = VeloPayments::UserDetailsUpdateRequest.new # UserDetailsUpdateRequest | The details of the user to update
 
 begin
@@ -1050,7 +1052,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **user_id** | [**String**](.md) | The UUID of the User. |  |
+| **user_id** | **String** | The UUID of the User. |  |
 | **user_details_update_request** | [**UserDetailsUpdateRequest**](UserDetailsUpdateRequest.md) | The details of the user to update |  |
 
 ### Return type

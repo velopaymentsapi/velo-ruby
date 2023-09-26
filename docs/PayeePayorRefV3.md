@@ -6,11 +6,11 @@
 | ---- | ---- | ----------- | ----- |
 | **payor_id** | **String** |  | [optional] |
 | **remote_id** | **String** |  | [optional] |
-| **invitation_status** | [**InvitationStatus2**](InvitationStatus2.md) |  | [optional] |
+| **invitation_status** | **String** |  | [optional] |
 | **invitation_status_timestamp** | **Time** | The timestamp when the invitation status is updated | [optional] |
 | **payment_channel_id** | **String** |  | [optional] |
 | **payable_status** | **Boolean** | Indicates if the payee is payable for this payor | [optional] |
-| **payable_issues** | [**Array&lt;PayableIssue&gt;**](PayableIssue.md) | Indicates any conditions which prevent the payee from being payable for this payor | [optional] |
+| **payable_issues** | [**Array&lt;PayableIssueV3&gt;**](PayableIssueV3.md) | Indicates any conditions which prevent the payee from being payable for this payor | [optional] |
 
 ## Example
 

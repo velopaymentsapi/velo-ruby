@@ -10,10 +10,10 @@
 | **inverted_rate** | **Float** |  |  |
 | **total_cost** | **Integer** |  |  |
 | **total_payment_amount** | **Integer** |  |  |
-| **source_currency** | [**PaymentAuditCurrencyV3**](PaymentAuditCurrencyV3.md) |  | [optional] |
-| **payment_currency** | [**PaymentAuditCurrencyV3**](PaymentAuditCurrencyV3.md) |  | [optional] |
-| **status** | **String** |  |  |
-| **funding_status** | **String** |  |  |
+| **source_currency** | **String** | ISO 3 character currency code | [optional] |
+| **payment_currency** | **String** | ISO 3 character currency code | [optional] |
+| **status** | **String** | Current status of the FX Summary. One of the following values: UNQUOTED, QUOTED, EXPIRED, EXECUTED |  |
+| **funding_status** | **String** | Current status of the funding. One of the following values: FUNDED, INSTRUCTED, UNFUNDED |  |
 
 ## Example
 

@@ -6,7 +6,7 @@
 | ---- | ---- | ----------- | ----- |
 | **payout_id** | **String** |  | [optional] |
 | **payor_id** | **String** |  | [optional] |
-| **status** | [**PayoutStatus**](PayoutStatus.md) |  |  |
+| **status** | **String** | Current status of the Payout. One of the following values: ACCEPTED, REJECTED, SUBMITTED, QUOTED, INSTRUCTED, COMPLETED, INCOMPLETE, CONFIRMED, WITHDRAWN |  |
 | **date_time** | **Time** |  | [optional] |
 | **submitted_date_time** | **String** |  |  |
 | **instructed_date_time** | **String** |  | [optional] |
@@ -18,8 +18,9 @@
 | **source_account_summary** | [**Array&lt;SourceAccountSummary&gt;**](SourceAccountSummary.md) |  | [optional] |
 | **fx_summaries** | [**Array&lt;FxSummary&gt;**](FxSummary.md) |  | [optional] |
 | **payout_memo** | **String** |  | [optional] |
-| **payout_type** | [**PayoutType**](PayoutType.md) |  |  |
+| **payout_type** | **String** | The type of payout. One of the following values: STANDARD, AS, ON_BEHALF_OF |  |
 | **payor_name** | **String** |  |  |
+| **schedule** | [**PayoutSchedule**](PayoutSchedule.md) |  | [optional] |
 
 ## Example
 
@@ -42,7 +43,8 @@ instance = VeloPayments::PayoutSummaryAudit.new(
   fx_summaries: null,
   payout_memo: null,
   payout_type: null,
-  payor_name: null
+  payor_name: null,
+  schedule: null
 )
 ```
 

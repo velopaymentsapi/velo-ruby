@@ -13,14 +13,14 @@
 | **source_account_name** | **String** | The name of the source account from which the payment was taken | [optional] |
 | **remote_id** | **String** | The remote id by which the payor refers to the payee. Only populated once payment is confirmed | [optional] |
 | **source_amount** | **Integer** | The source amount for the payment (amount debited to make the payment) | [optional] |
-| **source_currency** | [**PaymentAuditCurrencyV3**](PaymentAuditCurrencyV3.md) |  | [optional] |
+| **source_currency** | **String** | ISO 3 character currency code | [optional] |
 | **payment_amount** | **Integer** | The amount which the payee will receive |  |
-| **payment_currency** | [**PaymentAuditCurrencyV3**](PaymentAuditCurrencyV3.md) |  | [optional] |
+| **payment_currency** | **String** | ISO 3 character currency code | [optional] |
 | **rate** | **Float** | The FX rate for the payment, if FX was involved. **Note** that (depending on the role of the caller) this information may not be displayed | [optional] |
 | **inverted_rate** | **Float** | The inverted FX rate for the payment, if FX was involved. **Note** that (depending on the role of the caller) this information may not be displayed | [optional] |
 | **submitted_date_time** | **Time** |  |  |
-| **status** | **String** |  |  |
-| **funding_status** | **String** | The funding status of the payment |  |
+| **status** | **String** | Current status of the payment. One of the following values: ACCEPTED, AWAITING_FUNDS, FUNDED, UNFUNDED, BANK_PAYMENT_REQUESTED, REJECTED, ACCEPTED_BY_RAILS, CONFIRMED, FAILED, WITHDRAWN |  |
+| **funding_status** | **String** | The funding status of the payment. One of the following values: [FUNDED, INSTRUCTED, UNFUNDED |  |
 | **routing_number** | **String** | The routing number for the payment. | [optional] |
 | **account_number** | **String** | The account number for the account which will receive the payment. | [optional] |
 | **iban** | **String** | The iban for the payment. | [optional] |
@@ -39,6 +39,7 @@
 | **return_reason** | **String** |  | [optional] |
 | **rails_payment_id** | **String** |  | [optional] |
 | **rails_batch_id** | **String** |  | [optional] |
+| **payment_scheme** | **String** |  | [optional] |
 | **rejection_reason** | **String** |  | [optional] |
 
 ## Example
@@ -82,6 +83,7 @@ instance = VeloPayments::PaymentResponseV3.new(
   return_reason: Some Reason Value,
   rails_payment_id: null,
   rails_batch_id: null,
+  payment_scheme: null,
   rejection_reason: null
 )
 ```

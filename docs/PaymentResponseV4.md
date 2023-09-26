@@ -15,15 +15,15 @@
 | **remote_system_id** | **String** | The velo id of the remote system orchestrating the payment. Not populated for normal Velo payments. | [optional] |
 | **remote_system_payment_id** | **String** | The id of the payment in the remote system. Not populated for normal Velo payments. | [optional] |
 | **source_amount** | **Integer** | The source amount for the payment (amount debited to make the payment) | [optional] |
-| **source_currency** | [**PaymentAuditCurrency**](PaymentAuditCurrency.md) |  | [optional] |
+| **source_currency** | **String** | ISO-4217 3 character currency code | [optional] |
 | **payment_amount** | **Integer** | The amount which the payee will receive |  |
-| **payment_currency** | [**PaymentAuditCurrency**](PaymentAuditCurrency.md) |  | [optional] |
+| **payment_currency** | **String** | ISO-4217 3 character currency code | [optional] |
 | **rate** | **Float** | The FX rate for the payment, if FX was involved. **Note** that (depending on the role of the caller) this information may not be displayed | [optional] |
 | **inverted_rate** | **Float** | The inverted FX rate for the payment, if FX was involved. **Note** that (depending on the role of the caller) this information may not be displayed | [optional] |
 | **is_payment_ccy_base_ccy** | **Boolean** |  | [optional] |
 | **submitted_date_time** | **Time** |  |  |
-| **status** | **String** |  |  |
-| **funding_status** | **String** | The funding status of the payment |  |
+| **status** | **String** | Current status of the payment. One of the following values: ACCEPTED, AWAITING_FUNDS, FUNDED, UNFUNDED, BANK_PAYMENT_REQUESTED, REJECTED, ACCEPTED_BY_RAILS, CONFIRMED, RETURNED, WITHDRAWN |  |
+| **funding_status** | **String** | Current funding status of the payment. One of the following values: FUNDED, INSTRUCTED, UNFUNDED |  |
 | **routing_number** | **String** | The routing number for the payment. | [optional] |
 | **account_number** | **String** | The account number for the account which will receive the payment. | [optional] |
 | **iban** | **String** | The iban for the payment. | [optional] |
@@ -37,17 +37,22 @@
 | **account_name** | **String** |  | [optional] |
 | **rails_id** | **String** | The rails ID. Default value is RAILS ID UNAVAILABLE when not populated. | [default to &#39;RAILS ID UNAVAILABLE&#39;] |
 | **country_code** | **String** | The country code of the payment channel. | [optional] |
+| **payee_address_country_code** | **String** | The country code of the payee&#39;s address. | [optional] |
 | **events** | [**Array&lt;PaymentEventResponse&gt;**](PaymentEventResponse.md) |  |  |
 | **return_cost** | **Integer** | The return cost if a returned payment. | [optional] |
 | **return_reason** | **String** |  | [optional] |
 | **rails_payment_id** | **String** |  | [optional] |
 | **rails_batch_id** | **String** |  | [optional] |
+| **payment_scheme** | **String** |  | [optional] |
 | **rejection_reason** | **String** |  | [optional] |
 | **withdrawn_reason** | **String** |  | [optional] |
 | **withdrawable** | **Boolean** |  | [optional] |
-| **transmission_type** | **String** | The transmission type of the payment, e.g. ACH, SAME_DAY_ACH, WIRE | [optional] |
+| **auto_withdrawn_reason_code** | **String** | Populated with rejection reason code if the payment was withdrawn automatically at instruct time | [optional] |
+| **transmission_type** | **String** | The transmission type of the payment, e.g. ACH, SAME_DAY_ACH, WIRE, GACHO | [optional] |
 | **payment_tracking_reference** | **String** |  | [optional] |
 | **payment_metadata** | **String** | Metadata for the payment | [optional] |
+| **schedule** | [**PayoutSchedule**](PayoutSchedule.md) |  | [optional] |
+| **post_instruct_fx_info** | [**PostInstructFxInfo**](PostInstructFxInfo.md) |  | [optional] |
 | **payout** | [**PaymentResponseV4Payout**](PaymentResponseV4Payout.md) |  | [optional] |
 
 ## Example
@@ -67,9 +72,9 @@ instance = VeloPayments::PaymentResponseV4.new(
   remote_system_id: REMOTE_SYSTEM_ID,
   remote_system_payment_id: null,
   source_amount: 12345,
-  source_currency: null,
+  source_currency: EUR,
   payment_amount: null,
-  payment_currency: null,
+  payment_currency: EUR,
   rate: null,
   inverted_rate: null,
   is_payment_ccy_base_ccy: null,
@@ -89,17 +94,22 @@ instance = VeloPayments::PaymentResponseV4.new(
   account_name: My Account Name,
   rails_id: asdf123,
   country_code: US,
+  payee_address_country_code: US,
   events: null,
   return_cost: 1232,
   return_reason: Some Reason Value,
   rails_payment_id: null,
   rails_batch_id: null,
+  payment_scheme: null,
   rejection_reason: null,
   withdrawn_reason: null,
   withdrawable: null,
+  auto_withdrawn_reason_code: null,
   transmission_type: null,
   payment_tracking_reference: null,
   payment_metadata: sample metadata,
+  schedule: null,
+  post_instruct_fx_info: null,
   payout: null
 )
 ```

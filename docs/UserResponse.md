@@ -13,7 +13,9 @@
 | **first_name** | **String** |  | [optional] |
 | **last_name** | **String** |  | [optional] |
 | **entity_id** | **String** | The payorId or payeeId or null if the user is not a payor or payee user  | [optional] |
+| **company_name** | **String** | The payor or payee company name or null if the user is not a payor or payee user  | [optional] |
 | **roles** | [**Array&lt;Role&gt;**](Role.md) | The role(s) for the user  | [optional] |
+| **user_type** | **String** | Indicates the type of user. Could be BACKOFFICE, PAYOR or PAYEE. | [optional] |
 | **mfa_type** | **String** | The type of the MFA device | [optional] |
 | **mfa_status** | **String** | The status of the MFA device | [optional] |
 | **locked_out** | **Boolean** | If true the user is currently locked out and unable to log in | [optional] |
@@ -34,7 +36,9 @@ instance = VeloPayments::UserResponse.new(
   first_name: John,
   last_name: Doe,
   entity_id: 7fffa261-ac68-49e6-b605-d24a444d9206,
+  company_name: Acme Corp,
   roles: [&quot;payor.admin&quot;],
+  user_type: PAYOR,
   mfa_type: TOTP,
   mfa_status: REGISTERED,
   locked_out: true,

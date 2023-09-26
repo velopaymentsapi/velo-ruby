@@ -6,7 +6,7 @@
 | ---- | ---- | ----------- | ----- |
 | **link_id** | **String** |  |  |
 | **from_payor_id** | **String** |  |  |
-| **link_type** | **String** |  |  |
+| **link_type** | **String** | The type of the link. One of the following values: PARENT_OF |  |
 | **to_payor_id** | **String** |  |  |
 
 ## Example

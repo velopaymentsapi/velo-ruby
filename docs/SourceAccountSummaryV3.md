@@ -6,7 +6,7 @@
 | ---- | ---- | ----------- | ----- |
 | **source_account_id** | **String** |  |  |
 | **total_cost** | **Integer** |  |  |
-| **currency** | [**PaymentAuditCurrencyV3**](PaymentAuditCurrencyV3.md) |  | [optional] |
+| **currency** | **String** | ISO 3 character currency code | [optional] |
 
 ## Example
 

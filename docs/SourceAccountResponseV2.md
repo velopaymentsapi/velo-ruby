@@ -16,9 +16,9 @@
 | **balance_visible** | **Boolean** |  |  |
 | **customer_id** | **String** |  | [optional] |
 | **physical_account_id** | **String** |  | [optional] |
-| **notifications** | [**Notifications**](Notifications.md) |  | [optional] |
+| **notifications** | [**NotificationsV2**](NotificationsV2.md) |  | [optional] |
 | **funding_account_id** | **String** |  | [optional] |
-| **auto_top_up_config** | [**AutoTopUpConfig**](AutoTopUpConfig.md) |  | [optional] |
+| **auto_top_up_config** | [**AutoTopUpConfigV2**](AutoTopUpConfigV2.md) |  | [optional] |
 | **account_type** | **String** |  |  |
 
 ## Example

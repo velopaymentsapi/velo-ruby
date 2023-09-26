@@ -7,7 +7,7 @@
 | **payor_id** | **String** |  |  |
 | **payor_name** | **String** |  |  |
 | **primary_contact_email** | **String** |  | [optional] |
-| **kyc_state** | **String** |  | [optional] |
+| **kyc_state** | **String** | Current KYC state. One of the following values: FAILED_KYC, PASSED_KYC, REQUIRES_KYC | [optional] |
 
 ## Example
 

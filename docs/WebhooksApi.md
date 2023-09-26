@@ -7,6 +7,7 @@ All URIs are relative to *https://api.sandbox.velopayments.com*
 | [**create_webhook_v1**](WebhooksApi.md#create_webhook_v1) | **POST** /v1/webhooks | Create Webhook |
 | [**get_webhook_v1**](WebhooksApi.md#get_webhook_v1) | **GET** /v1/webhooks/{webhookId} | Get details about the given webhook. |
 | [**list_webhooks_v1**](WebhooksApi.md#list_webhooks_v1) | **GET** /v1/webhooks | List the details about the webhooks for the given payor. |
+| [**ping_webhook_v1**](WebhooksApi.md#ping_webhook_v1) | **POST** /v1/webhooks/{webhookId}/ping |  |
 | [**update_webhook_v1**](WebhooksApi.md#update_webhook_v1) | **POST** /v1/webhooks/{webhookId} | Update Webhook |
 
 
@@ -100,7 +101,7 @@ VeloPayments.configure do |config|
 end
 
 api_instance = VeloPayments::WebhooksApi.new
-webhook_id = TODO # String | Webhook id
+webhook_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | Webhook id
 
 begin
   # Get details about the given webhook.
@@ -133,7 +134,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **webhook_id** | [**String**](.md) | Webhook id |  |
+| **webhook_id** | **String** | Webhook id |  |
 
 ### Return type
 
@@ -169,7 +170,7 @@ VeloPayments.configure do |config|
 end
 
 api_instance = VeloPayments::WebhooksApi.new
-payor_id = TODO # String | The Payor ID
+payor_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | The Payor ID
 opts = {
   page: 56, # Integer | Page number. Default is 1.
   page_size: 56 # Integer | The number of results to return in a page
@@ -206,13 +207,80 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **payor_id** | [**String**](.md) | The Payor ID |  |
+| **payor_id** | **String** | The Payor ID |  |
 | **page** | **Integer** | Page number. Default is 1. | [optional][default to 1] |
 | **page_size** | **Integer** | The number of results to return in a page | [optional][default to 25] |
 
 ### Return type
 
 [**WebhooksResponse**](WebhooksResponse.md)
+
+### Authorization
+
+[OAuth2](../README.md#OAuth2)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## ping_webhook_v1
+
+> <PingResponse> ping_webhook_v1(webhook_id)
+
+
+
+### Examples
+
+```ruby
+require 'time'
+require 'velopayments'
+# setup authorization
+VeloPayments.configure do |config|
+  # Configure OAuth2 access token for authorization: OAuth2
+  config.access_token = 'YOUR ACCESS TOKEN'
+end
+
+api_instance = VeloPayments::WebhooksApi.new
+webhook_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | Webhook id
+
+begin
+  
+  result = api_instance.ping_webhook_v1(webhook_id)
+  p result
+rescue VeloPayments::ApiError => e
+  puts "Error when calling WebhooksApi->ping_webhook_v1: #{e}"
+end
+```
+
+#### Using the ping_webhook_v1_with_http_info variant
+
+This returns an Array which contains the response data, status code and headers.
+
+> <Array(<PingResponse>, Integer, Hash)> ping_webhook_v1_with_http_info(webhook_id)
+
+```ruby
+begin
+  
+  data, status_code, headers = api_instance.ping_webhook_v1_with_http_info(webhook_id)
+  p status_code # => 2xx
+  p headers # => { ... }
+  p data # => <PingResponse>
+rescue VeloPayments::ApiError => e
+  puts "Error when calling WebhooksApi->ping_webhook_v1_with_http_info: #{e}"
+end
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+| ---- | ---- | ----------- | ----- |
+| **webhook_id** | **String** | Webhook id |  |
+
+### Return type
+
+[**PingResponse**](PingResponse.md)
 
 ### Authorization
 
@@ -244,7 +312,7 @@ VeloPayments.configure do |config|
 end
 
 api_instance = VeloPayments::WebhooksApi.new
-webhook_id = TODO # String | Webhook id
+webhook_id = '38400000-8cf0-11bd-b23e-10b96e4ef00d' # String | Webhook id
 opts = {
   update_webhook_request: VeloPayments::UpdateWebhookRequest.new # UpdateWebhookRequest | 
 }
@@ -279,7 +347,7 @@ end
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **webhook_id** | [**String**](.md) | Webhook id |  |
+| **webhook_id** | **String** | Webhook id |  |
 | **update_webhook_request** | [**UpdateWebhookRequest**](UpdateWebhookRequest.md) |  | [optional] |
 
 ### Return type

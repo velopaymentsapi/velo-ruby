@@ -10,10 +10,10 @@
 | **inverted_rate** | **Float** |  |  |
 | **total_cost** | **Integer** |  |  |
 | **total_payment_amount** | **Integer** |  |  |
-| **source_currency** | [**PaymentAuditCurrency**](PaymentAuditCurrency.md) |  | [optional] |
-| **payment_currency** | [**PaymentAuditCurrency**](PaymentAuditCurrency.md) |  | [optional] |
-| **status** | **String** |  |  |
-| **funding_status** | **String** |  |  |
+| **source_currency** | **String** | ISO-4217 3 character currency code | [optional] |
+| **payment_currency** | **String** | ISO-4217 3 character currency code | [optional] |
+| **status** | **String** | Current status of the FX Summary. One of the following values: UNQUOTED, QUOTED, EXPIRED, EXECUTED |  |
+| **funding_status** | **String** | Current status of the funding. One of the following values: FUNDED, INSTRUCTED, UNFUNDED |  |
 
 ## Example
 
@@ -27,8 +27,8 @@ instance = VeloPayments::FxSummary.new(
   inverted_rate: 123.23,
   total_cost: null,
   total_payment_amount: 34235,
-  source_currency: null,
-  payment_currency: null,
+  source_currency: EUR,
+  payment_currency: EUR,
   status: null,
   funding_status: null
 )

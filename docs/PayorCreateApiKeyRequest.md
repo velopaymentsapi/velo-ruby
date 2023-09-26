@@ -6,7 +6,7 @@
 | ---- | ---- | ----------- | ----- |
 | **name** | **String** | A name for the key. |  |
 | **description** | **String** | Description of the key. | [optional] |
-| **roles** | **Array&lt;String&gt;** | A list of roles to assign to the key. |  |
+| **roles** | **Array&lt;String&gt;** | &lt;p&gt;A role to assign to the key.&lt;/p&gt; &lt;p&gt;If you want your API key to have write access then assign the role velo.payor.admin&lt;/p&gt; &lt;p&gt;A later version will change this property from a list to string&lt;/p&gt;  |  |
 
 ## Example
 
@@ -16,7 +16,7 @@ require 'velopayments'
 instance = VeloPayments::PayorCreateApiKeyRequest.new(
   name: iOS Key,
   description: Key for iOS mobile application,
-  roles: [&quot;payor.admin&quot;]
+  roles: [&quot;velo.payor.admin&quot;]
 )
 ```
 
