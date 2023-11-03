@@ -65,7 +65,9 @@ describe 'PayeesApi' do
   # @param [Hash] opts the optional parameters
   # @return [nil]
   describe 'delete_payee_by_id_v3 test' do
-    skip "skipping test"
+    skip "skipping test" do
+      # assertion here. ref: https://rspec.info/features/3-12/rspec-expectations/built-in-matchers/
+    end
   end
 
   # unit tests for delete_payee_by_id_v4

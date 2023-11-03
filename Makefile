@@ -14,6 +14,9 @@ version:
 oa3config:
 	sed -i.bak 's/"gemVersion": ".*"/"gemVersion": "${VERSION}"/g' oa3-config.json && rm oa3-config.json.bak
 
+sdkversion:
+	@docker run -i stedolan/jq <oa3-config.json -r '.gemVersion'
+
 clean:
 	rm -Rf lib
 	rm -Rf docs
@@ -40,14 +43,15 @@ trim:
 	- rm .travis.yml
 	- rm git_push.sh
 
-info:
+adjustments:
 	sed -i.bak '1s/.*/# Ruby client for Velo/' README.md && rm README.md.bak
 	sed -i.bak '2s/.*/[![License](https:\/\/img.shields.io\/badge\/License-Apache%202.0-blue.svg)](https:\/\/opensource.org\/licenses\/Apache-2.0) [![npm version](https:\/\/badge.fury.io\/rb\/velopayments.svg)](https:\/\/badge.fury.io\/rb\/velopayments) [![CircleCI](https:\/\/circleci.com\/gh\/velopaymentsapi\/velo-ruby.svg?style=svg)](https:\/\/circleci.com\/gh\/velopaymentsapi\/velo-ruby)\\/' README.md && rm README.md.bak
 	
-build_client:
-	#
+rcnaming: ## 
+	$(eval RC_REVISION="$(shell make WORKING_SPEC=${WORKING_SPEC} version)")
+	@echo "${RC_REVISION}.beta${RC_BUILD}"
 
-client: clean generate trim info build_client
+client: clean generate trim adjustments
 
 tests:
 	# TODO: spec/models since generated models tests are empty remove for now
@@ -56,17 +60,3 @@ tests:
 	cp -Rf specs/ spec/
 	docker build -t=client-ruby-tests .
 	docker run -t -v $(PWD):/myapp -e KEY=${KEY} -e SECRET=${SECRET} -e PAYOR=${PAYOR} -e APIURL=${APIURL} -e APITOKEN="" client-ruby-tests bundle exec rspec
-
-commit:
-	git add --all
-	git commit -am 'bump version to ${VERSION}'
-	git push --set-upstream origin master
-
-build:
-	sed -i.bak "s/VERSION = '.*'/VERSION = '${VERSION}'/g" lib/velopayments/version.rb && rm lib/velopayments/version.rb.bak
-	gem build velopayments.gemspec
-
-publish:
-	git tag $(VERSION)
-	git push origin tag $(VERSION)
-	gem push velopayments-$(VERSION).gem
