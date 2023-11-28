@@ -22,6 +22,7 @@
 | **deleted** | **Boolean** | An optional flag for whether the source account has been deleted. Only present in the response if true. | [optional] |
 | **user_deleted** | **Boolean** | An optional flag for whether the source account has been deleted by a user. Only present in the response if true. | [optional] |
 | **deleted_at** | **Time** | An optional timestamp when the source account has been deleted. Only present in the response if deleted. | [optional] |
+| **transmission_types** | **Array&lt;String&gt;** | List of supported transmission types. | [optional] |
 
 ## Example
 
@@ -46,7 +47,8 @@ instance = VeloPayments::SourceAccountResponseV3.new(
   country: US,
   deleted: null,
   user_deleted: null,
-  deleted_at: 2021-01-27T10:08:25.701Z
+  deleted_at: 2021-01-27T10:08:25.701Z,
+  transmission_types: [&quot;ACH&quot;,&quot;SAME_DAY_ACH&quot;]
 )
 ```
 

@@ -14,9 +14,9 @@
 require 'velopayments'
 
 instance = VeloPayments::PayorCreateApiKeyRequest.new(
-  name: iOS Key,
-  description: Key for iOS mobile application,
-  roles: [&quot;velo.payor.admin&quot;]
+  name: SAP Key 01,
+  description: An API Key for the SAP Application,
+  roles: [&quot;payor.admin&quot;]
 )
 ```
 

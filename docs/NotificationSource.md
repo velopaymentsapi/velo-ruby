@@ -20,6 +20,7 @@ VeloPayments::NotificationSource.openapi_one_of
 #   :'PayeeDetailsChanged',
 #   :'PaymentRejectedOrReturned',
 #   :'PaymentStatusChanged',
+#   :'PayorFundingDetected',
 #   :'Ping'
 # ]
 ```
@@ -55,6 +56,7 @@ VeloPayments::NotificationSource.openapi_discriminator_mapping
 #   :'payee_details_changed' => :'PayeeDetailsChanged',
 #   :'payment_rejected_or_returned' => :'PaymentRejectedOrReturned',
 #   :'payment_status_changed' => :'PaymentStatusChanged',
+#   :'payor_funding_detected' => :'PayorFundingDetected',
 #   :'ping' => :'Ping'
 # }
 ```
@@ -89,6 +91,7 @@ VeloPayments::NotificationSource.build(data_that_doesnt_match)
 - `PayeeDetailsChanged`
 - `PaymentRejectedOrReturned`
 - `PaymentStatusChanged`
+- `PayorFundingDetected`
 - `Ping`
 - `nil` (if no type matches)
 

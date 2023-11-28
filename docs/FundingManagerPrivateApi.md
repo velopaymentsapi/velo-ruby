@@ -29,7 +29,7 @@ end
 
 api_instance = VeloPayments::FundingManagerPrivateApi.new
 opts = {
-  create_funding_account_request_v2: VeloPayments::CreateFundingAccountRequestV2.new({type: 'FBO', name: 'name_example', payor_id: 'payor_id_example'}) # CreateFundingAccountRequestV2 | 
+  create_funding_account_request_v2: VeloPayments::CreateFundingAccountRequestV2.new({type: 'FBO', name: 'name_example', payor_id: 'payor_id_example', country_code: 'US'}) # CreateFundingAccountRequestV2 | 
 }
 
 begin

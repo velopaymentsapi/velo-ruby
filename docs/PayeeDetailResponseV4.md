@@ -6,6 +6,7 @@
 | ---- | ---- | ----------- | ----- |
 | **payee_id** | **String** |  | [optional][readonly] |
 | **payor_refs** | [**Array&lt;PayeePayorRefV4&gt;**](PayeePayorRefV4.md) |  | [optional][readonly] |
+| **payment_channels** | [**Array&lt;PaymentChannelSummaryV4&gt;**](PaymentChannelSummaryV4.md) | A list of the Payee&#39;s payment channels in their preferred order | [optional][readonly] |
 | **email** | **String** |  | [optional] |
 | **onboarded_status** | **String** | Payee onboarded status. One of the following values: CREATED, INVITED, REGISTERED, ONBOARDED | [optional] |
 | **watchlist_status** | **String** | Current watchlist status. One of the following values: NONE, PENDING, REVIEW, PASSED, FAILED | [optional] |
@@ -23,6 +24,7 @@
 | **individual** | [**IndividualV4**](IndividualV4.md) |  | [optional] |
 | **company** | [**CompanyV4**](CompanyV4.md) |  | [optional] |
 | **cellphone_number** | **String** |  | [optional] |
+| **managed_by_payor_id** | **String** | The id of the payor if the payee is managed | [optional] |
 | **watchlist_status_updated_timestamp** | **String** |  | [optional][readonly] |
 | **grace_period_end_date** | **Date** |  | [optional][readonly] |
 | **enhanced_kyc_completed** | **Boolean** |  | [optional] |
@@ -42,6 +44,7 @@ require 'velopayments'
 instance = VeloPayments::PayeeDetailResponseV4.new(
   payee_id: 2aa5d7e0-2ecb-403f-8494-1865ed0454e9,
   payor_refs: null,
+  payment_channels: null,
   email: bob@example.com,
   onboarded_status: null,
   watchlist_status: null,
@@ -59,6 +62,7 @@ instance = VeloPayments::PayeeDetailResponseV4.new(
   individual: null,
   company: null,
   cellphone_number: 1234567890,
+  managed_by_payor_id: a2967711-df07-41e5-b5ea-0f563088911c,
   watchlist_status_updated_timestamp: 2019-01-20T09:00:00+00:00,
   grace_period_end_date: Sun Jan 20 00:00:00 UTC 2019,
   enhanced_kyc_completed: null,

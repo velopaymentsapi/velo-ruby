@@ -248,7 +248,7 @@ api_instance = VeloPayments::FundingApi.new
 opts = {
   payor_id: '38400000-8cf0-11bd-b23e-10b96e4ef00d', # String | 
   name: 'name_example', # String | The descriptive funding account name
-  country: 'US', # String | The 2 letter ISO 3166-1 country code (upper case)
+  country_code: 'US', # String | The 2 letter ISO 3166-1 country code (upper case)
   currency: 'USD', # String | The ISO 4217 currency code
   type: 'type_example', # String | The type of funding account.
   page: 56, # Integer | Page number. Default is 1.
@@ -290,7 +290,7 @@ end
 | ---- | ---- | ----------- | ----- |
 | **payor_id** | **String** |  | [optional] |
 | **name** | **String** | The descriptive funding account name | [optional] |
-| **country** | **String** | The 2 letter ISO 3166-1 country code (upper case) | [optional] |
+| **country_code** | **String** | The 2 letter ISO 3166-1 country code (upper case) | [optional] |
 | **currency** | **String** | The ISO 4217 currency code | [optional] |
 | **type** | **String** | The type of funding account. | [optional] |
 | **page** | **Integer** | Page number. Default is 1. | [optional][default to 1] |

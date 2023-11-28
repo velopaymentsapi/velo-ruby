@@ -19,6 +19,7 @@
 | **disabled** | **Boolean** |  | [optional] |
 | **disabled_comment** | **String** |  | [optional] |
 | **disabled_updated_timestamp** | **Time** |  | [optional] |
+| **managed_by_payor_id** | **String** | The id of the payor if the payee is managed | [optional] |
 | **individual** | [**GetPayeeListResponseIndividualV4**](GetPayeeListResponseIndividualV4.md) |  | [optional] |
 | **company** | [**GetPayeeListResponseCompanyV4**](GetPayeeListResponseCompanyV4.md) |  | [optional] |
 
@@ -43,6 +44,7 @@ instance = VeloPayments::GetPayeeListResponseV4.new(
   disabled: null,
   disabled_comment: reason for disabled,
   disabled_updated_timestamp: 2019-01-20T09:00Z,
+  managed_by_payor_id: a2967711-df07-41e5-b5ea-0f563088911c,
   individual: null,
   company: null
 )

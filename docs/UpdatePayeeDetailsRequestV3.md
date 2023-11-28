@@ -11,6 +11,7 @@
 | **payee_type** | [**PayeeTypeEnum**](PayeeTypeEnum.md) |  | [optional] |
 | **challenge** | [**ChallengeV3**](ChallengeV3.md) |  | [optional] |
 | **email** | **String** |  | [optional] |
+| **contact_sms_number** | **String** | The phone number of a device that the payee wishes to receive sms messages on  | [optional] |
 
 ## Example
 
@@ -24,7 +25,8 @@ instance = VeloPayments::UpdatePayeeDetailsRequestV3.new(
   language: en-US,
   payee_type: null,
   challenge: null,
-  email: bob@example.com
+  email: bob@example.com,
+  contact_sms_number: 11235555555
 )
 ```
 

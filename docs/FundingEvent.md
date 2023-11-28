@@ -4,10 +4,9 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **event_id** | **String** |  | [optional] |
-| **event_date_time** | **Time** |  | [optional] |
-| **funding_event_type** | **String** | Funding event type. One of the following values: PAYOR_FUNDING_DETECTED, PAYOR_FUNDING_REQUESTED, PAYOR_FUNDING_RETURN_RECEIVED, FUNDING_RETURN_DETECTED, PAYOR_FUNDING_REQUEST_SUBMITTED, PAYOR_FUNDING_ENTRY_DETAIL_RECEIVED, FUNDING_DEALLOCATED | [optional] |
-| **principal** | **String** |  | [optional] |
+| **source_type** | **String** | OA3 Schema type name for the source info which is used as the discriminator value to ensure that data binding works correctly |  |
+| **event_id** | **String** | UUID id of the source event in the Velo platform |  |
+| **created_at** | **Time** | ISO8601 timestamp indicating when the source event was created |  |
 
 ## Example
 
@@ -15,10 +14,9 @@
 require 'velopayments'
 
 instance = VeloPayments::FundingEvent.new(
-  event_id: null,
-  event_date_time: null,
-  funding_event_type: null,
-  principal: null
+  source_type: payment_status_changed,
+  event_id: 270ab907-27ec-4b83-8028-0ff432bbdec4,
+  created_at: 2020-06-18T15:09:42Z
 )
 ```
 

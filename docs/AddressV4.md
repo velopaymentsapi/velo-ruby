@@ -1,4 +1,4 @@
-# VeloPayments::PayorAddress
+# VeloPayments::AddressV4
 
 ## Properties
 
@@ -11,14 +11,14 @@
 | **city** | **String** |  |  |
 | **county_or_province** | **String** |  | [optional] |
 | **zip_or_postcode** | **String** |  | [optional] |
-| **country** | **String** |  |  |
+| **country** | **String** | Valid ISO 3166 2 character country code. See the &lt;a href&#x3D;\&quot;https://www.iso.org/iso-3166-country-codes.html\&quot; target&#x3D;\&quot;_blank\&quot; a&gt;ISO specification&lt;/a&gt; for details. |  |
 
 ## Example
 
 ```ruby
 require 'velopayments'
 
-instance = VeloPayments::PayorAddress.new(
+instance = VeloPayments::AddressV4.new(
   line1: 500 Duval St,
   line2: null,
   line3: null,

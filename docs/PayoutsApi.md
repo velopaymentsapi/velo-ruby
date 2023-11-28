@@ -178,7 +178,7 @@ opts = {
   remote_id: 'remote_id_example', # String | The remote id of the payees.
   payor_payment_id: 'payor_payment_id_example', # String | Payor's Id of the Payment
   source_account_name: 'source_account_name_example', # String | Physical Account Name
-  transmission_type: 'ACH', # String | Transmission Type * ACH * SAME_DAY_ACH * WIRE 
+  transmission_type: 'transmission_type_example', # String | Transmission Type * ACH * SAME_DAY_ACH * WIRE 
   payment_memo: 'payment_memo_example', # String | Payment Memo of the Payment
   page_size: 56, # Integer | The number of results to return in a page
   page: 56 # Integer | Page number. Default is 1.
@@ -472,7 +472,7 @@ VeloPayments.configure do |config|
 end
 
 api_instance = VeloPayments::PayoutsApi.new
-create_payout_request_v3 = VeloPayments::CreatePayoutRequestV3.new({payments: [VeloPayments::PaymentInstructionV3.new({remote_id: 'remoteId1234', currency: 'USD', amount: 1299, source_account_name: 'MyAccountName'})]}) # CreatePayoutRequestV3 | Post amount to transfer using stored funding account details.
+create_payout_request_v3 = VeloPayments::CreatePayoutRequestV3.new({payments: [VeloPayments::PaymentInstructionV3.new({remote_id: 'remoteId1234', currency: 'USD', amount: 1299})]}) # CreatePayoutRequestV3 | Post amount to transfer using stored funding account details.
 
 begin
   # Submit Payout

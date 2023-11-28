@@ -43,14 +43,19 @@
 | **return_reason** | **String** |  | [optional] |
 | **rails_payment_id** | **String** |  | [optional] |
 | **rails_batch_id** | **String** |  | [optional] |
+| **rails_account_id** | **String** |  | [optional] |
 | **payment_scheme** | **String** |  | [optional] |
 | **rejection_reason** | **String** |  | [optional] |
+| **rails_rejection_information** | **String** | The original reason that the payment was rejected. This can be third party rails specific if rejected by the underlying third party rails logic. | [optional] |
 | **withdrawn_reason** | **String** |  | [optional] |
 | **withdrawable** | **Boolean** |  | [optional] |
 | **auto_withdrawn_reason_code** | **String** | Populated with rejection reason code if the payment was withdrawn automatically at instruct time | [optional] |
 | **transmission_type** | **String** | The transmission type of the payment, e.g. ACH, SAME_DAY_ACH, WIRE, GACHO | [optional] |
+| **transmission_type_requested** | **String** | The transmission type of the payment requested by the payor | [optional] |
 | **payment_tracking_reference** | **String** |  | [optional] |
 | **payment_metadata** | **String** | Metadata for the payment | [optional] |
+| **transaction_id** | **String** |  | [optional] |
+| **transaction_reference** | **String** |  | [optional] |
 | **schedule** | [**PayoutSchedule**](PayoutSchedule.md) |  | [optional] |
 | **post_instruct_fx_info** | [**PostInstructFxInfo**](PostInstructFxInfo.md) |  | [optional] |
 | **payout** | [**PaymentResponseV4Payout**](PaymentResponseV4Payout.md) |  | [optional] |
@@ -100,14 +105,19 @@ instance = VeloPayments::PaymentResponseV4.new(
   return_reason: Some Reason Value,
   rails_payment_id: null,
   rails_batch_id: null,
+  rails_account_id: null,
   payment_scheme: null,
   rejection_reason: null,
+  rails_rejection_information: null,
   withdrawn_reason: null,
   withdrawable: null,
   auto_withdrawn_reason_code: null,
   transmission_type: null,
+  transmission_type_requested: null,
   payment_tracking_reference: null,
   payment_metadata: sample metadata,
+  transaction_id: null,
+  transaction_reference: null,
   schedule: null,
   post_instruct_fx_info: null,
   payout: null

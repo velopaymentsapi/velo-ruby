@@ -10,7 +10,7 @@
 | **account_name** | **String** | Required if type is either FBO or PRIVATE | [optional] |
 | **account_number** | **String** | Required if type is either FBO or PRIVATE | [optional] |
 | **routing_number** | **String** | Required if type is either FBO or PRIVATE | [optional] |
-| **currency** | **String** | ISO 4217 currency code, Required if type is either WUBS_DECOUPLED or PRIVATE | [optional] |
+| **country_code** | **String** | ISO 3166-1 2 letter country code (upper case) |  |
 
 ## Example
 
@@ -24,7 +24,7 @@ instance = VeloPayments::CreateFundingAccountRequestV2.new(
   account_name: null,
   account_number: null,
   routing_number: null,
-  currency: USD
+  country_code: US
 )
 ```
 

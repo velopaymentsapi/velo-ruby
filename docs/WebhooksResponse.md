@@ -4,8 +4,8 @@
 
 | Name | Type | Description | Notes |
 | ---- | ---- | ----------- | ----- |
-| **page** | [**PagedPayeeInvitationStatusResponseV3Page**](PagedPayeeInvitationStatusResponseV3Page.md) |  | [optional] |
-| **links** | [**Array&lt;PagedPayeeResponseV3Links&gt;**](PagedPayeeResponseV3Links.md) |  | [optional] |
+| **page** | [**CommonPageObject**](CommonPageObject.md) |  | [optional] |
+| **links** | [**Array&lt;CommonLinkObject&gt;**](CommonLinkObject.md) |  | [optional] |
 | **content** | [**Array&lt;WebhookResponse&gt;**](WebhookResponse.md) |  | [optional] |
 
 ## Example
